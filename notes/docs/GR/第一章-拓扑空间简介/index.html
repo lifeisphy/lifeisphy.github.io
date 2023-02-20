@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1.1 集合论初步#这部分比较简单，略
+1.2 拓扑空间#拓扑空间被定义为\((X,\mathscr{T})\)，其中 \[\mathscr T \subset 2^X\]是X的全部开集的集合。开集要满足任意并和有限交的封闭性。
+\(\mathscr T\)选取任意性：
+凝聚拓扑\(\mathscr T= \{X,\emptyset\}\)离散拓扑\(\mathscr T = 2^X\)通常拓扑，对\(\mathbb{R}^n\)来讲就是普通的开区间，和能表示为开区间并的子集 \(A\subset X\),指定拓扑\(A,\mathscr S\)A有可能不属于\(\mathscr T\)，可以定义\(\mathscr S\)为： \[\mathscr S:=\left\{V\subset A\middle|\exists O\in \mathscr T\text{such that}V=A\cap O\right\}\]\(\mathscr S\)为A的由\(\mathscr T\)导出的诱导拓扑。\((A,\mathscr S)\)为\((X,\mathscr T)\)的topological subspace
+\((X,\mathscr T)和(Y,\mathscr S)\)为拓扑空间，映射\(f:X\to Y\)连续，若 \[f^{-1}[O]\in \mathscr T\ \ \forall O\in \mathscr S\]映射f在点\(x\in X\)连续，若任意\(G&#39;\in \mathscr S\ \text{such that}\ f(x)\in G&#39;\),\(\exists G\in \mathscr T\)使得\(x\in G,f[G]\subset G&#39;\).">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="第一章 拓扑空间简介" />
+<meta property="og:description" content="1.1 集合论初步#这部分比较简单，略
+1.2 拓扑空间#拓扑空间被定义为\((X,\mathscr{T})\)，其中 \[\mathscr T \subset 2^X\]是X的全部开集的集合。开集要满足任意并和有限交的封闭性。
+\(\mathscr T\)选取任意性：
+凝聚拓扑\(\mathscr T= \{X,\emptyset\}\)离散拓扑\(\mathscr T = 2^X\)通常拓扑，对\(\mathbb{R}^n\)来讲就是普通的开区间，和能表示为开区间并的子集 \(A\subset X\),指定拓扑\(A,\mathscr S\)A有可能不属于\(\mathscr T\)，可以定义\(\mathscr S\)为： \[\mathscr S:=\left\{V\subset A\middle|\exists O\in \mathscr T\text{such that}V=A\cap O\right\}\]\(\mathscr S\)为A的由\(\mathscr T\)导出的诱导拓扑。\((A,\mathscr S)\)为\((X,\mathscr T)\)的topological subspace
+\((X,\mathscr T)和(Y,\mathscr S)\)为拓扑空间，映射\(f:X\to Y\)连续，若 \[f^{-1}[O]\in \mathscr T\ \ \forall O\in \mathscr S\]映射f在点\(x\in X\)连续，若任意\(G&#39;\in \mathscr S\ \text{such that}\ f(x)\in G&#39;\),\(\exists G\in \mathscr T\)使得\(x\in G,f[G]\subset G&#39;\)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-11-12T11:12:20+00:00" />
+<meta property="article:modified_time" content="2022-11-12T11:12:20+00:00" />
+<title>第一章 拓扑空间简介 | Hugo Book</title>
+<link rel="manifest" href="/notes/manifest.json">
+<link rel="icon" href="/notes/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/notes/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
+  <script defer src="/notes/flexsearch.min.js"></script>
+  <script defer src="/notes/en.search.min.d51d9c4c74e53f164def58b10513607ec5e599cc713cf958711a7498b01f1351.js" integrity="sha256-1R2cTHTlPxZN71ixBRNgfsXlmcxxPPlYcRp0mLAfE1E=" crossorigin="anonymous"></script>
+
+  <script defer src="/notes/sw.min.f02d8041fe15fd4a1d7a0fe50c02c2f57a3ec87d69231797beeed7968a47d96e.js" integrity="sha256-8C2AQf4V/Uodeg/lDALC9Xo&#43;yH1pIxeXvu7XlopH2W4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/notes/"><img src="/notes/favicon.jpg" alt="Logo" /><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/" class="">实变函数与泛函分析</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" class="">2-1 Lebesgue外测度，可测集</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" class="">1-集合的势与无穷</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/" class="">Lebesgue可测函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/sigma/" class="">sigma</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/" class="">广义相对论</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" class="active">第一章 拓扑空间简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/" class="">第二章 流形和张量场</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" class="">第三章 黎曼曲率张量</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" class="">第四章 李导数、Killing场和超曲面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="">第五章 微分形式及其积分</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="">第六章 狭义相对论</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" class="">群论拓扑</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/" class="">CS106L笔记</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/4/" class="">4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/3/" class="">3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/lifeisphy"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/notes/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>第一章 拓扑空间简介</strong>
+
+  <label for="toc-control">
+    
+    <img src="/notes/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+
+<link rel="stylesheet" href= "/notes/katex/katex.min.css" >
+<script defer src= "/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/katex-macros.js"></script>
+<link rel="stylesheet" href="/notes/css/1.css"></style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError :false,
+                macros
+            });
+        });
+</script>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-集合论初步">1.1 集合论初步</a></li>
+    <li><a href="#12-拓扑空间">1.2 拓扑空间</a></li>
+    <li><a href="#13-紧致性选读">1.3 紧致性[选读]</a></li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="11-集合论初步">
+  1.1 集合论初步
+  <a class="anchor" href="#11-%e9%9b%86%e5%90%88%e8%ae%ba%e5%88%9d%e6%ad%a5">#</a>
+</h1>
+<p>这部分比较简单，略</p>
+<h1 id="12-拓扑空间">
+  1.2 拓扑空间
+  <a class="anchor" href="#12-%e6%8b%93%e6%89%91%e7%a9%ba%e9%97%b4">#</a>
+</h1>
+<div class="def" name="Topological space"  style="">
+<p>拓扑空间被定义为
+<link rel="stylesheet" href="/notes/katex/katex.min.css" />
+<script defer src="/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/auto-render.min.js" onload="renderMathInElement(document.body,{'macros':macros});"></script><span>
+  \((X,\mathscr{T})\)
+</span>
+，其中
+<span>
+  \[\mathscr T \subset 2^X\]
+</span>
+
+是X的全部开集的集合。开集要满足任意并和有限交的封闭性。</p>
+</div>
+<p><span>
+  \(\mathscr T\)
+</span>
+选取任意性：</p>
+<ol>
+<li>凝聚拓扑<span>
+  \(\mathscr T= \{X,\emptyset\}\)
+</span>
+</li>
+<li>离散拓扑<span>
+  \(\mathscr T = 2^X\)
+</span>
+</li>
+<li>通常拓扑，对<span>
+  \(\mathbb{R}^n\)
+</span>
+来讲就是普通的开区间，和能表示为开区间并的子集</li>
+</ol>
+<div class="def" name="诱导拓扑"  style="">
+<p><span>
+  \(A\subset X\)
+</span>
+,指定拓扑<span>
+  \(A,\mathscr S\)
+</span>
+
+A有可能不属于<span>
+  \(\mathscr T\)
+</span>
+，可以定义<span>
+  \(\mathscr S\)
+</span>
+为：
+<span>
+  \[\mathscr S:=\left\{V\subset A\middle|\exists O\in \mathscr T\text{such that}V=A\cap O\right\}\]
+</span>
+
+<span>
+  \(\mathscr S\)
+</span>
+为A的由<span>
+  \(\mathscr T\)
+</span>
+导出的诱导拓扑。<span>
+  \((A,\mathscr S)\)
+</span>
+为<span>
+  \((X,\mathscr T)\)
+</span>
+的topological subspace</p>
+</div>
+<div class="def" name="连续性"  style="">
+<p><span>
+  \((X,\mathscr T)和(Y,\mathscr S)\)
+</span>
+为拓扑空间，映射<span>
+  \(f:X\to Y\)
+</span>
+连续，若
+<span>
+  \[f^{-1}[O]\in \mathscr T\ \ \forall O\in \mathscr S\]
+</span>
+</p>
+</div>
+<div class="def" name="点连续性"  style="">
+<p>映射f在点<span>
+  \(x\in X\)
+</span>
+连续，若任意<span>
+  \(G&#39;\in \mathscr S\ \text{such that}\ f(x)\in G&#39;\)
+</span>
+,<span>
+  \(\exists G\in \mathscr T\)
+</span>
+使得<span>
+  \(x\in G,f[G]\subset G&#39;\)
+</span>
+.在所有点连续的映射成为连续映射。</p>
+</div>
+<div class="def" name="同胚"  style="">
+<p>拓扑空间相互同胚，若存在一对一的连续映射<span>
+  \(f\)
+</span>
+,且逆映射也连续。这样的映射称为同胚映射(homeomorphism)</p>
+</div>
+<div class="def" name="邻域"  style="">
+<p><span>
+  \(N\subset X\)
+</span>
+是<span>
+  \(x\in X\)
+</span>
+的一个邻域，若<span>
+  \(\exists O\in \mathscr T\text{such that}x\in O\subset N\)
+</span>
+。开集邻域称为开邻域</p>
+</div>
+<div class="thm" name="1-2-1"  style="">
+<p><span>
+  \(A\subset X\)
+</span>
+是开集，当且仅当<span>
+  \(A\)
+</span>
+为<span>
+  \(x\)
+</span>
+的邻域<span>
+  \(\forall x\in A\)
+</span>
+</p>
+</div>
+<div class="def" name="闭集"  style="">
+<p><span>
+  \(C\subset X\)
+</span>
+为闭集，当<span>
+  \(-C\in \mathscr T\)
+</span>
+</p>
+</div>
+<div class="prop" name="性质"  style="">
+<ol>
+<li>任意交为闭集</li>
+<li>有限并为闭集</li>
+<li>全集X和空集<span>
+  \(\emptyset\)
+</span>
+为闭集</li>
+</ol>
+</div>
+<p>连通：除X和<span>
+  \(\emptyset\)
+</span>
+之外没有既开又闭的子集</p>
+<div class="def" name="闭包"  style="">
+<p>A的闭包<span>
+  \(\bar{A}\)
+</span>
+是所有含A的闭集的交集</p>
+</div>
+<div class="def" name="内部"  style="">
+<p>A的内部<span>
+  \(i(A)\)
+</span>
+是所有含于A的开集的并集</p>
+</div>
+<div class="def" name="边界"  style="">
+<span>
+  \(\partial A=\dot{A}:=\bar{A}-i(A)\)
+</span>
+
+</div>
+<div class="prop" name="性质"  style="">
+<ol>
+<li><span>
+  \(\bar{A}\)
+</span>
+为闭集;</li>
+<li><span>
+  \(A\subset A\)
+</span>
+;</li>
+<li><span>
+  \(A=\bar A \Harr\)
+</span>
+A为闭集</li>
+<li><span>
+  \(i(A)\)
+</span>
+为开集；</li>
+<li><span>
+  \(i(A)\subset A\)
+</span>
+</li>
+<li><span>
+  \(i(A)=A\Harr A\in \mathscr T\)
+</span>
+</li>
+<li><span>
+  \(\dot A\)
+</span>
+为闭集</li>
+</ol>
+</div>
+<p>A的开覆盖：满足<span>
+  \(A\subset \bigcup_\alpha O_\alpha\)
+</span>
+开子集的集合<span>
+  \(\{O_\alpha\}\)
+</span>
+</p>
+<h1 id="13-紧致性选读">
+  1.3 紧致性[选读]
+  <a class="anchor" href="#13-%e7%b4%a7%e8%87%b4%e6%80%a7%e9%80%89%e8%af%bb">#</a>
+</h1>
+<p>开覆盖和有限子覆盖的定义略。</p>
+<div class="def" name="紧致"  style="">
+<p><span>
+  \(A\subset X\)
+</span>
+是紧致的，如果它的任意开覆盖都有有限子覆盖。</p>
+</div>
+<div class="def" name="Hausdorff space|T2空间"  style="">
+<p><span>
+  \((X,\mathscr T)\)
+</span>
+叫<span>
+  \(T_2\)
+</span>
+空间或Hausdorff space，若
+<span>
+  \[\forall x,y\in X,x\ne y,\exists O_1,O_2\in \mathscr T\text{such that}\\ 
+x\in O_1,y\in O_2且O_1\cap O_2 \ne \emptyset\]
+</span>
+
+Hausdorff空间的定义描述的是：可分离的两点可分别属于两分离的开集邻域</p>
+</div>
+<div class="thm" name="定理"  style="">
+<p><span>
+  \(T_2\)
+</span>
+空间中紧致的集合为闭集</p>
+</div>
+<div class="pf"  style="">
+<p><span>
+  \(A=\emptyset\)
+</span>
+显然成立。对非空集情形，只需证<span>
+  \(X-A\in \mathscr T\)
+</span>
+，即证<span>
+  \(\forall x\in X-A,\exists O\in \mathscr T\text{such that}x\in O\subset X-A\)
+</span>
+.
+因为X为T2空间，给定<span>
+  \(x\)
+</span>
+，<span>
+  \(\forall y\in A,\exists O_y,G_y\in \mathscr T\text{such that} x\in O_y,y\in G_y,O_y\cap G_y = \emptyset\)
+</span>
+. <span>
+  \(y\)
+</span>
+走遍A给出两个子集的集合<span>
+  \(\{G_y|y\in A\},\{O_y|y\in A\}\)
+</span>
+易见<span>
+  \(\{G_y|y\in A\}\)
+</span>
+为A开覆盖。A的紧致性保证必存在有限子覆盖<span>
+  \(\{G_{y_1},\cdots,G_{y_n}\}\)
+</span>
+。令<span>
+  \(O\equiv O_{y_1}\cap \cdots\cap O_{y_n}\)
+</span>
+，便有：<span>
+  \(O\in \mathscr T,x\in O,O\cap A = \emptyset\)
+</span>
+，即<span>
+  \(O\subset X-A\)
+</span>
+，于是<span>
+  \(X-A\in \mathscr T\)
+</span>
+，A为闭集。</p>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/lifeisphy/notes/edit/main/exampleSite/content/docs/GR/%e7%ac%ac%e4%b8%80%e7%ab%a0%20%e6%8b%93%e6%89%91%e7%a9%ba%e9%97%b4%e7%ae%80%e4%bb%8b.md" target="_blank" rel="noopener">
+      <img src="/notes/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-集合论初步">1.1 集合论初步</a></li>
+    <li><a href="#12-拓扑空间">1.2 拓扑空间</a></li>
+    <li><a href="#13-紧致性选读">1.3 紧致性[选读]</a></li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

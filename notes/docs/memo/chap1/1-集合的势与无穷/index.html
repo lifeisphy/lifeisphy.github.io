@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="本文是参考了《实变函数与泛函分析》第一章写出的科普文，也希望能让各位对“有限”与“无限”的区别与联系有一个更数学的认识。 有限其实已经为我们所熟知了。但很多人碰到“无穷”这个概念时常常会感到十分困惑：无穷大是什么？无穷大的量之间该如何比较？本篇文章将带你走进这些问题的数学研究。
+集合#集合就是把一类不相同的事物聚集在一起。比如把三个人堆在一起，\(A=\{张三，李四，王五\}\)就构成一个集合，全体自然数堆在一起，\(\mathbb{N}=\{0,1,2,...\}\)也构成一个集合。集合中的每个事物叫做元素，元素可以是一本书，一个人，或者一粒沙子，总之什么都可以。对于一个元素\(x\)，它如果在集合\(S\)中，就叫做\(x\)属于集合S,记作\(x\in S\)。反之，若\(x\)不在集合中，则\(x\)不属于\(S\)，\(x\notin S\)。
+元素与集合之间存在“属于”或“不属于”的关系，而集合与集合之间则可以比较。比如集合A包含B，换言之B是A的子集，说的就是\(\forall a\in B,a\in A\)，记作\(B\subseteq A\),如果B和A不相同，则B是A的真子集，\(B\subset A\)显然，有些集合的元素个数是有限的，比如上面的\(A\)就只有3个元素，这叫做有限集，是我们熟悉的情况；但也有些集合元素个数无限，比如自然数集\(\mathbb{N}\)和实数集\(\mathbb{R}\)。这些叫做无限集。
+笛卡尔积#假设我们有两个集合\(A,B\)，从\(A\)中取出一个元素\(a\)，再从\(B\)中取出一元素\(b\)，它们的有序对\((a,b)\)构成的集合称作集合\(A,B\)的笛卡尔积笛卡尔积，记作\(A\times B\)。 用数学语言描述，就是： \[A\times B = \{(a,b)|\forall a\in A,b\in B\}\]笛卡尔积的使用也很常见。比如，\(\mathbb R\)表示实数，那么\(\mathbb R\times \mathbb R\)就是二维欧式空间，\(\mathbb R^n =\{(x_1,x_2,\cdots,x_n)|x_i\in \mathbb R,1\le i\le n\}\)是n维欧式空间。">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="1-集合的势与无穷" />
+<meta property="og:description" content="本文是参考了《实变函数与泛函分析》第一章写出的科普文，也希望能让各位对“有限”与“无限”的区别与联系有一个更数学的认识。 有限其实已经为我们所熟知了。但很多人碰到“无穷”这个概念时常常会感到十分困惑：无穷大是什么？无穷大的量之间该如何比较？本篇文章将带你走进这些问题的数学研究。
+集合#集合就是把一类不相同的事物聚集在一起。比如把三个人堆在一起，\(A=\{张三，李四，王五\}\)就构成一个集合，全体自然数堆在一起，\(\mathbb{N}=\{0,1,2,...\}\)也构成一个集合。集合中的每个事物叫做元素，元素可以是一本书，一个人，或者一粒沙子，总之什么都可以。对于一个元素\(x\)，它如果在集合\(S\)中，就叫做\(x\)属于集合S,记作\(x\in S\)。反之，若\(x\)不在集合中，则\(x\)不属于\(S\)，\(x\notin S\)。
+元素与集合之间存在“属于”或“不属于”的关系，而集合与集合之间则可以比较。比如集合A包含B，换言之B是A的子集，说的就是\(\forall a\in B,a\in A\)，记作\(B\subseteq A\),如果B和A不相同，则B是A的真子集，\(B\subset A\)显然，有些集合的元素个数是有限的，比如上面的\(A\)就只有3个元素，这叫做有限集，是我们熟悉的情况；但也有些集合元素个数无限，比如自然数集\(\mathbb{N}\)和实数集\(\mathbb{R}\)。这些叫做无限集。
+笛卡尔积#假设我们有两个集合\(A,B\)，从\(A\)中取出一个元素\(a\)，再从\(B\)中取出一元素\(b\)，它们的有序对\((a,b)\)构成的集合称作集合\(A,B\)的笛卡尔积笛卡尔积，记作\(A\times B\)。 用数学语言描述，就是： \[A\times B = \{(a,b)|\forall a\in A,b\in B\}\]笛卡尔积的使用也很常见。比如，\(\mathbb R\)表示实数，那么\(\mathbb R\times \mathbb R\)就是二维欧式空间，\(\mathbb R^n =\{(x_1,x_2,\cdots,x_n)|x_i\in \mathbb R,1\le i\le n\}\)是n维欧式空间。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lifeisphy.github.io/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-09-14T18:21:26+00:00" />
+<meta property="article:modified_time" content="2022-09-14T18:21:26+00:00" />
+<title>1-集合的势与无穷 | Hugo Book</title>
+<link rel="manifest" href="/notes/manifest.json">
+<link rel="icon" href="/notes/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/notes/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
+  <script defer src="/notes/flexsearch.min.js"></script>
+  <script defer src="/notes/en.search.min.d51d9c4c74e53f164def58b10513607ec5e599cc713cf958711a7498b01f1351.js" integrity="sha256-1R2cTHTlPxZN71ixBRNgfsXlmcxxPPlYcRp0mLAfE1E=" crossorigin="anonymous"></script>
+
+  <script defer src="/notes/sw.min.f02d8041fe15fd4a1d7a0fe50c02c2f57a3ec87d69231797beeed7968a47d96e.js" integrity="sha256-8C2AQf4V/Uodeg/lDALC9Xo&#43;yH1pIxeXvu7XlopH2W4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/notes/"><img src="/notes/favicon.jpg" alt="Logo" /><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/" class="">实变函数与泛函分析</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" class="">2-1 Lebesgue外测度，可测集</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" class="active">1-集合的势与无穷</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/" class="">Lebesgue可测函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/sigma/" class="">sigma</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/" class="">广义相对论</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" class="">第一章 拓扑空间简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/" class="">第二章 流形和张量场</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" class="">第三章 黎曼曲率张量</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" class="">第四章 李导数、Killing场和超曲面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="">第五章 微分形式及其积分</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="">第六章 狭义相对论</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" class="">群论拓扑</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/" class="">CS106L笔记</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/4/" class="">4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/3/" class="">3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/lifeisphy"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/notes/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>1-集合的势与无穷</strong>
+
+  <label for="toc-control">
+    
+    <img src="/notes/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+
+<link rel="stylesheet" href= "/notes/katex/katex.min.css" >
+<script defer src= "/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/katex-macros.js"></script>
+<link rel="stylesheet" href="/notes/css/1.css"></style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError :false,
+                macros
+            });
+        });
+</script>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#集合">集合</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#笛卡尔积">笛卡尔积</a></li>
+            <li><a href="#幂集">幂集</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#映射">映射</a></li>
+    <li><a href="#势">势</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#可列集的运算">可列集的运算</a></li>
+            <li><a href="#最大的无穷集">最大的无穷集？</a></li>
+            <li><a href="#连续统假设">连续统假设</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p>本文是参考了《实变函数与泛函分析》第一章写出的科普文，也希望能让各位对“有限”与“无限”的区别与联系有一个更数学的认识。
+有限其实已经为我们所熟知了。但很多人碰到“无穷”这个概念时常常会感到十分困惑：无穷大是什么？无穷大的量之间该如何比较？本篇文章将带你走进这些问题的数学研究。</p>
+<h1 id="集合">
+  集合
+  <a class="anchor" href="#%e9%9b%86%e5%90%88">#</a>
+</h1>
+<p><strong>集合</strong>就是把一类不相同的事物聚集在一起。比如把三个人堆在一起，
+<link rel="stylesheet" href="/notes/katex/katex.min.css" />
+<script defer src="/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/auto-render.min.js" onload="renderMathInElement(document.body,{'macros':macros});"></script><span>
+  \(A=\{张三，李四，王五\}\)
+</span>
+就构成一个集合，全体自然数堆在一起，<span>
+  \(\mathbb{N}=\{0,1,2,...\}\)
+</span>
+也构成一个集合。集合中的每个事物叫做<strong>元素</strong>，元素可以是一本书，一个人，或者一粒沙子，总之什么都可以。对于一个元素<span>
+  \(x\)
+</span>
+，它如果在集合<span>
+  \(S\)
+</span>
+中，就叫做<span>
+  \(x\)
+</span>
+<strong>属于</strong>集合S,记作<span>
+  \(x\in S\)
+</span>
+。反之，若<span>
+  \(x\)
+</span>
+不在集合中，则<span>
+  \(x\)
+</span>
+<strong>不属于</strong><span>
+  \(S\)
+</span>
+，<span>
+  \(x\notin S\)
+</span>
+。</p>
+<p>元素与集合之间存在“属于”或“不属于”的关系，而集合与集合之间则可以比较。比如集合A包含B，换言之B是A的子集，说的就是<span>
+  \(\forall a\in B,a\in A\)
+</span>
+，记作<span>
+  \(B\subseteq A\)
+</span>
+,如果B和A不相同，则B是A的真子集，<span>
+  \(B\subset A\)
+</span>
+</p>
+<p>显然，有些集合的元素个数是有限的，比如上面的<span>
+  \(A\)
+</span>
+就只有3个元素，这叫做<strong>有限集</strong>，是我们熟悉的情况；但也有些集合元素个数无限，比如自然数集<span>
+  \(\mathbb{N}\)
+</span>
+和实数集<span>
+  \(\mathbb{R}\)
+</span>
+。这些叫做<strong>无限集</strong>。</p>
+<h3 id="笛卡尔积">
+  笛卡尔积
+  <a class="anchor" href="#%e7%ac%9b%e5%8d%a1%e5%b0%94%e7%a7%af">#</a>
+</h3>
+<p>假设我们有两个集合<span>
+  \(A,B\)
+</span>
+，从<span>
+  \(A\)
+</span>
+中取出一个元素<span>
+  \(a\)
+</span>
+，再从<span>
+  \(B\)
+</span>
+中取出一元素<span>
+  \(b\)
+</span>
+，它们的有序对<span>
+  \((a,b)\)
+</span>
+构成的集合称作<strong>集合<span>
+  \(A,B\)
+</span>
+的笛卡尔积笛卡尔积</strong>，记作<span>
+  \(A\times B\)
+</span>
+。
+用数学语言描述，就是：
+<span>
+  \[A\times B = \{(a,b)|\forall a\in A,b\in B\}\]
+</span>
+
+笛卡尔积的使用也很常见。比如，<span>
+  \(\mathbb R\)
+</span>
+表示实数，那么<span>
+  \(\mathbb R\times \mathbb R\)
+</span>
+就是二维欧式空间，<span>
+  \(\mathbb R^n =\{(x_1,x_2,\cdots,x_n)|x_i\in \mathbb R,1\le i\le n\}\)
+</span>
+是n维欧式空间。</p>
+<h3 id="幂集">
+  幂集
+  <a class="anchor" href="#%e5%b9%82%e9%9b%86">#</a>
+</h3>
+<p>提问：集合的每个成员是元素，既然元素可以是任何事物，那这元素可以是一个集合吗？</p>
+<p>当然可以啦！比如这个：<span>
+  \(C=\{\{1,2,3\},\{2,3\},\{0\}\}\)
+</span>
+，就是一个&quot;自然数集<span>
+  \(\mathbb{N}\)
+</span>
+的一些子集构成的集合&quot;。</p>
+<p>如果你没读懂上面这句话的话，可以多读几遍。</p>
+<p>如果你读懂了，那我们就可以介绍什么是<strong>幂集</strong>了。</p>
+<p>一个集合<span>
+  \(A\)
+</span>
+的幂集就是&quot;A的所有子集构成的集合&quot;，记作<span>
+  \(2^A\)
+</span>
+。
+显然，空集和A自身都是A的子集，<span>
+  \(\emptyset \in 2^A,A\in 2^A\)
+</span>
+
+我们为什么用这么一个符号来表示幂集呢？一个直观的想法是，如果<span>
+  \(A\)
+</span>
+是一个有限集，元素个数记作<span>
+  \(|A|\)
+</span>
+，那么幂集所有元素是<span>
+  \(|A|\)
+</span>
+个“取”和“不取”两种选择的排列，所以元素个数是<span>
+  \(|2^A|=2^{|A|}\)
+</span>
+</p>
+<h1 id="映射">
+  映射
+  <a class="anchor" href="#%e6%98%a0%e5%b0%84">#</a>
+</h1>
+<blockquote>
+<p>设<span>
+  \(X,Y\)
+</span>
+是两个非空的集合，若对于每个<span>
+  \(x\in X\)
+</span>
+, 存在唯一的<span>
+  \(y\in Y\)
+</span>
+与之对应，则称这个对应为<span>
+  \(X\)
+</span>
+到<span>
+  \(Y\)
+</span>
+的<strong>映射</strong>。并把<span>
+  \(x\)
+</span>
+叫<strong>原像</strong>，<span>
+  \(y\)
+</span>
+叫<strong>映像</strong></p>
+</blockquote>
+<p>若用<span>
+  \(f\)
+</span>
+来表示这个映射，我们一般把这个映射记成
+<span>
+  \[f:X\to Y\\
+y=f(x)\]
+</span>
+</p>
+<p>考虑两个有限集合之间的映射，一般情况是像这样：
+
+  <img src="./ys.png" alt="pic" />
+根据映射的定义，A中所有原像都存在映像，但<strong>并非B中所有元素都存在原像，也并非所有映像都只对应一个原像</strong>。
+如果我们再加入一些条件，比如<span>
+  \(f(a)\ne f(b),\forall a,b\in A且a\ne b\)
+</span>
+，那我们称这时的映射为<strong>单射</strong>,像这样：
+
+  <img src="./ds.png" alt="pic" />
+如果在映射基础上加入条件：B中任何元素都存在原像，那我们称这个映射为<strong>满射</strong>，像这样：
+
+  <img src="./ms.png" alt="pic" /></p>
+<p>如果映射既是单射又是满射，我们称其为<strong>一一对应</strong>。像这样：
+
+  <img src="./yyys.png" alt="pic" />
+这时，我们称集合<span>
+  \(A,B\)
+</span>
+之间存在一一对应。
+一一对应性质很好，因为我们可以直接构造逆映射<span>
+  \(f^{-1}\)
+</span>
+，将B中的元素一一满映射到A中。并且，如果<span>
+  \(f:A\to B,g:B\to C\)
+</span>
+都是一一对应，那么<span>
+  \(g\circ f:A\to C\)
+</span>
+也是一一对应。也就是说，一一对应还可以像一条链一样，将多个集合串联起来，链上的任何两个集合之间都存在一一对应。</p>
+<h1 id="势">
+  势
+  <a class="anchor" href="#%e5%8a%bf">#</a>
+</h1>
+<p>有了前面的基础，我们可以试着去比较不同集合之间的“大小”。这里的集合既包括有限集，也包括了无穷集。
+对于有限集，比较大小是十分简单的，我们只需要数元素的个数就可以了；但对于无穷集，这就不适用了。我们还需要除了“数”之外的另一种方法。</p>
+<p>根据上面的知识，判断两个集合元素个数是否相等，我们可以看是否能在两个集合之间建立一一对应关系。
+显然，对于有限集，元素个数相等必然能建立一一对应。我们可以将这种方法推广到无穷集。</p>
+<blockquote>
+<p>设<span>
+  \(A,B\)
+</span>
+是两个集合，如果存在一个从<span>
+  \(A\)
+</span>
+到<span>
+  \(B\)
+</span>
+的一一对应，则称集合<span>
+  \(A\)
+</span>
+与<span>
+  \(B\)
+</span>
+<strong>对等</strong>，记作<span>
+  \(A\sim B\)
+</span>
+</p>
+</blockquote>
+<p>显然，对等关系是一种等价关系，它满足三条基本的性质：</p>
+<ol>
+<li>自反性：<span>
+  \(A\sim A\)
+</span>
+</li>
+<li>对称性：<span>
+  \(A\sim B\ \to\ B\sim A\)
+</span>
+</li>
+<li>传递性：<span>
+  \(A\sim B,B\sim C\to\ A\sim C\)
+</span>
+</li>
+</ol>
+<p>如果两个集合对等，就称它们有相同的<strong>势</strong>(基数)。用<span>
+  \(|A|\)
+</span>
+来表示集合<span>
+  \(A\)
+</span>
+的基数。若存在一个从A到B的单射(A对等于B的某个子集)，则规定<span>
+  \(|A|\le |B|\)
+</span>
+。若<span>
+  \(|A|\le |B|\)
+</span>
+且<span>
+  \(|B|\ne |A|\)
+</span>
+，则记作<span>
+  \(|A|&lt;|B|\)
+</span>
+
+势是自然数的推广，而势不等式可以看作是自然数顺序关系的推广。对于两个势<span>
+  \(\alpha,\beta\)
+</span>
+,总有<span>
+  \(\alpha&lt;\beta,\alpha=\beta,\alpha&gt;\beta\)
+</span>
+三者之一成立。</p>
+<p>这波推广看上去如此和谐&hellip;but wait,真的有这么丝滑吗(bushi)？
+我们来看两个例子：</p>
+<p>a.自然数集<span>
+  \(\mathbb N=\{0,1,2,3,\cdots\}\)
+</span>
+和偶数集<span>
+  \(2\mathbb N=\{0,2,4,\cdots\}\)
+</span>
+之间存在一一对应关系
+<span>
+  \[f:\mathbb N\to 2\mathbb N\\
+x\to 2x\]
+</span>
+
+这意味着，<strong>自然数集对等于偶数集</strong>，你可能觉得很困惑，明明<span>
+  \(2\mathbb N\subset \mathbb N\)
+</span>
+,为什么两个集合会是对等的呢(oﾟvﾟ)ノ？
+但是，这正是无穷集有趣的地方啊~(￣▽￣)&quot;
+与之相似，全体整数<span>
+  \(\mathbb Z\)
+</span>
+，甚至全体有理数<span>
+  \(\mathbb Q\)
+</span>
+都是与自然数集<span>
+  \(\mathbb N\)
+</span>
+等势的！读者不妨尝试一下，如何构造这样的一一对应。</p>
+<p>b.区间<span>
+  \((-1,1)\)
+</span>
+和实数集<span>
+  \(\mathbb R\)
+</span>
+对等,因为我们可以构造一一对应
+<span>
+  \[f:(-1,1)\to \mathbb R\\
+x\to \tan \frac \pi 2 x\]
+</span>
+
+这个函数在<span>
+  \((-1,1)\)
+</span>
+上是单调上升的连续函数，值域为<span>
+  \((-\infty,\infty)\)
+</span>
+，所以构成了一一对应。</p>
+<p>有两种无穷集的势是常见的。一种是自然数集的势，记作<span>
+  \(|\mathbb N|=\aleph_0\)
+</span>
+，与之对等的集合称为<strong>可列集/可数集</strong>；另一种是实数集的势<span>
+  \(|\mathbb R|=c\)
+</span>
+,与它对等的集合称为具有<strong>连续势</strong>。</p>
+<p>之所以把与<span>
+  \(|\mathbb N|\)
+</span>
+对等的集合叫可列集，是因为可以把集合中的所有元素用正整数“标号”：<span>
+  \(A=\{x_1,x_2,\cdots,x_n,\cdots\}\)
+</span>
+,而有连续势的集合就做不到这一点。</p>
+<p>看到这里，简单总结一下就是：一个无穷集合的个数是“无穷大”，这些“无穷大”有不一样的类型，并且可以进行大小比较。但我们还是有一些疑问：这些“无穷”的运算关系如何呢？是否有一个“最大”的“无穷”，它比其他的“无穷”都要“大”呢？</p>
+<h3 id="可列集的运算">
+  可列集的运算
+  <a class="anchor" href="#%e5%8f%af%e5%88%97%e9%9b%86%e7%9a%84%e8%bf%90%e7%ae%97">#</a>
+</h3>
+<p>首先,我们来看看可列集的性质，和可列集之间的运算对势的影响。</p>
+<blockquote>
+<p>任何无穷集合包含一个可列子集</p>
+</blockquote>
+<p>证明思路很简单：从无穷集取一个元素<span>
+  \(x_0\)
+</span>
+，<span>
+  \(A/\{x_0\}\)
+</span>
+还是无穷集；依次取<span>
+  \(x_1,x_2,...,x_n,...\)
+</span>
+，构成的集合就是无穷集A的一个可列子集</p>
+<blockquote>
+<p>可列集合无穷子集仍是可列的</p>
+</blockquote>
+<p>比如，<span>
+  \(2\mathbb N\)
+</span>
+是<span>
+  \(\mathbb N\)
+</span>
+的一个无穷子集，它也是可列的</p>
+<blockquote>
+<p>可列集和有限集/可列集的并集是可列集</p>
+</blockquote>
+<p>用公式表示就是：
+<span>
+  \[n&#43;\aleph_0=\aleph_0;\aleph_0&#43;\aleph_0=\aleph_0\]
+</span>
+</p>
+<blockquote>
+<p><strong>可数（无穷）个</strong>有限集或可列集的并是可列集</p>
+</blockquote>
+<p>用公式表示就是：
+<span>
+  \[\sum_{i=1}^{\infty}\aleph_0=\aleph_0\]
+</span>
+</p>
+<blockquote>
+<p><strong>有限</strong>个可列集的笛卡尔积是可列集</p>
+</blockquote>
+<p>一定注意，这里只能是有限个！下面我们就会看到，可数个可列集的笛卡尔积不一定是可列集。
+用公式表示就是：
+<span>
+  \[\aleph_0\times\aleph_0=\aleph_0; \prod_{i=1}^n \aleph_0 = \aleph_0\]
+</span>
+
+根据有限集时集合运算之后集合元素个数的变化关系，我们也可以类似地定义无穷集情况下相对应的符号：</p>
+<blockquote>
+<p>定义：设有集合与势<span>
+  \(|A|=\alpha,|B|=\beta\)
+</span>
+，笛卡尔积集合的势写作<span>
+  \(|A\times B|=\alpha\cdot \beta\)
+</span>
+，n个相同势的笛卡尔积写成次幂形式：<span>
+  \(\alpha\cdot\alpha\cdot\ \cdots\ \cdot \alpha=\alpha^n\)
+</span>
+；全体A到B的映射构成的集合记作<span>
+  \(B^A\)
+</span>
+,<span>
+  \(|B^A|=\beta^\alpha\)
+</span>
+；如果<span>
+  \(A\cap B=\emptyset\)
+</span>
+,则<span>
+  \(|A\cup B|=\alpha&#43;\beta\)
+</span>
+；A的幂集的势<span>
+  \(|2^A|=2^\alpha\)
+</span>
+</p>
+</blockquote>
+<p>无限集还有很多不符合常理的性质，比如</p>
+<h3 id="最大的无穷集">
+  最大的无穷集？
+  <a class="anchor" href="#%e6%9c%80%e5%a4%a7%e7%9a%84%e6%97%a0%e7%a9%b7%e9%9b%86">#</a>
+</h3>
+<p>我们再来看另一个问题：是否有最大的无穷集呢？为了回答这个问题，我们先来看几个引理：</p>
+<blockquote>
+<p>引理：区间<span>
+  \((0,1]\)
+</span>
+不是可列集。</p>
+</blockquote>
+<p>如果它是可列集，那么就存在一一对应<span>
+  \(f:\mathbb N\to (0,1]\)
+</span>
+，将<span>
+  \(f(n)\)
+</span>
+用十进位小数表示：
+<span>
+  \[f(n)=0.a_{n_1}a_{n_2}\cdots a_{n_k}\cdots\]
+</span>
+
+证明：我们规定，上式可能从某位开始全为9（根据极限的规则，全9=全0+向上进位1），但不允许从某位开始全为0.
+构造这样一个数：<span>
+  \(x=0.b_1b_2\cdots b_n\cdots\)
+</span>
+，如果<span>
+  \(a_{n_n}=1\)
+</span>
+，取<span>
+  \(b_n=2\)
+</span>
+,反之取<span>
+  \(b_n=1\)
+</span>
+；总之，<span>
+  \(b_n\)
+</span>
+的选取满足：
+<span>
+  \(b_1\ne a_{1_1},b_2\ne a_{2_2},...,b_n\ne a_{n_n},...\)
+</span>
+
+容易得知，<span>
+  \(x\in (0,1]\)
+</span>
+，但这样一串数不等于任何一个<span>
+  \(f(n)\)
+</span>
+，因此推出矛盾。所以<span>
+  \((0,1]\)
+</span>
+不可列。</p>
+<p>下面这个引理则解释了连续势<span>
+  \(c\)
+</span>
+和<span>
+  \(\aleph_0\)
+</span>
+的关系：</p>
+<blockquote>
+<p>引理：<span>
+  \(2^{\aleph_0}=c\)
+</span>
+</p>
+</blockquote>
+<p>证明：<span>
+  \([0,1]\)
+</span>
+和<span>
+  \((0,1]\)
+</span>
+一样，具有连续势<span>
+  \(c\)
+</span>
+，我们只需要找到<span>
+  \(2^{\mathbb N}\)
+</span>
+与<span>
+  \([0,1]\)
+</span>
+之间的一一对应就可以了。
+对于<span>
+  \(2^{\mathbb N}\)
+</span>
+中的任意一个元素A，构造一个取值为0或1的、无限长的序列<span>
+  \(\{x_0,x_1,\cdots,x_n,\cdots\}\)
+</span>
+如果自然数<span>
+  \(n\in A\)
+</span>
+，则<span>
+  \(x_n=1\)
+</span>
+,否则<span>
+  \(x_n=0\)
+</span>
+。这样，自然数集的幂集与全部的<span>
+  \({0,1}\)
+</span>
+取值的序列<span>
+  \(\{0,1\}^{\mathbb N}\)
+</span>
+存在一一对应。
+举个例子，<span>
+  \(\mathbb N\in 2^{\mathbb N}\)
+</span>
+,对应的序列是<span>
+  \(\{1,1,1,\cdots,1,\cdots\}\)
+</span>
+,而空集对应的序列是全0。
+而全体序列与<span>
+  \([0,1]\)
+</span>
+存在一一对应:
+<span>
+  \[\{x_0,...,x_i,...\}\to\sum_{i=0}^\infty \frac{x_{i}}{2^{i&#43;1}}\]
+</span>
+
+因此自然数集的幂集与具有连续势的集合存在一一对应，即<span>
+  \(2^{\aleph_0}=c\)
+</span>
+</p>
+<p>最后压轴登场的定理，则能告诉我们，是否存在最大的“无穷”：</p>
+<blockquote>
+<p>无最大基数定理：若A是非空集合，则集合A与其幂集<span>
+  \(2^A\)
+</span>
+不对等</p>
+</blockquote>
+<p>证明：假设<span>
+  \(A\sim 2^A\)
+</span>
+，则存在一一满映射<span>
+  \(f:A\to 2^A\)
+</span>
+
+构造集合<span>
+  \(B=\{x\in A|x\notin f(x)\}\)
+</span>
+,容易看出B是A中一些元素构成的集合，因此它是<span>
+  \(2^A\)
+</span>
+中的元素，<span>
+  \(B\in 2^A\)
+</span>
+。
+由于<span>
+  \(f\)
+</span>
+是满射，所以<span>
+  \(A\)
+</span>
+中一定存在原像<span>
+  \(y\)
+</span>
+，使得<span>
+  \(f(y)=B\)
+</span>
+
+下面我们考虑命题<span>
+  \(y\in B\)
+</span>
+的真假。
+若命题为真，<span>
+  \(y\in B\)
+</span>
+，但B中的元素应该满足<span>
+  \(y\notin f(y)=B\)
+</span>
+，矛盾；
+若命题为假，<span>
+  \(y\notin B=f(y)\)
+</span>
+，根据集合B的定义，<span>
+  \(y\)
+</span>
+应该是B的元素，<span>
+  \(y\in B\)
+</span>
+，矛盾。
+所以命题既不可能为真又不可能为假，只能是假设前提错误，因此<span>
+  \(A\)
+</span>
+与<span>
+  \(2^A\)
+</span>
+不对等。</p>
+<p>有了这个命题，我们从<span>
+  \(\aleph_0\)
+</span>
+出发可以构造比它更大的势<span>
+  \(2^{\aleph_0}\)
+</span>
+，我们把它叫做<span>
+  \(\aleph_1\)
+</span>
+，根据引理，它和连续势等价；类似地，我们还可以构造更大的势<span>
+  \(\aleph_2,\aleph_3,\cdots,\aleph_k，\cdots\)
+</span>
+，每一个都比原来的更大。因此，世界上不存在最大的势。</p>
+<p>现在，我们可以把已知的势按照大小排序：
+<span>
+  \[0\lt 1\lt 2\lt \cdots\lt n \lt \cdots \lt \aleph_0 \lt \aleph_1 = c \lt \cdots \lt \aleph_k \lt \cdots\]
+</span>
+</p>
+<h3 id="连续统假设">
+  连续统假设
+  <a class="anchor" href="#%e8%bf%9e%e7%bb%ad%e7%bb%9f%e5%81%87%e8%ae%be">#</a>
+</h3>
+<p>我们有了势大小比较的轮廓，但还缺少一些细节。比如，在<span>
+  \(\aleph_0\)
+</span>
+与<span>
+  \(\aleph_1\)
+</span>
+之间是否存在势呢？换言之，是否存在集合<span>
+  \(A\)
+</span>
+，使得它的势满足<span>
+  \(\aleph_0&lt;|A|&lt;c\)
+</span>
+?
+如果你想到了这个问题，恭喜你，你发现了一个一百多年前的著名数学难题：<strong>连续统假设</strong>。
+连续统假设的一般提法是：用归纳法定义<span>
+  \(\aleph_{k&#43;1}=2^{\aleph_k}\)
+</span>
+，则不存在集合<span>
+  \(A\)
+</span>
+，它的势满足<span>
+  \(\aleph_k&lt;|A|&lt;\aleph_{k&#43;1},k=0,1,2,\dots\)
+</span>
+.
+1900年8月，Hilbert在巴黎国际数学家大会上作的题为《数学问题》的著名演说中，提出了20世纪数学所面临的23个重大问题。其中第一个便是连续统假设。
+目前该问题已得到解决，而解决的方法也十分出人意料：1963年，Korn和早于他的Godel共同解决了这个问题。他们证明了，<strong>在已有集合论公理系统中，既不能证明连续统假设成立，也不能证明它不成立</strong>。因此连续统假设成立或不成立，都可以与集合论中其他公理兼容。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/lifeisphy/notes/edit/main/exampleSite/content/docs/memo/chap1/1-%e9%9b%86%e5%90%88%e7%9a%84%e5%8a%bf%e4%b8%8e%e6%97%a0%e7%a9%b7.md" target="_blank" rel="noopener">
+      <img src="/notes/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#集合">集合</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#笛卡尔积">笛卡尔积</a></li>
+            <li><a href="#幂集">幂集</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#映射">映射</a></li>
+    <li><a href="#势">势</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#可列集的运算">可列集的运算</a></li>
+            <li><a href="#最大的无穷集">最大的无穷集？</a></li>
+            <li><a href="#连续统假设">连续统假设</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

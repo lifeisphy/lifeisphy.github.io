@@ -1,0 +1,305 @@
+@media print {
+    .markdown-preview .def,
+    .markdown-preview .d,
+    .markdown-preview .yellow,
+    .markdown-preview .thm,
+    .markdown-preview .theorem,
+    .markdown-preview .t,
+    .markdown-preview .pf,
+    .markdown-preview .proof,
+    .markdown-preview .p,
+    .markdown-preview .blue,
+    .markdown-preview .properties,
+    .markdown-preview .property,
+    .markdown-preview .prop,
+    .markdown-preview .question,
+    .markdown-preview .q,
+    .markdown-preview .pink,
+    .markdown-preview .eg,
+    .markdown-preview .ex,
+    .markdown-preview .example,
+    .markdown-preview .lemma {
+      page-break-inside: avoid;
+    }
+    .markdown-preview .page-break {
+      visibility: hidden;
+      page-break-after: always;
+    }
+  }
+  .exp {
+    color: red;
+    background-color: blue;
+    font-size: medium;
+  }
+  .bar_template {
+    margin: 35px 0 20px 0;
+    padding: 0px 20px 0px 20px;
+    border-left: 5px solid;
+    position: relative;
+  }
+  .bar_template:before {
+    position: absolute;
+    left: 0px;
+    top: -24px;
+    height: 24px;
+    width: 100%;
+    padding: 0px 6px 0px 6px;
+    display: block;
+    color: white;
+  }
+  .def,
+  .d,
+  .yellow {
+    margin: 35px 0 20px 0;
+    padding: 0px 20px 0px 20px;
+    border-left: 5px solid;
+    position: relative;
+    border-color: #e6d303;
+  }
+  .def:before,
+  .d:before,
+  .yellow:before {
+    position: absolute;
+    left: 0px;
+    top: -24px;
+    height: 24px;
+    width: 100%;
+    padding: 0px 6px 0px 6px;
+    display: block;
+    color: white;
+  }
+  .def:before,
+  .d:before,
+  .yellow:before {
+    content: attr(name);
+    background-color: #d8b049;
+  }
+  .thm,
+  .theorem,
+  .t {
+    margin: 35px 0 20px 0;
+    padding: 0px 20px 0px 20px;
+    border-left: 5px solid;
+    position: relative;
+    border-color: #e6d303;
+  }
+  .thm:before,
+  .theorem:before,
+  .t:before {
+    position: absolute;
+    left: 0px;
+    top: -24px;
+    height: 24px;
+    width: 100%;
+    padding: 0px 6px 0px 6px;
+    display: block;
+    color: white;
+  }
+  .thm:before,
+  .theorem:before,
+  .t:before {
+    content: attr(name);
+    background-color: #42b51b;
+  }
+  .pf,
+  .proof,
+  .p {
+    margin: 35px 0 20px 0;
+    padding: 0px 20px 0px 20px;
+    border-left: 5px solid;
+    position: relative;
+    border-color: lightpink;
+  }
+  .pf:before,
+  .proof:before,
+  .p:before {
+    position: absolute;
+    left: 0px;
+    top: -24px;
+    height: 24px;
+    width: 100%;
+    padding: 0px 6px 0px 6px;
+    display: block;
+    color: white;
+  }
+  .pf:before,
+  .proof:before,
+  .p:before {
+    content: "证明";
+    background-color: #4949ff;
+  }
+  .pf:after,
+  .proof:after,
+  .p:after {
+    content: "得证";
+    color: blue;
+  }
+  .blue,
+  .properties,
+  .property,
+  .prop {
+    margin: 35px 0 20px 0;
+    padding: 0px 20px 0px 20px;
+    border-left: 5px solid;
+    position: relative;
+    border-color: lightpink;
+  }
+  .blue:before,
+  .properties:before,
+  .property:before,
+  .prop:before {
+    position: absolute;
+    left: 0px;
+    top: -24px;
+    height: 24px;
+    width: 100%;
+    padding: 0px 6px 0px 6px;
+    display: block;
+    color: white;
+  }
+  .blue:before,
+  .properties:before,
+  .property:before,
+  .prop:before {
+    content: attr(name);
+    background-color: #4949ff;
+  }
+  .question,
+  .q,
+  .pink {
+    margin: 35px 0 20px 0;
+    padding: 0px 20px 0px 20px;
+    border-left: 5px solid;
+    position: relative;
+    border-color: #e958e9;
+  }
+  .question:before,
+  .q:before,
+  .pink:before {
+    position: absolute;
+    left: 0px;
+    top: -24px;
+    height: 24px;
+    width: 100%;
+    padding: 0px 6px 0px 6px;
+    display: block;
+    color: white;
+  }
+  .question:before,
+  .q:before,
+  .pink:before {
+    content: attr(name);
+    background-color: #fa97a8;
+  }
+  .eg,
+  .ex,
+  .example {
+    margin: 35px 0 20px 0;
+    padding: 0px 20px 0px 20px;
+    border-left: 5px solid;
+    position: relative;
+    border-color: #0cb951;
+  }
+  .eg:before,
+  .ex:before,
+  .example:before {
+    position: absolute;
+    left: 0px;
+    top: -24px;
+    height: 24px;
+    width: 100%;
+    padding: 0px 6px 0px 6px;
+    display: block;
+    color: white;
+  }
+  .eg:before,
+  .ex:before,
+  .example:before {
+    content: attr(name);
+    background-color: #2bbb2b;
+  }
+  .lemma {
+    margin: 35px 0 20px 0;
+    padding: 0px 20px 0px 20px;
+    border-left: 5px solid;
+    position: relative;
+    border-color: #771be7;
+  }
+  .lemma:before {
+    position: absolute;
+    left: 0px;
+    top: -24px;
+    height: 24px;
+    width: 100%;
+    padding: 0px 6px 0px 6px;
+    display: block;
+    color: white;
+  }
+  .lemma:before {
+    content: attr(name);
+    background-color: #871bb5;
+  }
+  .footer {
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: 35px;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    background-color: #8b0012;
+    width: 98%;
+    height: 46px;
+  }
+  .column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+  .column3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+  .column4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+  }
+  .item {
+    text-align: left;
+  }
+  .center {
+    text-align: center;
+  }
+  .logo {
+    float: right;
+    width: 10%;
+    display: inline;
+  }
+  .logo > img {
+    margin: 0px 0px 0px 0px;
+  }
+  .middle {
+    text-align: center;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .reveal p {
+    margin: 5px 0 5px 0;
+  }
+  .center {
+    text-align: center;
+  }
+  .title_passage {
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+    font-family: fangsong;
+  }
+  .title_info {
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    font-family: fangsong;
+  }

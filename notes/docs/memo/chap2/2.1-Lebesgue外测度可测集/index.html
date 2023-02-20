@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1.Lebesgue外测度与可测集#测度是体积概念的推广
+E是\(\mathbb{R}^n\)点集，若\(E\)存在一系列开矩体\(I_k,k=1,2,\cdots\)，则它确定了一个非负实数 \[u = \sum_{k=1}^{\infty } |I_k|\]，记 \[m^*(E) = \inf\left\{u|u=\sum_{k=1}^{\infty } |I_k|,E\subset \bigcup_{k=1}^\infty I_k,I_k为开矩体 \right\}\]称\(m^*(E)\)为集合E的外测度
+非负 单调（有包含关系的集合测度单调增加） 次可加性（集合的并的外测度小于等于组成部分测度和） 平移不变性（给每个点均进行平移，得到的新集合测度不变） 一些例子：
+可数个点测度为0 n维实空间的超平面测度为0 Cantor集测度为0 2. Lebesgue可测集#Lebesgue外测度没有可加性，即有一些集合的外测度不具有可加性。除掉这些集合，得到的的集族具有可列可加性，成为体积、长度概念推广。
+设\(E\subset\mathbb{R}^n\),若\(\forall T\subset\mathbb{R}^n\)，有 \[m^*(T)=m^*(T\cap E)&#43;m^*(T\cap E^c),\]则称E是Lebesgue可测集，简称可测集，记作\(\frak M\)可测集性质：
+\(\emptyset\in\frak M,m(\emptyset)=0\)\(E\in\frak M\Rightarrow E^c\in \frak M\)\(E,F\in\frak M,\Rightarrow E\cup F,E\cap F,E-F\in \frak M\)可列可加性：\(E_j\in\frak M,j=1,2,\cdots\Rightarrow\bigcup_{j=1}^\infty E_j \in\frak M\),若\(E_j\)之间互不相交，则满足可加性： \[m\left(\bigcup_{j=1}^\infty E_j \right)= \sum_{j=1}^{\infty } m(E_j)\]3.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="2-1 Lebesgue外测度，可测集" />
+<meta property="og:description" content="1.Lebesgue外测度与可测集#测度是体积概念的推广
+E是\(\mathbb{R}^n\)点集，若\(E\)存在一系列开矩体\(I_k,k=1,2,\cdots\)，则它确定了一个非负实数 \[u = \sum_{k=1}^{\infty } |I_k|\]，记 \[m^*(E) = \inf\left\{u|u=\sum_{k=1}^{\infty } |I_k|,E\subset \bigcup_{k=1}^\infty I_k,I_k为开矩体 \right\}\]称\(m^*(E)\)为集合E的外测度
+非负 单调（有包含关系的集合测度单调增加） 次可加性（集合的并的外测度小于等于组成部分测度和） 平移不变性（给每个点均进行平移，得到的新集合测度不变） 一些例子：
+可数个点测度为0 n维实空间的超平面测度为0 Cantor集测度为0 2. Lebesgue可测集#Lebesgue外测度没有可加性，即有一些集合的外测度不具有可加性。除掉这些集合，得到的的集族具有可列可加性，成为体积、长度概念推广。
+设\(E\subset\mathbb{R}^n\),若\(\forall T\subset\mathbb{R}^n\)，有 \[m^*(T)=m^*(T\cap E)&#43;m^*(T\cap E^c),\]则称E是Lebesgue可测集，简称可测集，记作\(\frak M\)可测集性质：
+\(\emptyset\in\frak M,m(\emptyset)=0\)\(E\in\frak M\Rightarrow E^c\in \frak M\)\(E,F\in\frak M,\Rightarrow E\cup F,E\cap F,E-F\in \frak M\)可列可加性：\(E_j\in\frak M,j=1,2,\cdots\Rightarrow\bigcup_{j=1}^\infty E_j \in\frak M\),若\(E_j\)之间互不相交，则满足可加性： \[m\left(\bigcup_{j=1}^\infty E_j \right)= \sum_{j=1}^{\infty } m(E_j)\]3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lifeisphy.github.io/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-12-06T14:16:11+00:00" />
+<meta property="article:modified_time" content="2022-12-06T14:16:11+00:00" />
+<title>2-1 Lebesgue外测度，可测集 | Hugo Book</title>
+<link rel="manifest" href="/notes/manifest.json">
+<link rel="icon" href="/notes/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/notes/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
+  <script defer src="/notes/flexsearch.min.js"></script>
+  <script defer src="/notes/en.search.min.d51d9c4c74e53f164def58b10513607ec5e599cc713cf958711a7498b01f1351.js" integrity="sha256-1R2cTHTlPxZN71ixBRNgfsXlmcxxPPlYcRp0mLAfE1E=" crossorigin="anonymous"></script>
+
+  <script defer src="/notes/sw.min.f02d8041fe15fd4a1d7a0fe50c02c2f57a3ec87d69231797beeed7968a47d96e.js" integrity="sha256-8C2AQf4V/Uodeg/lDALC9Xo&#43;yH1pIxeXvu7XlopH2W4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/notes/"><img src="/notes/favicon.jpg" alt="Logo" /><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/" class="">实变函数与泛函分析</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" class="active">2-1 Lebesgue外测度，可测集</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" class="">1-集合的势与无穷</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/" class="">Lebesgue可测函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/sigma/" class="">sigma</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/" class="">广义相对论</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" class="">第一章 拓扑空间简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/" class="">第二章 流形和张量场</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" class="">第三章 黎曼曲率张量</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" class="">第四章 李导数、Killing场和超曲面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="">第五章 微分形式及其积分</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="">第六章 狭义相对论</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" class="">群论拓扑</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/" class="">CS106L笔记</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/4/" class="">4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/3/" class="">3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/lifeisphy"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/notes/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2-1 Lebesgue外测度，可测集</strong>
+
+  <label for="toc-control">
+    
+    <img src="/notes/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+
+<link rel="stylesheet" href= "/notes/katex/katex.min.css" >
+<script defer src= "/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/katex-macros.js"></script>
+<link rel="stylesheet" href="/notes/css/1.css"></style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError :false,
+                macros
+            });
+        });
+</script>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1lebesgue外测度与可测集">1.Lebesgue外测度与可测集</a></li>
+    <li><a href="#2-lebesgue可测集">2. Lebesgue可测集</a></li>
+    <li><a href="#3-测度空间">3. 测度空间</a></li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="1lebesgue外测度与可测集">
+  1.Lebesgue外测度与可测集
+  <a class="anchor" href="#1lebesgue%e5%a4%96%e6%b5%8b%e5%ba%a6%e4%b8%8e%e5%8f%af%e6%b5%8b%e9%9b%86">#</a>
+</h1>
+<p>测度是体积概念的推广</p>
+<div class="def" name="外测度"  style="">
+<p>E是
+<link rel="stylesheet" href="/notes/katex/katex.min.css" />
+<script defer src="/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/auto-render.min.js" onload="renderMathInElement(document.body,{'macros':macros});"></script><span>
+  \(\mathbb{R}^n\)
+</span>
+点集，若<span>
+  \(E\)
+</span>
+存在一系列开矩体<span>
+  \(I_k,k=1,2,\cdots\)
+</span>
+，则它确定了一个非负实数
+<span>
+  \[u = \sum_{k=1}^{\infty } |I_k|\]
+</span>
+
+，记
+<span>
+  \[m^*(E) = \inf\left\{u|u=\sum_{k=1}^{\infty } |I_k|,E\subset \bigcup_{k=1}^\infty I_k,I_k为开矩体  \right\}\]
+</span>
+
+称<span>
+  \(m^*(E)\)
+</span>
+为集合E的<strong>外测度</strong></p>
+</div>
+<div class="prop" name="Rn中外测度性质"  style="">
+<ol>
+<li>非负</li>
+<li>单调（有包含关系的集合测度单调增加）</li>
+<li>次可加性（集合的并的外测度小于等于组成部分测度和）</li>
+<li>平移不变性（给每个点均进行平移，得到的新集合测度不变）</li>
+</ol>
+</div>
+<p>一些例子：</p>
+<ol>
+<li>可数个点测度为0</li>
+<li>n维实空间的超平面测度为0</li>
+<li>Cantor集测度为0</li>
+</ol>
+<h1 id="2-lebesgue可测集">
+  2. Lebesgue可测集
+  <a class="anchor" href="#2-lebesgue%e5%8f%af%e6%b5%8b%e9%9b%86">#</a>
+</h1>
+<p>Lebesgue外测度没有可加性，即有一些集合的外测度不具有可加性。除掉这些集合，得到的的集族具有可列可加性，成为体积、长度概念推广。</p>
+<div class="def" name="可测集"  style="">
+<p>设<span>
+  \(E\subset\mathbb{R}^n\)
+</span>
+,若<span>
+  \(\forall T\subset\mathbb{R}^n\)
+</span>
+，有
+<span>
+  \[m^*(T)=m^*(T\cap E)&#43;m^*(T\cap E^c),\]
+</span>
+
+则称E是Lebesgue可测集，简称可测集，记作<span>
+  \(\frak M\)
+</span>
+</p>
+</div>
+<p>可测集性质：</p>
+<ol>
+<li><span>
+  \(\emptyset\in\frak M,m(\emptyset)=0\)
+</span>
+</li>
+<li><span>
+  \(E\in\frak M\Rightarrow E^c\in \frak M\)
+</span>
+</li>
+<li><span>
+  \(E,F\in\frak M,\Rightarrow E\cup F,E\cap F,E-F\in \frak M\)
+</span>
+</li>
+<li>可列可加性：<span>
+  \(E_j\in\frak M,j=1,2,\cdots\Rightarrow\bigcup_{j=1}^\infty E_j \in\frak M\)
+</span>
+,若<span>
+  \(E_j\)
+</span>
+之间互不相交，则满足可加性：
+<span>
+  \[m\left(\bigcup_{j=1}^\infty E_j \right)= \sum_{j=1}^{\infty } m(E_j)\]
+</span>
+</li>
+</ol>
+<h1 id="3-测度空间">
+  3. 测度空间
+  <a class="anchor" href="#3-%e6%b5%8b%e5%ba%a6%e7%a9%ba%e9%97%b4">#</a>
+</h1>
+<p>设X是一个非空集，<span>
+  \(\mathcal F\subset 2^X\)
+</span>
+ 是X的一个<span>
+  \(\sigma\)
+</span>
+代数，称<span>
+  \((X,\mathcal F)\)
+</span>
+是一个<strong>可测空间</strong>，每个集合<span>
+  \(A\in \mathcal F\)
+</span>
+称为<span>
+  \(\mathcal F\)
+</span>
+可测集，或简称为可测集。若集函数<span>
+  \(\mu :\mathcal F \to [0,\infty]\)
+</span>
+具有以下性质：</p>
+<span>
+  \[\begin{array}{rl}
+(1)&amp; \mu(\emptyset)=0;\\
+(2)&amp; \text{if}\quad  A_n\in \mathcal F, n=1,2,...，\text{such that}\\ &amp; A_i\cap A_j=\emptyset\qquad  \forall i\ne j,\text{then}\\ 
+&amp;\mu(\bigcup_n A_n)= \sum_n \mu(A_n)
+\end{array}\]
+</span>
+
+<p>则称<span>
+  \(\mu\)
+</span>
+为(X,<span>
+  \(\mathcal F\)
+</span>
+)上的一个测度，称三元组<span>
+  \((X,\mathcal F,\mu)\)
+</span>
+为<strong>测度空间</strong></p>
+<p>若<span>
+  \(\mu\)
+</span>
+满足：</p>
+<span>
+  \[若 B\subset A \in \mathcal F, \mu(A)=0,则B\in \mathcal F\]
+</span>
+
+<p>则<span>
+  \(\mu\)
+</span>
+是<strong>完备测度</strong>，<span>
+  \((X,\mathcal F,\mu)\)
+</span>
+是<strong>完备测度空间</strong></p>
+<p>若<span>
+  \(\mu(X)&lt;\infty\)
+</span>
+则称<span>
+  \(\mu\)
+</span>
+为<strong>有限测度</strong>。
+若<span>
+  \(\mu(X)=1\)
+</span>
+，则称<span>
+  \(\mu\)
+</span>
+为概率测度,<span>
+  \((X,\mathcal F,\mu )\)
+</span>
+称为<strong>概率测度空间</strong>。
+对于集合<span>
+  \(A\in \mathcal F\)
+</span>
+,若存在<span>
+  \(A_n \in \mathcal F, n = 1,2,...\)
+</span>
+使得<span>
+  \(A = \bigcup_n A_n,\mu(A_n)&lt;\infty\)
+</span>
+,则称A具有<span>
+  \(\sigma\)
+</span>
+有限测度
+若X本身具有<span>
+  \(\sigma\)
+</span>
+有限测度，则称<span>
+  \(\mu\)
+</span>
+为<span>
+  \(\sigma\)
+</span>
+有限测度。</p>
+<p>e.g.
+Lebesgue 测度m是<span>
+  \((\mathbb R^n,m)\)
+</span>
+上的一个<span>
+  \(\sigma\)
+</span>
+有限测度。
+在<span>
+  \(\mathbb R^n,\mathcal{M}\)
+</span>
+上引入如下测度：对于<span>
+  \(\forall A\in \mathcal{M}\)
+</span>
+，有
+<span>
+  \[p(A)=\frac{1}{(2\pi)^{n/2}}\int_A \exp{-\frac 1 2 \sum_{j=1}^n x_j^2 }dx_1dx_2...dx_n\]
+</span>
+
+p是<span>
+  \((\mathbb{R}^n,\mathcal{M})\)
+</span>
+上的一个概率测度。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/lifeisphy/notes/edit/main/exampleSite/content/docs/memo/chap2/2.1%20Lebesgue%e5%a4%96%e6%b5%8b%e5%ba%a6%ef%bc%8c%e5%8f%af%e6%b5%8b%e9%9b%86.md" target="_blank" rel="noopener">
+      <img src="/notes/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1lebesgue外测度与可测集">1.Lebesgue外测度与可测集</a></li>
+    <li><a href="#2-lebesgue可测集">2. Lebesgue可测集</a></li>
+    <li><a href="#3-测度空间">3. 测度空间</a></li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

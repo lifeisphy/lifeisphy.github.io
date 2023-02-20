@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="5.1 微分形式#先介绍\(n\)维空间\(V\)上的形式，再讨论\(n\)维流形\(M\)上的微分形式场。
+\(\omega_{a_{1}a_{2}\dots a_{l}}\in \mathscr T_{V}(0,l)\)叫\(V\)上的l次形式，若 \[\omega _{a_{1}a_{2}\cdots a_{l}}=\omega_{[a_{1}\dots a_{l}]}\]为书写方便，有时略去下标，将形式\(\omega_{a_{1}\dots a_{l}}\)写为\(\mathbf{ \omega}\)由定义知，1形式就是\(V\)上对偶矢量,\(\Lambda(1)=V^*\).约定把任意实数称为\(V\)上0形式，则\(\lambda(0)=\mathbb{R}\)若微分形式某分量有两个指标重复，则整个分量为0. 记\(\mathscr{T}_{V}(0,l)\)是全体(0,l)型矢量空间的集合，全体l-form的集合记为\(\Lambda(l)\)，则\(\Lambda(l)\subset \mathscr{T}_{V}(0,l)\)\[\dim \Lambda(l) = \begin{cases}\frac{n!}{l!(n-l)!},&amp; l\ge n\\ \\0, &amp; l&lt;n\end{cases}\]proof:对\(n=3,l=2\)情形， \[\begin{aligned}\omega_{ab}&amp;=\omega_{11}(e^1)_{a}(e^1)_{b} &#43; \omega_{12}(e^1)_{a}(e^2)_{b}&#43;\omega_{13}(e^1)_{a}(e^3)_{b}&#43;\dots \\ \\&amp;= \omega_{12}(e^1)_{a}\wedge(e^2)_{b}&#43;\omega_{13}(e^1)_{a}\wedge (e^3)_{b}&#43;\omega_{23}(e^2)_{a}\wedge(e^3)_{b} \\\end{aligned}\]推广到一般情形，就有： \[\omega_{ab}=\sum_{C}\omega_{\mu\nu}(e^\mu)_{a}\wedge (e^\nu)_{b}\\ \omega_{a_{1}\dots a_{l}}=\sum_{C}\omega_{\mu_{1}\dots\mu_{l}}(e^{\mu_{1}})_{a_{1}}\wedge \dots\wedge (e^{\mu_{l}})_{a_{l}}\]其中\(\sum_{c}\)表示对\(n\)个数中取\(l\)个数的各种组合求和，即，\(\Lambda(l)\)的基底矢量共\(C_n^l\)个 当\(l&lt;n\)时，\(\Lambda(l)\)一定有重复指标，因而只有零元一个元素。">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="第五章 微分形式及其积分" />
+<meta property="og:description" content="5.1 微分形式#先介绍\(n\)维空间\(V\)上的形式，再讨论\(n\)维流形\(M\)上的微分形式场。
+\(\omega_{a_{1}a_{2}\dots a_{l}}\in \mathscr T_{V}(0,l)\)叫\(V\)上的l次形式，若 \[\omega _{a_{1}a_{2}\cdots a_{l}}=\omega_{[a_{1}\dots a_{l}]}\]为书写方便，有时略去下标，将形式\(\omega_{a_{1}\dots a_{l}}\)写为\(\mathbf{ \omega}\)由定义知，1形式就是\(V\)上对偶矢量,\(\Lambda(1)=V^*\).约定把任意实数称为\(V\)上0形式，则\(\lambda(0)=\mathbb{R}\)若微分形式某分量有两个指标重复，则整个分量为0. 记\(\mathscr{T}_{V}(0,l)\)是全体(0,l)型矢量空间的集合，全体l-form的集合记为\(\Lambda(l)\)，则\(\Lambda(l)\subset \mathscr{T}_{V}(0,l)\)\[\dim \Lambda(l) = \begin{cases}\frac{n!}{l!(n-l)!},&amp; l\ge n\\ \\0, &amp; l&lt;n\end{cases}\]proof:对\(n=3,l=2\)情形， \[\begin{aligned}\omega_{ab}&amp;=\omega_{11}(e^1)_{a}(e^1)_{b} &#43; \omega_{12}(e^1)_{a}(e^2)_{b}&#43;\omega_{13}(e^1)_{a}(e^3)_{b}&#43;\dots \\ \\&amp;= \omega_{12}(e^1)_{a}\wedge(e^2)_{b}&#43;\omega_{13}(e^1)_{a}\wedge (e^3)_{b}&#43;\omega_{23}(e^2)_{a}\wedge(e^3)_{b} \\\end{aligned}\]推广到一般情形，就有： \[\omega_{ab}=\sum_{C}\omega_{\mu\nu}(e^\mu)_{a}\wedge (e^\nu)_{b}\\ \omega_{a_{1}\dots a_{l}}=\sum_{C}\omega_{\mu_{1}\dots\mu_{l}}(e^{\mu_{1}})_{a_{1}}\wedge \dots\wedge (e^{\mu_{l}})_{a_{l}}\]其中\(\sum_{c}\)表示对\(n\)个数中取\(l\)个数的各种组合求和，即，\(\Lambda(l)\)的基底矢量共\(C_n^l\)个 当\(l&lt;n\)时，\(\Lambda(l)\)一定有重复指标，因而只有零元一个元素。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-01-26T17:14:58+00:00" />
+<meta property="article:modified_time" content="2023-01-26T17:14:58+00:00" />
+<title>第五章 微分形式及其积分 | Hugo Book</title>
+<link rel="manifest" href="/notes/manifest.json">
+<link rel="icon" href="/notes/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/notes/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
+  <script defer src="/notes/flexsearch.min.js"></script>
+  <script defer src="/notes/en.search.min.d51d9c4c74e53f164def58b10513607ec5e599cc713cf958711a7498b01f1351.js" integrity="sha256-1R2cTHTlPxZN71ixBRNgfsXlmcxxPPlYcRp0mLAfE1E=" crossorigin="anonymous"></script>
+
+  <script defer src="/notes/sw.min.f02d8041fe15fd4a1d7a0fe50c02c2f57a3ec87d69231797beeed7968a47d96e.js" integrity="sha256-8C2AQf4V/Uodeg/lDALC9Xo&#43;yH1pIxeXvu7XlopH2W4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/notes/"><img src="/notes/favicon.jpg" alt="Logo" /><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/" class="">实变函数与泛函分析</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" class="">2-1 Lebesgue外测度，可测集</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" class="">1-集合的势与无穷</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/" class="">Lebesgue可测函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/sigma/" class="">sigma</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/" class="">广义相对论</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" class="">第一章 拓扑空间简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/" class="">第二章 流形和张量场</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" class="">第三章 黎曼曲率张量</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" class="">第四章 李导数、Killing场和超曲面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="active">第五章 微分形式及其积分</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="">第六章 狭义相对论</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" class="">群论拓扑</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/" class="">CS106L笔记</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/4/" class="">4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/3/" class="">3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/lifeisphy"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/notes/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>第五章 微分形式及其积分</strong>
+
+  <label for="toc-control">
+    
+    <img src="/notes/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+
+<link rel="stylesheet" href= "/notes/katex/katex.min.css" >
+<script defer src= "/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/katex-macros.js"></script>
+<link rel="stylesheet" href="/notes/css/1.css"></style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError :false,
+                macros
+            });
+        });
+</script>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#51-微分形式">5.1 微分形式</a></li>
+        <li><a href="#52-流形上的积分">5.2 流形上的积分</a></li>
+        <li><a href="#53-stokes定理">5.3 Stokes定理</a></li>
+        <li><a href="#54-体元">5.4 体元</a></li>
+        <li><a href="#55-函数在流形上的积分gauss定理">5.5 函数在流形上的积分，Gauss定理</a></li>
+        <li><a href="#56-对偶微分形式">5.6 对偶微分形式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="51-微分形式">
+  5.1 微分形式
+  <a class="anchor" href="#51-%e5%be%ae%e5%88%86%e5%bd%a2%e5%bc%8f">#</a>
+</h2>
+<p>先介绍
+<link rel="stylesheet" href="/notes/katex/katex.min.css" />
+<script defer src="/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/auto-render.min.js" onload="renderMathInElement(document.body,{'macros':macros});"></script><span>
+  \(n\)
+</span>
+维空间<span>
+  \(V\)
+</span>
+上的<strong>形式</strong>，再讨论<span>
+  \(n\)
+</span>
+维流形<span>
+  \(M\)
+</span>
+上的<strong>微分形式场</strong>。</p>
+<div class="def" name="l形式"  style="">
+<p><span>
+  \(\omega_{a_{1}a_{2}\dots a_{l}}\in \mathscr T_{V}(0,l)\)
+</span>
+叫<span>
+  \(V\)
+</span>
+上的<strong>l次形式</strong>，若
+<span>
+  \[\omega _{a_{1}a_{2}\cdots a_{l}}=\omega_{[a_{1}\dots a_{l}]}\]
+</span>
+
+为书写方便，有时略去下标，将形式<span>
+  \(\omega_{a_{1}\dots a_{l}}\)
+</span>
+写为<span>
+  \(\mathbf{ \omega}\)
+</span>
+</p>
+</div>
+<p>由定义知，1形式就是<span>
+  \(V\)
+</span>
+上对偶矢量,<span>
+  \(\Lambda(1)=V^*\)
+</span>
+.约定把任意实数称为<span>
+  \(V\)
+</span>
+上0形式，则<span>
+  \(\lambda(0)=\mathbb{R}\)
+</span>
+
+若微分形式某分量有两个指标重复，则整个分量为0.
+记<span>
+  \(\mathscr{T}_{V}(0,l)\)
+</span>
+是全体(0,l)型矢量空间的集合，全体l-form的集合记为<span>
+  \(\Lambda(l)\)
+</span>
+，则<span>
+  \(\Lambda(l)\subset \mathscr{T}_{V}(0,l)\)
+</span>
+</p>
+<p><span>
+  \[\dim \Lambda(l) = \begin{cases}
+\frac{n!}{l!(n-l)!},&amp; l\ge n\\  \\
+0, &amp; l&lt;n
+\end{cases}\]
+</span>
+
+proof:对<span>
+  \(n=3,l=2\)
+</span>
+情形，
+<span>
+  \[\begin{aligned}
+\omega_{ab}&amp;=\omega_{11}(e^1)_{a}(e^1)_{b} &#43; \omega_{12}(e^1)_{a}(e^2)_{b}&#43;\omega_{13}(e^1)_{a}(e^3)_{b}&#43;\dots \\ \\
+&amp;= \omega_{12}(e^1)_{a}\wedge(e^2)_{b}&#43;\omega_{13}(e^1)_{a}\wedge (e^3)_{b}&#43;\omega_{23}(e^2)_{a}\wedge(e^3)_{b}  \\
+\end{aligned}\]
+</span>
+
+推广到一般情形，就有：
+<span>
+  \[\omega_{ab}=\sum_{C}\omega_{\mu\nu}(e^\mu)_{a}\wedge (e^\nu)_{b}\\ 
+\omega_{a_{1}\dots a_{l}}=\sum_{C}\omega_{\mu_{1}\dots\mu_{l}}(e^{\mu_{1}})_{a_{1}}\wedge \dots\wedge (e^{\mu_{l}})_{a_{l}}\]
+</span>
+
+其中<span>
+  \(\sum_{c}\)
+</span>
+表示对<span>
+  \(n\)
+</span>
+个数中取<span>
+  \(l\)
+</span>
+个数的各种组合求和，即，<span>
+  \(\Lambda(l)\)
+</span>
+的基底矢量共<span>
+  \(C_n^l\)
+</span>
+个
+当<span>
+  \(l&lt;n\)
+</span>
+时，<span>
+  \(\Lambda(l)\)
+</span>
+一定有重复指标，因而只有零元一个元素。</p>
+<p><span>
+  \(\omega_{a_{1}\dots a_{l}}=\sum_{C}\omega_{\mu_{1}\mu_{2}\dots \mu_{l}}(\mathrm{d}x^{\mu_{1}})_{a_{1}}\wedge \dots\wedge(\mathrm{d}x^{\mu_{l}})_{a_{l}}\)
+</span>
+
+其中的每个分量可以写成：
+<span>
+  \(\omega_{\mu_{1}\dots \mu_{l}}=\omega_{a_{1}\dots a_{l}}\left( \frac{ \partial  }{ \partial x^{\mu_{1}} } \right)^{a_{1}}\dots(\frac{ \partial  }{ \partial x^{\mu_{l}}})^{a_{l}}\)
+</span>
+
+注意里面逆变坐标基矢之间是张量积而不是楔积。</p>
+<div class="def" name="楔形积"  style="">
+<p>若<span>
+  \(\omega,\mu\)
+</span>
+分别为<span>
+  \(l,m\)
+</span>
+次形式，则定义它们的<strong>楔形积(wedge product)</strong> 得到的<span>
+  \(n\)
+</span>
+次形式为：
+<span>
+  \[\mathbf{\omega }\wedge \mathbf{\mu} \equiv \frac{(l&#43;m)!}{l!m!}\omega_{[a_{1}\dots a_{l}}\mu_{b_{1}\dots b_{m}]}\]
+</span>
+</p>
+</div>
+<p>或者说，楔积是满足上式的映射<span>
+  \(\wedge:\Lambda(l)\times \Lambda(m)\to \Lambda(l&#43;m)\)
+</span>
+,楔积<span>
+  \((\omega\wedge \mu)_{a_{1}\dots a_{l}b_{1}\dots b_{m}}\)
+</span>
+可记作<span>
+  \(\omega_{a_{1}\dots a_{l}}\wedge \mu_{b_{1}\dots b_{m}}\)
+</span>
+，常简记为<span>
+  \(\mathbf{ \omega}\wedge \mathbf{ \mu}\)
+</span>
+
+楔积满足结合律和分配律：<span>
+  \(( \omega\wedge \mu )\wedge \nu=\omega \wedge(\mu\wedge \nu),\omega \wedge (\mu&#43;\nu)=\omega \wedge \mu&#43;\omega\wedge \nu\)
+</span>
+
+但楔积不服从分配律。例如，对两个1-form有：
+<span>
+  \[\omega\wedge \mu=(\omega\wedge\mu)_{ab}=\omega_{a}\mu_{b}-\omega_{b}\mu_{a}\]
+</span>
+
+<span>
+  \[\mu\wedge \omega=\mu_{a}\omega_{b}-\mu_{b}\omega_{a}\]
+</span>
+
+即两个1-form满足反交换律。对一般情况，<span>
+  \(\omega,\mu\)
+</span>
+分别为<span>
+  \(l,m\)
+</span>
+形式，则
+<span>
+  \[\omega\wedge \mu=(-1)^{lm}\mu\wedge\omega\]
+</span>
+
+回到流形上讨论。若<span>
+  \(M\)
+</span>
+上任一点<span>
+  \(p\)
+</span>
+指定一个<span>
+  \(V_p\)
+</span>
+上的l-form, 就得到<span>
+  \(M\)
+</span>
+上的<span>
+  \(l\)
+</span>
+形式场。<span>
+  \(M\)
+</span>
+上光滑的<span>
+  \(l\)
+</span>
+形式场称为<strong>l次微分形式场</strong>，也称作<span>
+  \(l\)
+</span>
+形式场或<span>
+  \(l\)
+</span>
+形式
+取定坐标系<span>
+  \((O,\psi)\)
+</span>
+,则<span>
+  \(O\)
+</span>
+上<span>
+  \(l\)
+</span>
+形式场可方便的用对偶坐标基底场逐点线性表出。</p>
+<p>定义外微分算符<span>
+  \(d:\Lambda_M(l)\to\Lambda_M(l&#43;1)\)
+</span>
+：
+<span>
+  \[(\mathrm{d} \omega)_{ba_1\cdots a_l}:=(l&#43;1)\nabla_{[b}\omega_{a_1\cdots a_l]}\]
+</span>
+
+注意，这时导数算符的任意性不影响结果：
+<span>
+  \[\nabla_b\omega_a = 2\nabla_{[b}\omega_{a]}=2\tilde\nabla_{[b}\omega_{a]}&#43;\Gamma^{c}{}_{[ba]}\omega_c=2\tilde\nabla_{[b}\omega_{a]}\]
+</span>
+
+此时，我们就可以将<span>
+  \((\mathrm{d} f)_b=\nabla_b f\)
+</span>
+看成0-form的外微分。
+对l-form <span>
+  \(\omega_{ba_1\cdots a_l}\)
+</span>
+做外微分，把系数看成张量场，得到：
+<span>
+  \[(\mathrm{d}\omega)_{ba_1\cdots a_l} = \sum_C(\mathrm{d} \omega_{\mu_1\cdots a_l})_b\wedge (\mathrm{d} x^{\mu_1})_{a_1}\wedge\cdots \wedge (\mathrm{d} x^{\mu_l})_{a_l}\]
+</span>
+</p>
+<div class="thm" name="5-1-5"  style="">
+<p>两次外微分的作用为0：<span>
+  \(d\circ d=0\)
+</span>
+</p>
+<div class="pf"  style="">
+<span>
+  \[\begin{aligned}
+[\mathrm{d}(\mathrm{d} \omega)]_{cba_1\cdots}&amp;=(l&#43;2)(l&#43;1)\partial_{[c}\partial_{[b}\omega_{a_1\cdots]]}\\
+&amp;= (l&#43;2)(l&#43;1)\partial_{[c}\partial_{b}\omega_{a_1\cdots]}\\ 
+&amp;= (l&#43;2)(l&#43;1)\partial_{[(c}\partial_{b)}\omega_{a_1\cdots]}=0
+\end{aligned}\]
+</span>
+
+</div>
+</div>
+<div class="def" name="闭形式，恰当形式"  style="">
+<p><span>
+  \(\omega\)
+</span>
+是闭的（closed），若<span>
+  \(\mathrm{d} \omega =0\)
+</span>
+；
+<span>
+  \(\omega\in \Lambda(l)\)
+</span>
+是恰当的（exact），若<span>
+  \(\exists \mu\in \Lambda(l-1)\ \text{such that}\ \omega=\mathrm{d} \mu\)
+</span>
+</p>
+</div>
+<p>容易知道，恰当形式一定是闭形式。那么闭形式是否为恰当形式呢？答案是否。这个命题正确与否与具体的流形有关：比如，对<span>
+  \(\mathbb{R}^n\)
+</span>
+流形，该命题正确。对任意流形，这个命题为是局域恰当的：即对任一点p，存在邻域U，在U上可找到场<span>
+  \(\mu\)
+</span>
+使得<span>
+  \(\mathrm{d} \mu=\omega\)
+</span>
+</p>
+<p>推论：
+<span>
+  \(M=\mathbb{R}^2\)
+</span>
+时，定理5-1-5给出命题：给定函数<span>
+  \(X(x,y),Y(x,y)\)
+</span>
+,<span>
+  \(\exists f(x,y)\)
+</span>
+ 使得 <span>
+  \(\mathrm{d} f=X\mathrm{d} x&#43;Y\mathrm{d} y\)
+</span>
+当且仅当<span>
+  \({\partial X\over\partial y} ={\partial Y\over\partial x}\)
+</span>
+</p>
+<div class="pf"  style="">
+<p>左侧命题等价于<span>
+  \(X\mathrm{d} x&#43;Y\mathrm{d} y\)
+</span>
+是恰当的，在<span>
+  \(\mathbb{R} ^2\)
+</span>
+上，这等价于它是个闭形式。
+求外微分得到：
+<span>
+  \[\begin{aligned}
+d(X\mathrm{d} x&#43;Y\mathrm{d} y) &amp;= \mathrm{d} X\wedge \mathrm{d} x&#43;\mathrm{d} Y\wedge \mathrm{d} y=\left({\partial X\over\partial x} \mathrm{d} x&#43;{\partial X\over\partial y} \mathrm{d} y\right)\wedge \mathrm{d} x&#43;\left({\partial Y\over\partial x} \mathrm{d} x&#43;{\partial Y\over\partial y} \mathrm{d} y\right)\wedge \mathrm{d} y\\ 
+&amp;= {\partial X\over\partial y}\mathrm{d} y\wedge \mathrm{d} x &#43;{\partial Y\over\partial x} \mathrm{d} x\wedge \mathrm{d} y=\left({\partial Y\over\partial x} -{\partial X\over\partial y} \right)\mathrm{d} x\wedge \mathrm{d} y 
+\end{aligned}\]
+</span>
+</p>
+<ul>
+<li>若存在<span>
+  \(f\)
+</span>
+使得<span>
+  \(\mathrm{d} f=X\mathrm{d} x&#43;Y\mathrm{d} y\)
+</span>
+，则<span>
+  \(\mathrm{d} \mathrm{d} f= 0 =  \left({\partial Y\over\partial x} -{\partial X\over\partial y} \right)\mathrm{d} x\wedge \mathrm{d} y\)
+</span>
+，即<span>
+  \({\partial X\over\partial y} ={\partial Y\over\partial x}\)
+</span>
+</li>
+<li>若<span>
+  \({\partial X\over\partial y} ={\partial Y\over\partial x}\)
+</span>
+,则<span>
+  \(\mathrm{d} (X\mathrm{d} x&#43;Y\mathrm{d} y)=0\)
+</span>
+，存在函数<span>
+  \(f\)
+</span>
+使得<span>
+  \(X\mathrm{d} x&#43;Y\mathrm{d} y=\mathrm{d} f\)
+</span>
+</li>
+</ul>
+</div>
+<h2 id="52-流形上的积分">
+  5.2 流形上的积分
+  <a class="anchor" href="#52-%e6%b5%81%e5%bd%a2%e4%b8%8a%e7%9a%84%e7%a7%af%e5%88%86">#</a>
+</h2>
+<p>三维空间中，要计算线积分和面积分都要指定一个方向。未确定方向的积分会有正负号的差异。推而广之，计算任意流形上的积分都应指定该流形的<strong>定向</strong>。</p>
+<div class="def" name="可定向"  style="">
+<p><span>
+  \(n\)
+</span>
+维流形称为<strong>可定向的(orientable)</strong>,若其上存在<span>
+  \(C^0\)
+</span>
+且处处非零的<span>
+  \(n\)
+</span>
+形式场<span>
+  \(\epsilon\)
+</span>
+</p>
+</div>
+<div class="example" name="例子"  style="">
+<ol>
+<li><span>
+  \(\mathbb{R}^3\)
+</span>
+可定向，因为存在<span>
+  \(C^\infty\)
+</span>
+形式场<span>
+  \(\epsilon \equiv \mathrm{d} x\wedge \mathrm{d} y\wedge \mathrm{d} z\)
+</span>
+，其中<span>
+  \(x,y,z\)
+</span>
+为自然坐标。</li>
+<li>莫比乌斯带不是可定向流形。</li>
+</ol>
+</div>
+<div class="def" name="定向"  style="">
+<p>若在<span>
+  \(n\)
+</span>
+维可定向流形<span>
+  \(M\)
+</span>
+上选定一个<span>
+  \(C^0\)
+</span>
+且处处非零的<span>
+  \(n\)
+</span>
+形式场<span>
+  \(\epsilon\)
+</span>
+,就说<span>
+  \(M\)
+</span>
+是<strong>定向的</strong>。设<span>
+  \(\epsilon_1,\epsilon_2\)
+</span>
+是两个<span>
+  \(C^0\)
+</span>
+且处处非零的<span>
+  \(n\)
+</span>
+形式场，若存在<span>
+  \(h&gt;0,\epsilon_1=h\epsilon_2\)
+</span>
+,就说<span>
+  \(\epsilon_1,\epsilon_2\)
+</span>
+给出<span>
+  \(M\)
+</span>
+的同一个<strong>定向</strong>。</p>
+</div>
+<div class="pink" name="注"  style="">
+<p><span>
+  \(n\)
+</span>
+维流形M上每点全体<span>
+  \(n\)
+</span>
+形式集合是一维矢量空间。对连通流形来说，一个处处非零的连续函数只能处处为正或处处为负，因此连通流形只有两种定向。</p>
+</div>
+<div class="def" name="右手/左手"  style="">
+<p><span>
+  \(M\)
+</span>
+上选好以<span>
+  \(\epsilon\)
+</span>
+为代表的定向后，开域<span>
+  \(O\subset M\)
+</span>
+上的基底场<span>
+  \(\{(e_\mu)^a\}\)
+</span>
+叫做以<span>
+  \(\epsilon\)
+</span>
+衡量为<strong>右手的</strong>，若O上存在处处为正的函数<span>
+  \(h\)
+</span>
+使<span>
+  \(\epsilon = h(e^1)_{a_1}\wedge \cdots \wedge (e^n)_{a_n}\)
+</span>
+,其中<span>
+  \(\{(e^\mu)_{a}\}\)
+</span>
+是<span>
+  \(\{(e_\mu)^a\}\)
+</span>
+对偶基。否则基底场称为左手的。</p>
+</div>
+<div class="def" name="积分"  style="">
+<p>设<span>
+  \((O,\psi)\)
+</span>
+是<span>
+  \(n\)
+</span>
+为定向流形<span>
+  \(M\)
+</span>
+上的右手坐标系，<span>
+  \(\omega\)
+</span>
+是开子集<span>
+  \(G\subset O\)
+</span>
+上的连续<span>
+  \(n\)
+</span>
+形式场，则<span>
+  \(\omega\)
+</span>
+在G上的积分定义为
+<span>
+  \[\int_G \mathbf \omega := \int_{\psi [G]} \omega_{1\cdots n}(x^1,\cdots,x^n)\mathrm{d} x^1\cdots \mathrm{d} x^n\]
+</span>
+
+上式右边是n元函数在<span>
+  \(\mathbb{R}^n\)
+</span>
+开子集上的普通积分。</p>
+</div>
+<p>为说明定义的合理性，应证明<span>
+  \(\omega\)
+</span>
+在G上的积分与所选右手坐标系无关。取二维流形中的两个坐标系<span>
+  \(x^\mu,x^\mu{}&#39;(\mu = 1,2)\)
+</span>
+，则
+<span>
+  \[\omega = \omega_{12}\mathrm{d} x^1\wedge \mathrm{d} x^2 = \omega_{12}&#39;\mathrm{d} x&#39;^1\wedge \mathrm{d} x&#39;^2\]
+</span>
+
+令<span>
+  \(\int_G\omega \equiv \int_{\psi [G]}\omega_{12}\mathrm{d} x^1\mathrm{d} x^2,(\int_G\omega)&#39; \equiv \int_{\psi [G]} \omega_{12}&#39;\mathrm{d} x&#39;^1\mathrm{d} x&#39;^2\)
+</span>
+，欲证
+<span>
+  \[(\int_G\omega)&#39; = \int_G\omega\]
+</span>
+
+由张量变换律，
+<span>
+  \[\begin{aligned}
+\omega_{12}&#39; &amp; =\omega_{ab}\left(  \frac{ \partial  }{ \partial x&#39;^1 }   \right)^a \left( \frac{ \partial  }{ \partial x&#39;^2 }  \right)^b  \\
+&amp;=\omega_{ab}\left[  \left( \frac{ \partial x^1 }{ \partial x&#39;^1 }  \right)^a \left( \frac{ \partial  }{ \partial x^1 }  \right)^a &#43;\left( \frac{ \partial x^1 }{ \partial x&#39;^2 }  \right)\left( \frac{ \partial  }{ \partial x^2 }  \right)^a \right]\left[ \left( \frac{ \partial x^1 }{ \partial x&#39;^2 }  \right)\left( \frac{ \partial  }{ \partial x^1 }  \right)^b&#43;\left( \frac{ \partial x^2 }{ \partial x&#39;^2 }  \right)\left( \frac{ \partial  }{ \partial x^2 }  \right)^b \right] \\
+&amp;= \omega_{\mu\nu} \frac{ \partial x^\mu }{ \partial x&#39;^1 } \frac{ \partial x^\nu }{ \partial x&#39;^2 }  \\
+&amp;= \omega_{12} \frac{ \partial x^1 }{ \partial x&#39;^1}\frac{ \partial x^2 }{ \partial x&#39;^2 } &#43;\omega_{21}\frac{ \partial x^2 }{ \partial x&#39;^1 } \frac{ \partial x^1 }{ \partial x&#39;^2 }  \\
+&amp;= \omega_{12}\det\left( \frac{ \partial (x^1,x^2) }{ \partial (x&#39;^1,x&#39;^2) }  \right)
+\end{aligned}\]
+</span>
+
+再由坐标变换的Jacob公式，得到的行列式相消即可得证。</p>
+<div class="pink" name="子流形上的切张量场"  style="">
+<p><span>
+  \(S,M\)
+</span>
+分别是l,n<span>
+  \((l &lt; n)\)
+</span>
+ 维流形， <span>
+  \(\phi:S\to M\)
+</span>
+是嵌入。<span>
+  \(\phi [S]\)
+</span>
+上矢量场有“切于<span>
+  \(\phi [S]\)
+</span>
+”和“不切于<span>
+  \(\phi [S]\)
+</span>
+”的区别。同样地，<span>
+  \(\phi [S]\)
+</span>
+上的<span>
+  \(l\)
+</span>
+形式场也有这样的却别。具体而言,切于<span>
+  \(\phi [S]\)
+</span>
+的l形式场<span>
+  \(\mu\)
+</span>
+具有性质：<span>
+  \(\forall q\in \phi [S],\mu|_q\)
+</span>
+ 是<span>
+  \(W_q\)
+</span>
+而非<span>
+  \(V_q\)
+</span>
+上的<span>
+  \(l\)
+</span>
+形式，即只能作用在<span>
+  \(W_q\)
+</span>
+上的矢量。只有切于<span>
+  \(\phi [S]\)
+</span>
+上的<span>
+  \(l\)
+</span>
+形式场<span>
+  \(\mu\)
+</span>
+的积分才有意义。</p>
+<p>对于<span>
+  \(\phi [S]\)
+</span>
+上不切于<span>
+  \(\phi [S]\)
+</span>
+的<span>
+  \(l\)
+</span>
+形式场<span>
+  \(\mu\)
+</span>
+，在点<span>
+  \(q\in \phi [S]\)
+</span>
+，我们也能把它作用在<span>
+  \(l\)
+</span>
+个<span>
+  \(W_q\)
+</span>
+中的元素上。也就是说，只要把<span>
+  \(\mu\)
+</span>
+作用范围限制到<span>
+  \(W_q\)
+</span>
+上，便得到一个切于<span>
+  \(\phi [S]\)
+</span>
+的<span>
+  \(l\)
+</span>
+形式场。</p>
+</div>
+<div class="def" name="限制"  style="">
+<p>设<span>
+  \(\mu_{a_1\cdots a_l}\)
+</span>
+是l维子流形<span>
+  \(\phi [S]\subset M\)
+</span>
+上的<span>
+  \(l\)
+</span>
+形式场，<span>
+  \(\phi [S]\)
+</span>
+上的<span>
+  \(l\)
+</span>
+形式场<span>
+  \(\tilde \mu_{a_{1\dots a_{l}}}\)
+</span>
+称为<span>
+  \(\mu_{a_{1}\dots a_{l}}\)
+</span>
+在<span>
+  \(\phi [S]\)
+</span>
+上的限制，若
+<span>
+  \[\begin{gathered}
+\left.\tilde{\mu}_{a_1 \cdots a_l}\right|_q\left(w_1\right)^{a_1} \cdots\left(w_l\right)^{a_l}=\mu_{a_1 \cdots a_l} |_q\left(w_1\right)^{a_1} \cdots\left(w_l\right)^{a_l}, \\
+\forall q \in \phi [S], \quad\left(w_1\right)^a, \cdots,\left(w_l\right)^a \in W_q .
+\end{gathered}\]
+</span>
+</p>
+</div>
+<p>今后谈及<span>
+  \(l\)
+</span>
+形式场<span>
+  \(\mu\)
+</span>
+在l维子流形<span>
+  \(\phi [S]\)
+</span>
+上的积分时，一律理解为<span>
+  \(\mu\)
+</span>
+的限制<span>
+  \(\tilde \mu\)
+</span>
+的积分:<span>
+  \(\int_{\phi [S]}\mu \equiv \int_{\phi [S]}\tilde \mu\)
+</span>
+</p>
+<h2 id="53-stokes定理">
+  5.3 Stokes定理
+  <a class="anchor" href="#53-stokes%e5%ae%9a%e7%90%86">#</a>
+</h2>
+<p>先引入带边流形的概念：带边流形最简单的例子是</p>
+<p><span>
+  \(\mathbb{R}^{n-}=\{(x^1\cdots x^n)\in \mathbb{R}^n|x^1\le 0\}\)
+</span>
+
+<span>
+  \(x^1=0\)
+</span>
+为其边界，是<span>
+  \(n-1\)
+</span>
+维流形。推广至一般情况，<span>
+  \(n\)
+</span>
+维带边流形<span>
+  \(N\)
+</span>
+与<img src="http://60.205.203.160:8000/home/ipad_2023-01-31_14-04-34.png"  style="width:30%;float:right;">普通流行的定义相仿，只是将定义中的<span>
+  \(\mathbb{R}^n\)
+</span>
+改为了<span>
+  \(\mathbb{R} ^{n-}\)
+</span>
+:带边流形<span>
+  \(N\)
+</span>
+的开覆盖<span>
+  \(\{O_\alpha\}\)
+</span>
+中每一元素<span>
+  \(O_\alpha\)
+</span>
+都同胚于<span>
+  \(\mathbb{R}^{n-}\)
+</span>
+的一个开子集，<span>
+  \(N\)
+</span>
+中全体被映射到<span>
+  \(x^1=0\)
+</span>
+处的点集组成<span>
+  \(N\)
+</span>
+的边界<span>
+  \(\partial N\)
+</span>
+,这是一个<span>
+  \(n-1\)
+</span>
+维流形；N的内部<span>
+  \(i(N)=N-\partial N\)
+</span>
+是<span>
+  \(n\)
+</span>
+维流形.
+例如，<span>
+  \(B\)
+</span>
+是三维带边流形，内部<span>
+  \(i(B)\)
+</span>
+是三维流形，边界<span>
+  \(S^2\)
+</span>
+是二维流形</p>
+<div class="thm" name="5-3-1：Stokes定理"  style="">
+<p>设<span>
+  \(n\)
+</span>
+维定向流形M的紧致子集N是个<span>
+  \(n\)
+</span>
+维带边流形,<span>
+  \(\omega\)
+</span>
+是M上的<span>
+  \(n-1\)
+</span>
+形式场（可微性至少<span>
+  \(C^1\)
+</span>
+），则
+<span>
+  \[\int_{i(N)}\mathrm{d} \omega = \int_{\partial N}\omega\]
+</span>
+</p>
+</div>
+<p>例：考虑<span>
+  \(\mathbb{R}^2\)
+</span>
+上的Stokes定理，
+<span>
+  \[\iint_S\left(\partial A_2 / \partial x^1-\partial A_1 / \partial x^2\right) \mathrm{d} x^1 \mathrm{~d} x^2=\oint_L A_l \mathrm{~d} l\]
+</span>
+
+<img src="http://60.205.203.160:8000/home/2023-1-29_17-44-49.82.png"  style="">
+用欧式度规把<span>
+  \(A^a\)
+</span>
+变为1-form <span>
+  \(A_a = \delta_{ab}A^b,\)
+</span>
+则<span>
+  \(A_a\)
+</span>
+可充当Stokes定理中的<span>
+  \(\omega\)
+</span>
+。把<span>
+  \(A_a\)
+</span>
+用笛卡尔系对偶坐标基矢展开：<span>
+  \(\omega = A_a = A_\mu (\mathrm{d} x^\mu)_a\)
+</span>
+,
+<span>
+  \[\begin{aligned}
+\mathrm{d} \omega &amp;= \mathrm{d} A_\mu \wedge \mathrm{d} x^\mu = {\partial A_\mu \over\partial x^\nu}\mathrm{d} x^\nu \wedge \mathrm{d} x^\mu = {\partial A_1\over\partial x^2} \mathrm{d} x^2\wedge \mathrm{d} x^1&#43;{\partial A_2\over\partial x^1} \mathrm{d} x^1\wedge \mathrm{d} x^2\\ 
+&amp;= \left({\partial A_2\over\partial x^1} -{\partial A_1\over\partial x^2} \right)\mathrm{d} x^1\wedge \mathrm{d} x^2  
+\end{aligned}\]
+</span>
+
+所以左侧可表为<span>
+  \(\int_{i(N)}\mathrm{d} \omega=\iint (\partial A_2/\partial x^1-\partial A_1/\partial x^2)\mathrm{d} x^1\mathrm{d} x^2\)
+</span>
+,即Stokes公式左侧特例。另一方面，Stokes公式右面为<span>
+  \(\int_{\partial N}\omega=\int_{\partial N}\tilde \omega\)
+</span>
+,选线长<span>
+  \(l\)
+</span>
+为<span>
+  \(L\)
+</span>
+局部坐标，按Stokes公式把<span>
+  \(\tilde \omega\)
+</span>
+用坐标基矢展开为<span>
+  \(\tilde \omega_a = \tilde \omega_1(l)(\mathrm{d} l)_a\)
+</span>
+，两边和<span>
+  \((\partial/\partial l)^a\)
+</span>
+缩并：
+<span>
+  \[\tilde \omega_1(l) = \tilde \omega_a (\partial/\partial l)^a = \omega_a(\partial/\partial l)^a = A_a (\partial/\partial l)^a = A_l\]
+</span>
+
+于是<span>
+  \(\tilde \omega=A_l\mathrm{d} l\)
+</span>
+,<span>
+  \(\oint_L A_l \mathrm{d} l = \int_{\partial N}\omega\)
+</span>
+</p>
+<h2 id="54-体元">
+  5.4 体元
+  <a class="anchor" href="#54-%e4%bd%93%e5%85%83">#</a>
+</h2>
+<div class="def" name="体元"  style="">
+<p>n维可定向流形M上的任一个<span>
+  \(C^0\)
+</span>
+且处处非零的<span>
+  \(n\)
+</span>
+形式场<span>
+  \(\epsilon\)
+</span>
+称为一个<strong>体元(volume element)</strong>。</p>
+</div>
+<div class="pink" name="注"  style="">
+<p>体元和定向不同。可定向流形只能有两个定向，但体元可以有无限多个。谈及定向流形的积分和体元时不需要选定度规，这时体元选择非常任意，没有与众不同的体元。但如果有了度规场<span>
+  \(g_{ab}\)
+</span>
+，则存在选择特定体元的方法。</p>
+</div>
+<p>考虑有度规<span>
+  \(g_{ab}\)
+</span>
+的二维定向流形。<span>
+  \(\epsilon_{a_1a_2}\)
+</span>
+为一体元，则<span>
+  \(\epsilon^{a_1a_2}\equiv g^{a_1b_1}g^{a_2b_3}\epsilon_{b_1b_2}\)
+</span>
+有意义，且缩并<span>
+  \(\epsilon^{a_1a_2}\epsilon_{a_1a_2}\)
+</span>
+为标量场，可借助任意基底计算。我们选定正交归一基底计算，考虑度规为正定/洛伦兹的情况。(2-form <span>
+  \(\epsilon_{ab}\)
+</span>
+满足：<span>
+  \(\epsilon_{12}=-\epsilon_{21},\epsilon_{ii}=0\)
+</span>
+)</p>
+<ol>
+<li><span>
+  \(g_{ab}\)
+</span>
+正定，则<span>
+  \[\epsilon^{a_1a_2}\epsilon_{a_1a_2}=\delta_{\mu_1\nu_1}\delta_{\mu_2\nu_2}\epsilon_{\nu_1\nu_2}\epsilon_{\mu_1\mu_2}=\delta_{11}\delta_{22}\epsilon_{12}\epsilon_{12}&#43;\delta_{22}\delta_{11}\epsilon_{21}\epsilon_{21}=2(\epsilon_{12})^2\]
+</span>
+</li>
+<li><span>
+  \(g_{ab}\)
+</span>
+洛伦兹，得到：<span>
+  \[\epsilon^{a_1a_2}\epsilon_{a_1a_2}=-2(\epsilon_{12})^2\]
+</span>
+</li>
+</ol>
+<p>推广到任意度规的<span>
+  \(n\)
+</span>
+维流形：<span>
+  \[\epsilon^{a_1\cdots a_n}\epsilon_{a_1\cdots a_n} = (-1)^s n!(\epsilon_{1\cdots n})^2\]
+</span>
+,其中<span>
+  \(s\)
+</span>
+为<span>
+  \(g_{ab}\)
+</span>
+在正交归一基底分量中<span>
+  \(-1\)
+</span>
+个数。利用度规可选择该值为<span>
+  \(\pm 1\)
+</span>
+，即：
+<span>
+  \[\epsilon_{1\cdots n} = \pm 1\\ 
+\epsilon_{a_1\cdots a_n} = \pm (e^1)_{a_1}\wedge \cdots \wedge (e^n)_{a_n}\qquad(正交归一基矢下)\]
+</span>
+
+即相当于要求<span>
+  \(\epsilon^{a_1\cdots a_n}\epsilon_{a_1\cdots a_n}=(-)^sn!\)
+</span>
+。此即<strong>与度规<span>
+  \(g_{ab}\)
+</span>
+相适配的体元</strong>.加上&quot;体元与定向相容&quot;的条件后，可唯一确定体元。
+在<span>
+  \(\mathbb{R}^3\)
+</span>
+上，<span>
+  \(\epsilon=\mathrm{d} x\wedge \mathrm{d} y\wedge \mathrm{d} z\)
+</span>
+为定向，也是笛卡尔系的适配体元。另一方面，由流形上积分的定义，<span>
+  \(\int_G\epsilon = \iiint_G\mathrm{d} x\mathrm{d} y\mathrm{d} z\)
+</span>
+正是空间G的体积。推广到任意带正定度规<span>
+  \(g_{ab}\)
+</span>
+的定向流形N，若<span>
+  \(\epsilon\)
+</span>
+为适配体元，且<span>
+  \(\int_N\epsilon\)
+</span>
+存在，则称它为N的体积。</p>
+<div class="thm" name="5-4-1"  style="">
+<p>设<span>
+  \(\epsilon\)
+</span>
+为适配体元，<span>
+  \(\{(e_\mu)^a\}\)
+</span>
+及<span>
+  \(\{(e^\mu)_ a\}\)
+</span>
+为基底及其对偶基底，其中<span>
+  \(g\)
+</span>
+代表<span>
+  \(g_{ab}\)
+</span>
+在该基底下分量的行列式，<span>
+  \(|g|\)
+</span>
+为其绝对值，则：
+<span>
+  \(\epsilon_{a_1\cdots a_n} =\pm \sqrt{|g|}(e^1)_{a_1}\wedge \cdots \wedge (e^n)_{a_n}\)
+</span>
+
+其中正号适用于右手基底，负号适用于左手基底。</p>
+</div>
+<p>上面的定理十分重要，证明请见书中P117，此处略去。</p>
+<div class="thm" name="5-4-2"  style="">
+<p>设<span>
+  \(\nabla_a\)
+</span>
+和<span>
+  \(\epsilon\)
+</span>
+分别为与度规适配的导数算符和体元，则<span>
+  \(\nabla_b\epsilon_{a_1\cdots a_n}=0\)
+</span>
+</p>
+<div class="pf"  style="">
+<p>由<span>
+  \(\nabla_bg_{ac}=0\)
+</span>
+及<span>
+  \(\epsilon^{a_1\cdots a_n}\epsilon_{a_1\cdots a_n}=(-1)^sn!\)
+</span>
+得到：<span>
+  \(\epsilon^{a_1\cdots a_n}\nabla_b\epsilon_{a_1\cdots a_n}=0\)
+</span>
+,于是对任意<span>
+  \(v^b\)
+</span>
+有：
+<span>
+  \[\epsilon^{a_1\cdots a_n}v^b\nabla_b\epsilon_{a_1\cdots a_n}=0\]
+</span>
+
+M中任一点的n形式是一维矢量空间，故该点任意两个<span>
+  \(n\)
+</span>
+-form只能差一个乘子h，故<span>
+  \(v^b\nabla_b\epsilon_{a_1\cdots a_n}=h\epsilon_{a_1\cdots a_n}\)
+</span>
+,于是<span>
+  \(h=0\)
+</span>
+,<span>
+  \(v^b\nabla_b\epsilon_{a_1\cdots a_n}=0\)
+</span>
+,由<span>
+  \(v^a\)
+</span>
+任意性，<span>
+  \(\nabla_b\epsilon_{a_1\cdots a_n}=0\)
+</span>
+.</p>
+</div>
+</div>
+<p>下面证明两个关于体元的等式。为此先给出一个引理：</p>
+<div class="lemma" name="5-4-3"  style="">
+<span>
+  \[\delta^{[a_1}{}_{a_1}\cdots \delta^{a_j}{}_{a_j}\delta^{a_{j&#43;1}}{}_{b_{j&#43;1}}\cdots \delta^{a_n]}{}_{b_n} = \frac{(n-j)!j!}{n!}\delta^{[a_{j&#43;1}}{}_{b_{j&#43;1}}\cdots\delta^{a_n]}{}_{b_n}\]
+</span>
+
+</div>
+<div class="thm" name="5-4-4"  style="">
+<ol>
+<li><span>
+  \(\epsilon^{a_1\cdots a_n}\epsilon_{b_1\cdots b_n} = (-1)^sn!\delta^{[a_{1}}{}_{b_{1}}\cdots \delta^{a_n]}{}_{b_n}\)
+</span>
+</li>
+<li><span>
+  \(\epsilon^{a_1\cdots a_ja_{j&#43;1}\cdots a_n}\epsilon_{a_1\cdots a_jb_{j&#43;1}\cdots b_n}=(-1)^s(n-j)!j!\delta^{[a_{j&#43;1}}{}_{b_{j&#43;1}}\cdots \delta^{a_n]}{}_{b_n}\)
+</span>
+</li>
+</ol>
+</div>
+<h2 id="55-函数在流形上的积分gauss定理">
+  5.5 函数在流形上的积分，Gauss定理
+  <a class="anchor" href="#55-%e5%87%bd%e6%95%b0%e5%9c%a8%e6%b5%81%e5%bd%a2%e4%b8%8a%e7%9a%84%e7%a7%af%e5%88%86gauss%e5%ae%9a%e7%90%86">#</a>
+</h2>
+<div class="def" name="标量场积分"  style="">
+<p>设<span>
+  \(\epsilon\)
+</span>
+为流形<span>
+  \(M\)
+</span>
+上的任意体元，<span>
+  \(f\)
+</span>
+为<span>
+  \(M\)
+</span>
+上<span>
+  \(C^0\)
+</span>
+函数，则<span>
+  \(f\)
+</span>
+在<span>
+  \(M\)
+</span>
+上积分<span>
+  \(\int_M f\)
+</span>
+定义为：
+<span>
+  \[\int_M f:= \int_M f\bold{\epsilon}\]
+</span>
+</p>
+</div>
+<p>由定义知，函数积分和体元选择有关。约定只要给定度规，就用适配体元定义函数积分。
+以<span>
+  \(\mathbb{R}^3,\delta_{ab}\)
+</span>
+为例，设<span>
+  \(\{x,y,z\}\)
+</span>
+为右手笛卡尔系，则<span>
+  \(\epsilon=\mathrm{d} x\wedge \mathrm{d} y\wedge \mathrm{d} z\)
+</span>
+是适配体元，于是<span>
+  \(\mathbb{R}^3,\delta_{ab}\)
+</span>
+上的函数<span>
+  \(f:\mathbb{R}^3\to\mathbb{R}\)
+</span>
+的积分为：
+<span>
+  \[\int f=\int f\epsilon = \int \omega=\iiint F(x,y,z)\mathrm{d} x\mathrm{d} y\mathrm{d} z\]
+</span>
+
+其中<span>
+  \(\omega = F(x,y,z)\mathrm{d} x\wedge \mathrm{d} y\wedge \mathrm{d} z\)
+</span>
+
+也可以使用球坐标系<span>
+  \(r,\theta,\phi\)
+</span>
+计算。由
+<span>
+  \[\mathrm{d} s^2 = \mathrm{d} r^2 &#43; \mathrm{d} \theta^2&#43;r^2\sin^2\theta\mathrm{d} \phi^2\]
+</span>
+
+可知<span>
+  \(g=\det{g_{\mu\nu}}=r^4\sin^2\theta\)
+</span>
+,<span>
+  \(\epsilon = r^2\sin\theta\mathrm{d} r\wedge \mathrm{d} \theta\wedge \mathrm{d} \phi\)
+</span>
+，于是
+<span>
+  \(\omega= f\epsilon =\hat F(r,\theta,\phi)r^2\sin\theta\mathrm{d} r\wedge\mathrm{d} \theta \wedge \mathrm{d} \phi\)
+</span>
+,
+<span>
+  \[\int f = \int f\epsilon = \int\omega = \iiint \hat{F}(r,\theta,\phi) r^2\sin \theta\mathrm{d} r\mathrm{d} \theta \mathrm{d} \phi\]
+</span>
+
+推广高斯定理，得到：</p>
+<div class="thm" name="5-5-1"  style="">
+<p>设<span>
+  \(M\)
+</span>
+是n维定向流形，N是M中的n维紧致带边嵌入子流形，<span>
+  \(g_{ab}\)
+</span>
+是<span>
+  \(M\)
+</span>
+上度规，<span>
+  \(\epsilon\)
+</span>
+和<span>
+  \(\nabla_a\)
+</span>
+分别为适配体元和适配导数算符，<span>
+  \(v^a\)
+</span>
+是M上的<span>
+  \(C^1\)
+</span>
+矢量场，则
+<span>
+  \[\int_{i(N)}(\nabla_b v^b)\epsilon = \int_{\partial N} v^b\epsilon_{ba_1\cdots a_{n-1}}\]
+</span>
+</p>
+<div class="pf"  style="">
+<p>令右侧积分内容为<span>
+  \(\omega\)
+</span>
+,则
+<span>
+  \[\begin{aligned}
+\int_{\partial N} v^b\epsilon_{ba_1\cdots a_{n-1}} &amp;=\int_{\partial N}\omega \overset{Stokes}{=} \int_N \mathrm{d} \omega \\ 
+&amp;=\int_{N} n\nabla_{[c}(v^b\epsilon_{|b|a_1\cdots a_{n-1}]})=\int_N h\epsilon_{ca_1\cdots a_{n-1}}
+\end{aligned}\]
+</span>
+
+其中<span>
+  \(h\)
+</span>
+是某个常数。最后一个等号是因为左右两侧被积式子都是<span>
+  \(n\)
+</span>
+-form field，而<span>
+  \(n\)
+</span>
+-form field的维数仅为1.
+左右两侧做缩并<span>
+  \(\otimes \epsilon^{ca_1\cdots a_{n-1}}\)
+</span>
+：
+<span>
+  \[\begin{aligned}
+RHS &amp;= h(-)^sn!\\
+LHS &amp;=  n\epsilon^{ca_1\cdots a_{n-1}}\nabla_{[c}(v^b\epsilon_{|b|a_1\cdots a_{n-1}]})\\
+ &amp;=n\epsilon^{[ca_1\cdots a_{n-1}]}\nabla_{c}(v^b\epsilon_{ba_1\cdots a_{n-1}}) &amp;\text{指标传染性}\\
+&amp;=n\epsilon^{ca_1\cdots a_{n-1}}\nabla_{c}(v^b\epsilon_{ba_1\cdots a_{n-1}}) &amp;\qquad\text{全反称}\\
+&amp;= n\epsilon^{ca_1\cdots a_{n-1}}\epsilon_{ba_1\cdots a_{n-1}}\nabla_cv^b &amp;\qquad\text{适配体元性质}\\ 
+&amp;= n(-1)^s(n-1)!\delta^c{}_b\nabla_cv^b\qquad&amp;\text{ 5-4-4}\\
+&amp;= (-1)^sn!\nabla_b v^b
+\end{aligned}\]
+</span>
+
+故<span>
+  \(h=\nabla_b v^b\)
+</span>
+，<span>
+  \(\mathrm{d} \omega = \epsilon\nabla_bv^b\)
+</span>
+，于是Gauss定理得证。</p>
+</div>
+</div>
+<p>进行进一步改写。我们首先得到<span>
+  \(\partial N\)
+</span>
+的体元。当<span>
+  \(\partial N\)
+</span>
+不是类光超曲面时，<span>
+  \(\partial N\)
+</span>
+存在归一化法矢<span>
+  \(n^a\)
+</span>
+，满足<span>
+  \(n^an_a=\pm 1\)
+</span>
+，于是N上度规<span>
+  \(g_{ab}\)
+</span>
+在其上<strong>诱导度规</strong>为<span>
+  \(h_{ab}=g_{ab}\mp n_an_b\)
+</span>
+。把<span>
+  \(\partial N\)
+</span>
+看作带度规的<span>
+  \(n-1\)
+</span>
+维流形，其体元应与<span>
+  \(\partial N\)
+</span>
+的诱导定向相容，且与度规<span>
+  \(h_{ab}\)
+</span>
+适配：即
+<span>
+  \[\hat \epsilon^{a_1\cdots a_{n-1}}\hat \epsilon _{a_1\cdots a_{n-1}}=(-1)^s(n-1)!\]
+</span>
+
+其中<span>
+  \(\hat s\)
+</span>
+是<span>
+  \(h_{ab}\)
+</span>
+对角元中负数个数。<span>
+  \(\partial N\)
+</span>
+上满足这两个条件的称为诱导体元。设<span>
+  \(n^b\)
+</span>
+为<span>
+  \(\partial N\)
+</span>
+的外向单位法矢量，则诱导体元和N上体元之间有关系：
+<span>
+  \[\hat \epsilon_{a_1\cdots a_{n-1}}=n^b \epsilon_{ba_1\cdots a_{n-1}}\]
+</span>
+</p>
+<div class="thm" name="5-5-2(Gauss定理)"  style="">
+<p>设<span>
+  \(M\)
+</span>
+是<span>
+  \(n\)
+</span>
+维定向流形，<span>
+  \(N\)
+</span>
+是<span>
+  \(M\)
+</span>
+中<span>
+  \(n\)
+</span>
+维紧致带边嵌入子流形，<span>
+  \(g_{ab}\)
+</span>
+为M上度规，<span>
+  \(\epsilon\)
+</span>
+和<span>
+  \(\nabla_a\)
+</span>
+分别为适配体元、适配导数算符，<span>
+  \(\hat \epsilon\)
+</span>
+为<span>
+  \(\partial N\)
+</span>
+上诱导体元，<span>
+  \(\partial N\)
+</span>
+的外向法矢<span>
+  \(n^a\)
+</span>
+满足<span>
+  \(n^an_a=\pm 1\)
+</span>
+，<span>
+  \(v^a\)
+</span>
+是<span>
+  \(M\)
+</span>
+上的<span>
+  \(C^1\)
+</span>
+矢量场，则
+<span>
+  \[\int_{i(N)}(\nabla_av^a)\epsilon = \pm \int_{\partial N} v^an_a \hat{\epsilon }\qquad(\text{正负号与}n^a n_a\text{相同})\]
+</span>
+</p>
+<div class="pf"  style="">
+<p>已知5-5-1,因此只需证
+<span>
+  \[\int_{\partial N}v^b\epsilon_{ba_1\cdots a_{n-1}}= \pm \int_{\partial N} v^an_a \hat{\epsilon}\]
+</span>
+
+令<span>
+  \(\omega = v^b\epsilon_{ba_1\cdots a_{n-1}}\)
+</span>
+,注意到此处积分应该是<span>
+  \(\omega\)
+</span>
+在<span>
+  \(\partial N\)
+</span>
+上的限制：<span>
+  \(\int_{\partial N}\tilde \omega\)
+</span>
+ (梁老：不保证<span>
+  \(\omega\)
+</span>
+不会“支楞出”<span>
+  \(\partial N\)
+</span>
+)，故只需证明：
+<span>
+  \[\tilde \omega = \pm v^bn_b \hat \epsilon_{a_1\cdots a_{n-1}},\qquad \forall q\in \partial N\]
+</span>
+
+其中<span>
+  \(n^a\)
+</span>
+是<span>
+  \(\partial N\)
+</span>
+外向法矢。上面两侧都是<span>
+  \(W_q\)
+</span>
+上的<span>
+  \(n-1\)
+</span>
+form，故存在<span>
+  \(K\)
+</span>
+使得<span>
+  \(\tilde \omega_{a_1\cdots a_{n-1}}=K v^bn_b\hat \epsilon_{a_1\cdots a_{n-1}}\)
+</span>
+，下面只需证<span>
+  \(K=\pm 1\)
+</span>
+。设<span>
+  \(\{(e_0)^a=n^a,(e_1)^a,\cdots,(e_{n-1})^a\}\)
+</span>
+是<span>
+  \(V_q\)
+</span>
+一个右手正交归一基底，则有<span>
+  \(n_b=\pm (e^0)_b\)
+</span>
+，用<span>
+  \((e_1)^{a_1}\cdots(e_{n-1})^{a_{n-1}}\)
+</span>
+缩并上式，得到：
+<span>
+  \[RHS=Kv^bn_b\hat{\epsilon}_{12\cdots n-1}=\pm Kv^b(e^0)_b\hat{\epsilon}_{12\cdots n-1}=\pm Kv^0\]
+</span>
+
+第二步是因为<span>
+  \(\{e_0\cdots e_{n}\}\)
+</span>
+的右手性（用<span>
+  \(\epsilon\)
+</span>
+衡量）可以保证<span>
+  \(\{e_1\cdots e_n\}\)
+</span>
+的右手性（用<span>
+  \(\hat\epsilon\)
+</span>
+衡量），从而<span>
+  \(\hat \epsilon_{12\cdots n-1}=1\)
+</span>
+
+左侧：
+<span>
+  \[\begin{aligned}
+LHS &amp;= \tilde\omega_{a_1\cdots a_{n-1}}(e_1)^{a_1}\cdots (e_{n-1})^{a_{n-1}}=\omega_{a_1\cdots a_{n-1}}(e_1)^{a_1}\cdots (e_{n-1})^{a_{n-1}}\\ 
+&amp;=v^b\epsilon_{ba_1\cdots a_{n-1}}(e_1)^{a_1}\cdots (e_{n-1})^{a_{n-1}}=v^\mu\epsilon_{\mu 12\cdots n-1}=v^0\epsilon_{012\cdots n-1}=v^0
+\end{aligned}\]
+</span>
+</p>
+<p>对比得到<span>
+  \(K=\pm 1\)
+</span>
+，从而完成证明</p>
+</div>
+</div>
+<h2 id="56-对偶微分形式">
+  5.6 对偶微分形式
+  <a class="anchor" href="#56-%e5%af%b9%e5%81%b6%e5%be%ae%e5%88%86%e5%bd%a2%e5%bc%8f">#</a>
+</h2>
+<p>以<span>
+  \(\Lambda_{p}(l)\)
+</span>
+代表<span>
+  \(p\in M\)
+</span>
+的全部<span>
+  \(l\)
+</span>
+形式的集合，则可以得到l形式的维数为：
+<span>
+  \[\dim \Lambda_{p}(l) = \frac{n!}{l!(n-l)!} = \dim \Lambda_{p}(n-l)\]
+</span>
+
+若<span>
+  \(M\)
+</span>
+为带度规<span>
+  \(g_{ab}\)
+</span>
+的定向映射，<span>
+  \(\epsilon\)
+</span>
+为适配体元，则可以用这个体元和度规在<span>
+  \(\Lambda_M(l)\)
+</span>
+和<span>
+  \(\Lambda_{M}(n-l)\)
+</span>
+之间定义一个同构映射<span>
+  \(*\)
+</span>
+如下：</p>
+<div class="def" name="对偶微分形式"  style="">
+<p><span>
+  \(\forall \omega\in \Lambda_{M}(l)\)
+</span>
+，定义<span>
+  \(\omega\)
+</span>
+的<strong>对偶微分形式(dual form)</strong> <span>
+  \({}^*\omega\in \Lambda_{M}(n-l)\)
+</span>
+为：
+<span>
+  \[{}^*\omega_{a_{1}a_{2}\dots a_{n-l}} = \frac{1}{l!}\omega^{b_1b_{2}\dots b_{l}}\epsilon_{b_{1}b_{2}\dots b_{l}a_{1}\dots a_{n-l}}\]
+</span>
+
+其中
+<span>
+  \[\omega^{b_{1}b_{2}\dots b_{l}}=g^{b_{1}c_{1}}\dots g^{b_{l}c_{l}}\omega_{c_{1}\dots c_{l}}\]
+</span>
+</p>
+</div>
+<div class="remark" name="注"  style="">
+<p>上面定义的star 称为Hodge star.可以看出，它是同构映射，且对于零形式场<span>
+  \(f\in \mathscr{F}_{M}\)
+</span>
+,
+<span>
+  \[{}^*f_{a_{1}\dots a_{n}} = f\epsilon_{a_{1}\dots a_{n}}\]
+</span>
+
+因此，可以说<span>
+  \(f\)
+</span>
+定义的积分就是对偶形式场的积分。</p>
+</div>
+<p>对上式再取star:
+<span>
+  \[{}^*(^*f)=^*(f\epsilon)=\frac{1}{n!}f\epsilon^{b_{1}\dots b_{n}}\epsilon_{b_{1}\dots b_{n}}=(-1)^sf.\]
+</span>
+
+两次对偶后得到的并不是原形式场，而是有可能与之相差一个负号。这个正负号取值是由号差（对欧式度规，<span>
+  \(s=0\)
+</span>
+；对洛伦兹度规，<span>
+  \(s=1\)
+</span>
+）和对偶形式场的<span>
+  \(l\)
+</span>
+决定。一般的，我们有下面的定理：</p>
+<div class="thm" name="5-6-1"  style="">
+<span>
+  \[{}^{**}\omega=(-1)^{s&#43;l(n-l)}\omega .\]
+</span>
+
+</div>
+<p>矢量代数的点乘和叉乘运算：记<span>
+  \(\vec{A},\vec{B}\)
+</span>
+为<span>
+  \(A^a,B^b\)
+</span>
+
+，则二者点乘为<span>
+  \(\vec{A} \cdot \vec{B}=A_{a}B^a\)
+</span>
+。对于<span>
+  \(\vec{A}\times \vec{B}\)
+</span>
+该如何理解？
+令<span>
+  \(\omega_{ab} = A_{a}\wedge B_{b}=2A_{[a}B_{b]}\)
+</span>
+，则
+<span>
+  \[{}^*\omega_{c} = \frac{1}{2}\omega^{ab}\epsilon_{abc} = \epsilon_{abc}A^{[a}B^{b]} = \epsilon_{abc}A^{[a}B^{b]}\]
+</span>
+
+其中<span>
+  \(\epsilon_{abc}\)
+</span>
+为欧式度规的适配体元。设<span>
+  \(\{x,y,z\}\)
+</span>
+为右手笛卡尔坐标系，则坐标基底正交归一，于是<span>
+  \(\epsilon_{abc}\)
+</span>
+在此系得非零分量<span>
+  \(\epsilon_{ijk}\)
+</span>
+为：
+<span>
+  \[\epsilon_{123}=\epsilon_{312}=\epsilon_{231}=1,\epsilon_{132}=\epsilon_{321}=\epsilon_{213}=-1\]
+</span>
+
+于是<span>
+  \(\epsilon_{ijk}\)
+</span>
+就是熟知得Levi-Civita符号。于是<span>
+  \({}^*\omega_{c}\)
+</span>
+在该笛卡尔系得第k分量为：
+<span>
+  \[{}^*\omega_{k}=\epsilon_{ijk}A^iB^j,\tag*{k=1,2,3}\]
+</span>
+
+可见，对<span>
+  \(\vec{A},\vec{B}\)
+</span>
+求叉乘就是先求<span>
+  \(A\wedge B\)
+</span>
+再求其对偶形式，可表示为<span>
+  \(\times=*\circ \wedge\)
+</span>
+
+利用Hodge star和微分算符<span>
+  \(\mathrm{d}\)
+</span>
+，可以表示三维矢量分析中的散度、梯度和旋度：</p>
+<div class="thm" name="5-6-2"  style="">
+<p>设<span>
+  \(f,\vec{A}\)
+</span>
+是三维欧式空间的函数和矢量场，则：
+<span>
+  \[\text{ grad } f = \mathrm{ d} f,\qquad \text{ curl }\vec{A} = ^*\mathrm{d}\mathbf{A},\text{ div }\vec{A} = ^*\mathrm{d}^*A\]
+</span>
+</p>
+</div>
+<p>同时，利用“<span>
+  \(\mathbb{R}^3\)
+</span>
+上闭形式必恰当”，我们很容易证明无旋矢量场必有标量势，无散矢量场必有矢量势：
+<span>
+  \[\begin{aligned}
+
+\text{curl}\ \vec{E}=0&amp;\implies^*\mathrm{d}E=0,\mathrm{d}E=0 \\
+&amp;\implies\exists \omega\ \text{such that}\ E=\mathrm{d}\omega \\
+&amp;\implies \exists \phi\ \text{such that}\ \vec{E}=\text{grad}\ \phi\\
+\end{aligned}\]
+</span>
+<span>
+  \[\begin{aligned}
+\text{div}\ \vec{B}=0&amp;\implies^*\mathrm{d}^*B=0 ,\mathrm{d}^*B=0\\  
+&amp;\exists A,^*B=\mathrm{d}A,B=^{**}B=^*\mathrm{d}A\\
+&amp;\implies\exists \vec{A}\ \ \text{such that}\ \vec{B}=\text{curl}\ \vec{A}
+\end{aligned}\]
+</span>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/lifeisphy/notes/edit/main/exampleSite/content/docs/GR/%e7%ac%ac%e4%ba%94%e7%ab%a0%20%e5%be%ae%e5%88%86%e5%bd%a2%e5%bc%8f%e5%8f%8a%e5%85%b6%e7%a7%af%e5%88%86.md" target="_blank" rel="noopener">
+      <img src="/notes/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#51-微分形式">5.1 微分形式</a></li>
+        <li><a href="#52-流形上的积分">5.2 流形上的积分</a></li>
+        <li><a href="#53-stokes定理">5.3 Stokes定理</a></li>
+        <li><a href="#54-体元">5.4 体元</a></li>
+        <li><a href="#55-函数在流形上的积分gauss定理">5.5 函数在流形上的积分，Gauss定理</a></li>
+        <li><a href="#56-对偶微分形式">5.6 对偶微分形式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
