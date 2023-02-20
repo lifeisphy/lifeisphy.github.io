@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Group theory补充：#\((X,\theta(X)),(Y,\theta(Y))\)都是拓扑空间，\(Z=X\otimes Y\)是X与Y的直积集，令 \[\theta(Z) = \left\{O=\bigcup_{O_1\in\tilde{O_1},O_2\in\tilde{O_2}} O_1\otimes O_2|\tilde{O_1}\in \theta(X),\tilde{O_2}\in\theta(Y)\right\}\]则\(\theta(Z)\)是Z上的一个拓扑，\((Z,\theta(Z))\)是X和Y的直积拓扑空间
+\((X,\theta)\)为连通拓扑空间，若\(\nexists\ 开集\ O_1,O_2\ \text{such that}\)\[O_1\cup O_2=X \\ P_1\cap O_2 = \emptyset \\\]则称\((X,\theta)\)是连通的拓扑空间；反之则是不连通的
+道路连通与连通的区别：道路连通的条件更加严格，道路连通的拓扑空间一定连通。
+\((X,\mathscr\theta(X)),(Y,\mathscr\theta(Y))\)是拓扑空间，如果\(f:X\to Y\)满足：\(\forall x\in X,\forall f(x)邻域 V_{f(x)}\subset Y\),则\(\exists x\)的邻域\(U_x\ \text{such that}\ f(U_x)\subset V_{f(x)}\)，则称映射\(f\)在\(x\)点连续
+\(f:X\to Y\)是两拓扑空间的映射，下面四条件等价：
+\(f\)是连续映射 \(Y\)中开集的原像为\(X\)中的开集 \(Y\)中闭集原像为闭集 \(\forall A\subset X\),\(f(\bar{A})\subset \overline{f(A)}\),\(\bar{A}\)为A的闭包 道路\(\alpha\)是连续映射\(I=[0,1]\to X\)，它连接\(\alpha(0)=x_0\)和\(\alpha(1)=x_1\),是连接两点的一条道路">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="群论拓扑" />
+<meta property="og:description" content="Group theory补充：#\((X,\theta(X)),(Y,\theta(Y))\)都是拓扑空间，\(Z=X\otimes Y\)是X与Y的直积集，令 \[\theta(Z) = \left\{O=\bigcup_{O_1\in\tilde{O_1},O_2\in\tilde{O_2}} O_1\otimes O_2|\tilde{O_1}\in \theta(X),\tilde{O_2}\in\theta(Y)\right\}\]则\(\theta(Z)\)是Z上的一个拓扑，\((Z,\theta(Z))\)是X和Y的直积拓扑空间
+\((X,\theta)\)为连通拓扑空间，若\(\nexists\ 开集\ O_1,O_2\ \text{such that}\)\[O_1\cup O_2=X \\ P_1\cap O_2 = \emptyset \\\]则称\((X,\theta)\)是连通的拓扑空间；反之则是不连通的
+道路连通与连通的区别：道路连通的条件更加严格，道路连通的拓扑空间一定连通。
+\((X,\mathscr\theta(X)),(Y,\mathscr\theta(Y))\)是拓扑空间，如果\(f:X\to Y\)满足：\(\forall x\in X,\forall f(x)邻域 V_{f(x)}\subset Y\),则\(\exists x\)的邻域\(U_x\ \text{such that}\ f(U_x)\subset V_{f(x)}\)，则称映射\(f\)在\(x\)点连续
+\(f:X\to Y\)是两拓扑空间的映射，下面四条件等价：
+\(f\)是连续映射 \(Y\)中开集的原像为\(X\)中的开集 \(Y\)中闭集原像为闭集 \(\forall A\subset X\),\(f(\bar{A})\subset \overline{f(A)}\),\(\bar{A}\)为A的闭包 道路\(\alpha\)是连续映射\(I=[0,1]\to X\)，它连接\(\alpha(0)=x_0\)和\(\alpha(1)=x_1\),是连接两点的一条道路" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lifeisphy.github.io/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-12-13T19:55:38+00:00" />
+<meta property="article:modified_time" content="2022-12-13T19:55:38+00:00" />
+<title>群论拓扑 | Hugo Book</title>
+<link rel="manifest" href="/notes/manifest.json">
+<link rel="icon" href="/notes/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/notes/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
+  <script defer src="/notes/flexsearch.min.js"></script>
+  <script defer src="/notes/en.search.min.b1e2619f3a3f7b5d16866c68c5ab69d292d27f6db9161841a025b999621af378.js" integrity="sha256-seJhnzo/e10Whmxoxatp0pLSf225FhhBoCW5mWIa83g=" crossorigin="anonymous"></script>
+
+  <script defer src="/notes/sw.min.f02d8041fe15fd4a1d7a0fe50c02c2f57a3ec87d69231797beeed7968a47d96e.js" integrity="sha256-8C2AQf4V/Uodeg/lDALC9Xo&#43;yH1pIxeXvu7XlopH2W4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/notes/"><img src="/notes/favicon.jpg" alt="Logo" /><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/" class="">实变函数与泛函分析</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" class="">2-1 Lebesgue外测度，可测集</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" class="">1-集合的势与无穷</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/" class="">Lebesgue可测函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/sigma/" class="">sigma</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/" class="">CS106L笔记</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/4/" class="">4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/3/" class="">3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/" class="">广义相对论</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" class="">第一章 拓扑空间简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/" class="">第二章 流形和张量场</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" class="">第三章 黎曼曲率张量</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" class="">第四章 李导数、Killing场和超曲面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="">第五章 微分形式及其积分</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="">第六章 狭义相对论</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" class="active">群论拓扑</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/lifeisphy"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/notes/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>群论拓扑</strong>
+
+  <label for="toc-control">
+    
+    <img src="/notes/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+
+<link rel="stylesheet" href= "/notes/katex/katex.min.css" >
+<script defer src= "/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/katex-macros.js"></script>
+<link rel="stylesheet" href="/notes/css/1.css"></style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError :false,
+                macros
+            });
+        });
+</script>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#group-theory补充">Group theory补充：</a></li>
+            <li><a href="#74-李群">7.4 李群</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h3 id="group-theory补充">
+  Group theory补充：
+  <a class="anchor" href="#group-theory%e8%a1%a5%e5%85%85">#</a>
+</h3>
+<div class="def" name="直积拓扑空间"  style="">
+<p>
+<link rel="stylesheet" href="/notes/katex/katex.min.css" />
+<script defer src="/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/auto-render.min.js" onload="renderMathInElement(document.body,{'macros':macros});"></script><span>
+  \((X,\theta(X)),(Y,\theta(Y))\)
+</span>
+都是拓扑空间，<span>
+  \(Z=X\otimes Y\)
+</span>
+是X与Y的直积集，令
+<span>
+  \[\theta(Z) = \left\{O=\bigcup_{O_1\in\tilde{O_1},O_2\in\tilde{O_2}} O_1\otimes O_2|\tilde{O_1}\in \theta(X),\tilde{O_2}\in\theta(Y)\right\}\]
+</span>
+
+则<span>
+  \(\theta(Z)\)
+</span>
+是Z上的一个拓扑，<span>
+  \((Z,\theta(Z))\)
+</span>
+是X和Y的<strong>直积拓扑空间</strong></p>
+</div>
+<div class="def" name="连通性"  style="">
+<p><span>
+  \((X,\theta)\)
+</span>
+为连通拓扑空间，若<span>
+  \(\nexists\ 开集\ O_1,O_2\ \text{such that}\)
+</span>
+
+<span>
+  \[O_1\cup O_2=X \\ 
+P_1\cap O_2 = \emptyset \\\]
+</span>
+
+则称<span>
+  \((X,\theta)\)
+</span>
+是<strong>连通的拓扑空间</strong>；反之则是不连通的</p>
+</div>
+<p>道路连通与连通的区别：道路连通的条件更加严格，道路连通的拓扑空间一定连通。</p>
+<div class="def" name="连续映射"  style="">
+<p><span>
+  \((X,\mathscr\theta(X)),(Y,\mathscr\theta(Y))\)
+</span>
+是拓扑空间，如果<span>
+  \(f:X\to Y\)
+</span>
+满足：<span>
+  \(\forall x\in X,\forall f(x)邻域 V_{f(x)}\subset Y\)
+</span>
+,则<span>
+  \(\exists x\)
+</span>
+的邻域<span>
+  \(U_x\ \text{such that}\ f(U_x)\subset V_{f(x)}\)
+</span>
+，则称映射<span>
+  \(f\)
+</span>
+在<span>
+  \(x\)
+</span>
+点<strong>连续</strong></p>
+</div>
+<div class="thm" name="等价定理"  style="">
+<p><span>
+  \(f:X\to Y\)
+</span>
+是两拓扑空间的映射，下面四条件等价：</p>
+<ol>
+<li><span>
+  \(f\)
+</span>
+是连续映射</li>
+<li><span>
+  \(Y\)
+</span>
+中开集的原像为<span>
+  \(X\)
+</span>
+中的开集</li>
+<li><span>
+  \(Y\)
+</span>
+中闭集原像为闭集</li>
+<li><span>
+  \(\forall A\subset X\)
+</span>
+,<span>
+  \(f(\bar{A})\subset \overline{f(A)}\)
+</span>
+,<span>
+  \(\bar{A}\)
+</span>
+为A的闭包</li>
+</ol>
+</div>
+<div class="def" name="道路"  style="">
+<p>道路<span>
+  \(\alpha\)
+</span>
+是连续映射<span>
+  \(I=[0,1]\to X\)
+</span>
+，它连接<span>
+  \(\alpha(0)=x_0\)
+</span>
+和<span>
+  \(\alpha(1)=x_1\)
+</span>
+,是连接两点的一条道路</p>
+</div>
+<div class="def" name="道路连通"  style="">
+<p>若拓扑空间中任意两点存在一条道路，则这个拓扑空间是<strong>道路连通的</strong></p>
+</div>
+<div class="def" name="映射同伦"  style="">
+<p><span>
+  \(f_0,f_1:X\to Y\)
+</span>
+是两拓扑空间连续映射，若存在连续映射F:<span>
+  \(X\otimes I\to Y\)
+</span>
+，使得<span>
+  \(\forall x\in X\)
+</span>
+,
+<span>
+  \[F(x,0)=f_0(x),F(x,1)=f_1(x)\]
+</span>
+
+其中<span>
+  \(I=[0,1]\)
+</span>
+，则称映射<span>
+  \(f_0,f_1\)
+</span>
+<strong>同伦</strong>,记为<span>
+  \(f_0\simeq f_1:X\to Y\)
+</span>
+
+F称为<span>
+  \(f_0\)
+</span>
+到<span>
+  \(f_1\)
+</span>
+的<strong>伦移</strong>。当<span>
+  \(f_1\)
+</span>
+是一个常值映射时，与之同伦的映射称为零伦映射</p>
+</div>
+<div class="def" name="道路同伦"  style="">
+<p>道路<span>
+  \(\alpha:I=[0,1]\to X\)
+</span>
+满足<span>
+  \(\alpha(0)=x_0,\alpha(1)=x_1\)
+</span>
+
+道路<span>
+  \(\beta:I\to X\)
+</span>
+也连接了相同的两点。若定义<span>
+  \(F:I\otimes I\to X\)
+</span>
+使得<span>
+  \(\forall t_1,t_2\in I\)
+</span>
+，有：
+<span>
+  \[F(t_1,0)=\alpha(t_1),F(t_1,1)=\beta(t_1)\\ 
+F(0,t_2)=x_0,F(1,t_2)=x_1\]
+</span>
+
+则有道路<span>
+  \(\alpha\)
+</span>
+与<span>
+  \(\beta\)
+</span>
+<strong>同伦</strong>，记为<span>
+  \(\alpha\cong\beta\)
+</span>
+,<span>
+  \(F\)
+</span>
+为<span>
+  \(\alpha\)
+</span>
+到<span>
+  \(\beta\)
+</span>
+的<strong>伦移</strong></p>
+<div class="pink" name="remark"  style="">
+<p>改变第一个参数：沿路径变化
+改变第二个：路径本身连续变化，从<span>
+  \(\alpha\)
+</span>
+到<span>
+  \(\beta\)
+</span>
+</p>
+</div>
+</div>
+<p>在连续映射之间定义的二元关系“全等”<span>
+  \(\cong\)
+</span>
+是一种等价关系：</p>
+<div class="prop" name="性质"  style="">
+<ol>
+<li><span>
+  \(f\cong f\)
+</span>
+</li>
+<li><span>
+  \(f\cong g\Rightarrow g\cong f\)
+</span>
+</li>
+<li><span>
+  \(f\cong g,g\cong h\Rightarrow f\cong h\)
+</span>
+</li>
+</ol>
+</div>
+<p>道路之间的同伦关系也是等价关系。</p>
+<p>道路<span>
+  \(\alpha,\beta\)
+</span>
+的乘积<span>
+  \(\alpha\beta\)
+</span>
+定义为<span>
+  \(\alpha\)
+</span>
+终点与<span>
+  \(\beta\)
+</span>
+起点相接形成的道路(必须首尾相接才有定义)</p>
+<div class="thm" name="theorem7.4"  style="">
+<p><span>
+  \(\alpha_0\cong \alpha_1\)
+</span>
+,<span>
+  \(\beta_0\cong \beta_1\)
+</span>
+,若<span>
+  \(\alpha_0\beta_0\)
+</span>
+有定义，则<span>
+  \(\alpha_0\beta_0\cong \alpha_1\beta_1\)
+</span>
+</p>
+</div>
+<div class="thm" name="theorem7.5"  style="">
+<span>
+  \(\alpha\cong\beta\Rightarrow\alpha^{-1}\cong \beta^{-1}\)
+</span>
+
+</div>
+<div class="def" name="道路同伦类"  style="">
+<p><span>
+  \(\alpha:I\to X\)
+</span>
+是连接<span>
+  \(x_0,x_1\)
+</span>
+两点的道路，则<span>
+  \(\langle\alpha \rangle\)
+</span>
+描述所有与<span>
+  \(\alpha\)
+</span>
+同伦的道路的集合，为<strong>道路同伦类</strong></p>
+</div>
+<p>所有道路同伦类有相同的起点和终点。可定义道路同伦类乘积
+<span>
+  \(\langle\alpha\rangle \langle\beta\rangle =\langle \alpha\beta\rangle\)
+</span>
+，乘积满足结合律。
+逆的性质：<span>
+  \(\langle\alpha^{-1}\rangle = \langle\alpha\rangle^{-1}\)
+</span>
+
+定义乘法单位元<span>
+  \(e_{x_0}\)
+</span>
+为将<span>
+  \(I\otimes I\)
+</span>
+全部映到一个点<span>
+  \(x_0\)
+</span>
+的同伦类，满足乘法的基本性质：
+<span>
+  \[\langle\alpha\rangle \langle e_{x_0}\rangle =\langle\alpha\rangle\langle e_{x_1}\rangle = \langle\alpha\rangle \\ 
+\langle\alpha\rangle \langle\alpha^{-1}\rangle =\langle e_{x_1}\rangle,\ \langle \alpha^{-1}\rangle \langle\alpha\rangle = \langle e_{x_0}\rangle\]
+</span>
+
+于是定义了以道路同伦类为群元、以常值映射为单位元、有逆元、封闭性和结合律的群。称之为<strong>基本群</strong>。</p>
+<div class="def" name="基本群"  style="">
+<p>X为拓扑空间，<span>
+  \(x_0\)
+</span>
+为其中一点，所有起点=终点=<span>
+  \(x_0\)
+</span>
+的道路同伦类的集合，以<span>
+  \(\langle e_{x_0}\rangle\)
+</span>
+为单位元，以<span>
+  \(\langle\alpha\rangle\langle\beta\rangle=\langle\alpha\beta\rangle,\langle\alpha^{-1}\rangle=\langle\alpha\rangle^{-1}\)
+</span>
+为规则定义乘法和逆元，构成的群称为拓扑空间X以<span>
+  \(x_0\)
+</span>
+为基点的<strong>基本群</strong></p>
+</div>
+<p>对于道路连通的拓扑空间，取不同基点，基本群相互同构。一个道路连通的拓扑空间，若其基本群只包含单位元素，则空间是单连通的：空间中任意封闭的线可以连续地缩为一点。如果一个道路连通地拓扑空间地基本群有m个元素，则拓扑空间具有m度连通度。</p>
+<div class="def" name="微分流形"  style="">
+<p>略</p>
+</div>
+<p>描述开集<span>
+  \(S^1\)
+</span>
+：
+定义开集合<span>
+  \(U_1=S_1-\{1\}\)
+</span>
+,
+定义映射<span>
+  \(\phi_1:U_1\to(0,2\pi)\)
+</span>
+为：<span>
+  \(e^{i\theta}\to \theta\)
+</span>
+
+再定义开集合<span>
+  \(U_2=S^1-\{e^{i\pi}\}\)
+</span>
+
+定义映射<span>
+  \(\phi_2:U_2\to(\pi,3\pi)\)
+</span>
+为：<span>
+  \(e^{i\eta}\to\eta\)
+</span>
+
+这样就确定了一个流形<span>
+  \(S^1,\Phi=\{(U_1,\phi_1),(U_2,\phi_2)\}\)
+</span>
+，来描述
+弯曲的一维欧氏空间</p>
+<p>流形间的光滑映射：</p>
+<div class="def" name="流形间的光滑映射"  style="">
+<p>设<span>
+  \((X_1,\Phi_1)\)
+</span>
+,<span>
+  \((X_2,\Phi_2)\)
+</span>
+分别为<span>
+  \(m\)
+</span>
+维和<span>
+  \(n\)
+</span>
+维流形，如果存在映射<span>
+  \(f\)
+</span>
+：
+<span>
+  \[f:X\to Y\]
+</span>
+
+且对<span>
+  \(\forall (V,\varphi_V)\in \Phi_2\)
+</span>
+,<span>
+  \(\exists (U,\varphi_U)\in \Phi_1,x\in U\)
+</span>
+满足：<span>
+  \(f(U)\subset V\)
+</span>
+,<span>
+  \(\varphi_V\circ f\circ \varphi_U^{-1}(U):\varphi_U(U) \to \varphi_V(V)\)
+</span>
+是<span>
+  \(C^\infty\)
+</span>
+的.这时称<span>
+  \(f\)
+</span>
+是<span>
+  \(X\)
+</span>
+到<span>
+  \(Y\)
+</span>
+的<span>
+  \(C^\infty\)
+</span>
+映射，或光滑映射。</p>
+</div>
+<div class="def" name="可微同胚"  style="">
+<p>对于两个维度相同的<span>
+  \(C^\infty\)
+</span>
+流形<span>
+  \((X,\Phi_1),(Y,\Phi_2)\)
+</span>
+，存在同胚映射<span>
+  \(f\)
+</span>
+，逆映射<span>
+  \(f^{-1}\)
+</span>
+,若二者都是光滑映射，则两个微分流形<strong>可微同胚</strong></p>
+</div>
+<div class="def" name="直积流形"  style="">
+<p><span>
+  \((X,\Psi),(Y,\Phi)\)
+</span>
+分别是m n维的<span>
+  \(C^\infty\)
+</span>
+流形，其中<span>
+  \(\Psi=\{(U,\psi(U)\},\Phi=\{(V,\varphi(V)\}\)
+</span>
+。可定义直积拓扑空间<span>
+  \(X\times Y\)
+</span>
+的流形结构为：
+<span>
+  \[\Omega=\{(U\times V,(\psi(U),\varphi(V))\}\]
+</span>
+
+其中<span>
+  \((\psi(U),\varphi(V))\)
+</span>
+为欧式空间的笛卡尔积，<span>
+  \((X\times Y,\Omega)\)
+</span>
+为二者的<strong>直积流形</strong></p>
+</div>
+<h3 id="74-李群">
+  7.4 李群
+  <a class="anchor" href="#74-%e6%9d%8e%e7%be%a4">#</a>
+</h3>
+<div class="def" name="拓扑群"  style="">
+<p><span>
+  \(G=\{\cdots,g,\cdots,f,\cdots\}\)
+</span>
+是一个群，在其基础上若继续满足：</p>
+<ol>
+<li>G形成一个拓扑空间</li>
+<li>G上的运算是连续的</li>
+</ol>
+<p>则<span>
+  \(G\)
+</span>
+是一个拓扑群</p>
+</div>
+<div class="pink" name="remark"  style="">
+<p>拓扑群的连续具体表现在：</p>
+<ol>
+<li><span>
+  \(\forall f,g\in G\)
+</span>
+,任意<span>
+  \(gf\)
+</span>
+的邻域<span>
+  \(W\)
+</span>
+,都存在<span>
+  \(g\)
+</span>
+的邻域<span>
+  \(U\)
+</span>
+与<span>
+  \(f\)
+</span>
+的邻域<span>
+  \(V\)
+</span>
+，使得<span>
+  \(UV\subset W\)
+</span>
+</li>
+<li><span>
+  \(\forall g\in G\)
+</span>
+，对其逆元素<span>
+  \(g^{-1}\)
+</span>
+的任意邻域<span>
+  \(W\)
+</span>
+，<span>
+  \(\exists g邻域 U\)
+</span>
+使得<span>
+  \(U^{-1}\subset V\)
+</span>
+</li>
+</ol>
+</div>
+<div class="def" name="李群"  style="">
+<ol>
+<li>G也是一个n维光滑流形</li>
+<li>乘法<span>
+  \(\varphi:G\times G\to G\)
+</span>
+和求逆<span>
+  \(\tau:G\to G\)
+</span>
+都是光滑映射</li>
+</ol>
+<p>则称G是一个n维<strong>李群</strong></p>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/lifeisphy/notes/edit/main/exampleSite/content/docs/GR/%e7%be%a4%e8%ae%ba%e6%8b%93%e6%89%91.md" target="_blank" rel="noopener">
+      <img src="/notes/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#group-theory补充">Group theory补充：</a></li>
+            <li><a href="#74-李群">7.4 李群</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

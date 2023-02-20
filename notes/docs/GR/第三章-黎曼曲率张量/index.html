@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="\[\global\def\ccc{c_1\cdots c_l}\global\def\bbb{b_1\cdots b_k}\global\def\ddd{d_1\cdots d_k&#39;}\global\def\eee{e_1\cdots e_l&#39;}\]黎曼（内禀）曲率张量#3.1 导数算符把nabla算子推广到任意流形，其上可以没有度规，所以要分清矢量和对偶矢量。在推广\(\vec\nabla\)时它更像对偶矢量，故记作\(\nabla_a\)。
+记\(\mathscr F_M(k,l)\)为流形M上全体\(C^\infty\)的\((k,l)\)型张量场集合(函数\(f\)视为标量场，因此\(\mathscr F_M(0,0)=\mathscr F_M\).)映射\(\nabla:\mathscr F_M(k,l)\to\mathscr F_M(k,l&#43;1)\)称为M上的无挠导数算符，若它满足：
+线性性：\(\nabla_a(\alpha T^{\bbb}{}_{\ccc}&#43;\beta S^{\bbb}{}_{\ccc})=\alpha \nabla_a T^{\bbb}{}_{\ccc}&#43;\beta\nabla_a S^{\bbb}{}_{\ccc}\)满足Leibnitz律: \[\nabla_a(T^{\bbb}{}_{\ccc}S^{\ddd}{}_{\eee} )= T^{\bbb}_{\ccc}\nabla_a S^{\ddd}{}_{\eee} &#43; S^{\ddd}{}_{\eee}\nabla_a T^{\bbb}{}_{\ccc}\]与缩并可换序; \(v(f)=v^a\nabla_a f\),\(\forall f\in\mathscr F_M,v\in \mathscr F_M(1,0)\); 无挠性(torsion-free):\(\nabla_a\nabla_b f=\nabla_b\nabla_a f,\forall f\in \mathscr F_M\)条件3记作\(\nabla\circ C=C\circ \nabla\),以后常写作">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="第三章 黎曼曲率张量" />
+<meta property="og:description" content="\[\global\def\ccc{c_1\cdots c_l}\global\def\bbb{b_1\cdots b_k}\global\def\ddd{d_1\cdots d_k&#39;}\global\def\eee{e_1\cdots e_l&#39;}\]黎曼（内禀）曲率张量#3.1 导数算符把nabla算子推广到任意流形，其上可以没有度规，所以要分清矢量和对偶矢量。在推广\(\vec\nabla\)时它更像对偶矢量，故记作\(\nabla_a\)。
+记\(\mathscr F_M(k,l)\)为流形M上全体\(C^\infty\)的\((k,l)\)型张量场集合(函数\(f\)视为标量场，因此\(\mathscr F_M(0,0)=\mathscr F_M\).)映射\(\nabla:\mathscr F_M(k,l)\to\mathscr F_M(k,l&#43;1)\)称为M上的无挠导数算符，若它满足：
+线性性：\(\nabla_a(\alpha T^{\bbb}{}_{\ccc}&#43;\beta S^{\bbb}{}_{\ccc})=\alpha \nabla_a T^{\bbb}{}_{\ccc}&#43;\beta\nabla_a S^{\bbb}{}_{\ccc}\)满足Leibnitz律: \[\nabla_a(T^{\bbb}{}_{\ccc}S^{\ddd}{}_{\eee} )= T^{\bbb}_{\ccc}\nabla_a S^{\ddd}{}_{\eee} &#43; S^{\ddd}{}_{\eee}\nabla_a T^{\bbb}{}_{\ccc}\]与缩并可换序; \(v(f)=v^a\nabla_a f\),\(\forall f\in\mathscr F_M,v\in \mathscr F_M(1,0)\); 无挠性(torsion-free):\(\nabla_a\nabla_b f=\nabla_b\nabla_a f,\forall f\in \mathscr F_M\)条件3记作\(\nabla\circ C=C\circ \nabla\),以后常写作" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-12-25T23:33:17+00:00" />
+<meta property="article:modified_time" content="2022-12-25T23:33:17+00:00" />
+<title>第三章 黎曼曲率张量 | Hugo Book</title>
+<link rel="manifest" href="/notes/manifest.json">
+<link rel="icon" href="/notes/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/notes/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
+  <script defer src="/notes/flexsearch.min.js"></script>
+  <script defer src="/notes/en.search.min.b1e2619f3a3f7b5d16866c68c5ab69d292d27f6db9161841a025b999621af378.js" integrity="sha256-seJhnzo/e10Whmxoxatp0pLSf225FhhBoCW5mWIa83g=" crossorigin="anonymous"></script>
+
+  <script defer src="/notes/sw.min.f02d8041fe15fd4a1d7a0fe50c02c2f57a3ec87d69231797beeed7968a47d96e.js" integrity="sha256-8C2AQf4V/Uodeg/lDALC9Xo&#43;yH1pIxeXvu7XlopH2W4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/notes/"><img src="/notes/favicon.jpg" alt="Logo" /><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/" class="">实变函数与泛函分析</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" class="">2-1 Lebesgue外测度，可测集</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" class="">1-集合的势与无穷</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/" class="">Lebesgue可测函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/sigma/" class="">sigma</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/" class="">CS106L笔记</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/4/" class="">4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/3/" class="">3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/" class="">广义相对论</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" class="">第一章 拓扑空间简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/" class="">第二章 流形和张量场</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" class="active">第三章 黎曼曲率张量</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" class="">第四章 李导数、Killing场和超曲面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="">第五章 微分形式及其积分</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="">第六章 狭义相对论</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" class="">群论拓扑</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/lifeisphy"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/notes/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>第三章 黎曼曲率张量</strong>
+
+  <label for="toc-control">
+    
+    <img src="/notes/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+
+<link rel="stylesheet" href= "/notes/katex/katex.min.css" >
+<script defer src= "/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/katex-macros.js"></script>
+<link rel="stylesheet" href="/notes/css/1.css"></style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError :false,
+                macros
+            });
+        });
+</script>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#黎曼内禀曲率张量">黎曼（内禀）曲率张量</a>
+      <ul>
+        <li><a href="#32-矢量场沿曲线的导数和平移">3.2 矢量场沿曲线的导数和平移</a>
+          <ul>
+            <li><a href="#321-矢量场沿曲线的平移">3.2.1 矢量场沿曲线的平移</a></li>
+            <li><a href="#322-与度规相适配的导数算符">3.2.2 与度规相适配的导数算符</a></li>
+            <li><a href="#323-矢量场沿曲线导数与沿曲线的平移之间的关系">3.2.3 矢量场沿曲线导数与沿曲线的平移之间的关系</a></li>
+          </ul>
+        </li>
+        <li><a href="#33-测地线">3.3 测地线</a></li>
+        <li><a href="#34-黎曼曲率张量">3.4 黎曼曲率张量</a>
+          <ul>
+            <li><a href="#342-由度规计算黎曼曲率">3.4.2 由度规计算黎曼曲率</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown">
+<link rel="stylesheet" href="/notes/katex/katex.min.css" />
+<script defer src="/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/auto-render.min.js" onload="renderMathInElement(document.body,{'macros':macros});"></script><span>
+  \[\global\def\ccc{c_1\cdots c_l}
+\global\def\bbb{b_1\cdots b_k}
+\global\def\ddd{d_1\cdots d_k&#39;}
+\global\def\eee{e_1\cdots e_l&#39;}\]
+</span>
+
+<h1 id="黎曼内禀曲率张量">
+  黎曼（内禀）曲率张量
+  <a class="anchor" href="#%e9%bb%8e%e6%9b%bc%e5%86%85%e7%a6%80%e6%9b%b2%e7%8e%87%e5%bc%a0%e9%87%8f">#</a>
+</h1>
+<div class="title2"  style="">
+3.1 导数算符
+</div>
+<p>把nabla算子推广到任意流形，其上可以没有度规，所以要分清矢量和对偶矢量。在推广<span>
+  \(\vec\nabla\)
+</span>
+时它更像对偶矢量，故记作<span>
+  \(\nabla_a\)
+</span>
+。</p>
+<div class="def" name="无挠导数算符"  style="">
+<p>记<span>
+  \(\mathscr F_M(k,l)\)
+</span>
+为流形M上全体<span>
+  \(C^\infty\)
+</span>
+的<span>
+  \((k,l)\)
+</span>
+型张量场集合(函数<span>
+  \(f\)
+</span>
+视为标量场，因此<span>
+  \(\mathscr F_M(0,0)=\mathscr F_M\)
+</span>
+.)映射<span>
+  \(\nabla:\mathscr F_M(k,l)\to\mathscr F_M(k,l&#43;1)\)
+</span>
+称为M上的无挠导数算符，若它满足：</p>
+<ol>
+<li>线性性：<span>
+  \(\nabla_a(\alpha T^{\bbb}{}_{\ccc}&#43;\beta S^{\bbb}{}_{\ccc})=\alpha \nabla_a T^{\bbb}{}_{\ccc}&#43;\beta\nabla_a S^{\bbb}{}_{\ccc}\)
+</span>
+</li>
+<li>满足Leibnitz律:
+<span>
+  \[\nabla_a(T^{\bbb}{}_{\ccc}S^{\ddd}{}_{\eee} )= T^{\bbb}_{\ccc}\nabla_a S^{\ddd}{}_{\eee} &#43; S^{\ddd}{}_{\eee}\nabla_a T^{\bbb}{}_{\ccc}\]
+</span>
+</li>
+<li>与缩并可换序;</li>
+<li><span>
+  \(v(f)=v^a\nabla_a f\)
+</span>
+,<span>
+  \(\forall f\in\mathscr F_M,v\in \mathscr F_M(1,0)\)
+</span>
+;</li>
+<li>无挠性(torsion-free):<span>
+  \(\nabla_a\nabla_b f=\nabla_b\nabla_a f,\forall f\in \mathscr F_M\)
+</span>
+</li>
+</ol>
+<div class="pink" name="note"  style="">
+<p>条件3记作<span>
+  \(\nabla\circ C=C\circ \nabla\)
+</span>
+,以后常写作</p>
+<p><span>
+  \[\nabla_a(v^b\omega_b)=v^b\nabla_a\omega_b&#43;\omega_b\nabla_av^b\]
+</span>
+
+因为
+<span>
+  \[\begin{aligned}
+\nabla_a(v^b\omega_b) &amp;= \nabla_a[C(v^b\omega_c)]\\ 
+&amp;=C_2^1 [\nabla_a (v^b\omega_c)]\\&amp;=C_2^1 (v^b\nabla_a\omega_c)&#43;C_2^1[(\nabla_av^b)\omega_c] \\ 
+&amp;= v^b\nabla_a\omega_v&#43;\omega_b\nabla_av^b
+\end{aligned}\]
+</span>
+</p>
+<p>条件4左侧不应写作<span>
+  \(v^a(f)\)
+</span>
+，否则容易被误解为矢量场。条件4可在欧式空间<span>
+  \(\mathbb{R}^3\)
+</span>
+下理解为：
+<span>
+  \[v^a=v^1\left({\partial \over\partial x}\right) ^a&#43;v^2\left({\partial \over\partial y} \right)^a &#43;v^3\left({\partial \over\partial z} \right)^a \\ 
+v(f) = v^i\partial_i f = v^a\nabla_a f\]
+</span>
+
+可见条件4是这种性质对任意流形的推广</p>
+<p>设<span>
+  \(\nabla_a\)
+</span>
+是任意导数算符，则由条件4可得<span>
+  \(\nabla_a f = (\mathrm{d} f)_a,\alpha f\in \mathscr F_M\)
+</span>
+
+(<span>
+  \((\mathrm{d} f)_av^a = \mathrm{d} f(v) =v(f)\overset{(4)}{=}v^a\nabla_a f\Rightarrow (\mathrm{d} f)_a = \nabla_a f\)
+</span>
+)</p>
+</div>
+</div>
+<p>任何流形必存在导数算符。事实上，导数算符存在且有多个。设<span>
+  \(\nabla_a\)
+</span>
+和<span>
+  \(\tilde\nabla_a\)
+</span>
+为两个导数算符，我们可推出它们作用于同一函数的结果相同：<span>
+  \(\nabla_a f=\tilde \nabla_a f=(\mathrm{d} f)_a, \forall f\in\mathscr F_M\)
+</span>
+，二者不同只能体现在非标量的标量场作用上。</p>
+<div class="thm" name="3-1-2"  style="">
+<p>设<span>
+  \(p\in M\)
+</span>
+,<span>
+  \(\omega_b,\omega_b&#39; \in \mathscr F(0,1)\)
+</span>
+满足<span>
+  \(\omega_b&#39;|_p = \omega_b|_p\)
+</span>
+，则
+<span>
+  \[[(\tilde{\nabla_a}-\nabla_a) \omega_b&#39;]_p = [(\tilde \nabla_a-\nabla_a) \omega_b]_p\]
+</span>
+
+证明略。</p>
+</div>
+<hr class="page-break">
+<p>这说明，虽然导数<span>
+  \([\nabla_a\omega_b]_p\)
+</span>
+依赖于<span>
+  \(\omega_b\)
+</span>
+在p邻域内的取值，但导数的差<span>
+  \([(\tilde\nabla_a -\nabla_a)\omega_b]_p\)
+</span>
+只依赖于<span>
+  \(\omega_b\)
+</span>
+在p点的取值，说明<span>
+  \(\tilde \nabla_a-\nabla_a\)
+</span>
+是把p点的<span>
+  \((0,1)\)
+</span>
+对偶矢量<span>
+  \(\omega_b|_p\)
+</span>
+变为p点的<span>
+  \((0,2)\)
+</span>
+型张量的线性映射。给定p点的一个对偶矢量<span>
+  \(\mu_a\)
+</span>
+,尽管把它延拓为矢量场<span>
+  \(\omega_b\ \text{such that}\ \omega_b|_p=\mu_b\)
+</span>
+有很多种延拓方式，但再作用上<span>
+  \(\tilde{\nabla}_a-\nabla_a\)
+</span>
+得到的<span>
+  \((0,2)\)
+</span>
+型张量场就只有一种，因此这种延拓是自然的。
+因而，<span>
+  \(\tilde{\nabla}_a-\nabla_a\)
+</span>
+作为一个映射，对应一个<span>
+  \((1,2)\)
+</span>
+型张量<span>
+  \(C^c{}_{ab}\)
+</span>
+，满足：
+<span>
+  \[[(\tilde\nabla_a-\nabla_a)\omega_b]_p =C^c{}_{ab} \omega_c|_p \\\]
+</span>
+
+即</p>
+<div class="thm" name="3-1-3"  style="">
+<span>
+  \(\nabla_a\omega_b=\tilde \nabla_a\omega_b - C^c{}_{ab}\omega_c\)
+</span>
+
+</div>
+<div class="prop" name="对称性"  style="">
+<span>
+  \[C^c{}_{ab}=C^c{}_{ba}\]
+</span>
+
+</div>
+<p>对于<span>
+  \((1,0)\)
+</span>
+型：
+<span>
+  \[\nabla_av^b = \tilde\nabla_av^b &#43; C^b{}_{ac}v^c\]
+</span>
+
+<span>
+  \((1,1)\)
+</span>
+型：<span>
+  \(\nabla_aT^b{}_c = \tilde\nabla_a T^b{}_{c}&#43;C^b{}_{ad}T^d{}_{c}-C^e{}_{ac}T^b{}_{e}\)
+</span>
+</p>
+<div class="def" name="普通导数算符"  style="">
+<p>给定O上的一个坐标<span>
+  \(\{\xi^\mu\}\)
+</span>
+，在这组坐标下定义<span>
+  \(\partial_a:\mathscr F_O(k,l)\to\mathscr F_O(k,l&#43;1)\)
+</span>
+，以<span>
+  \((1,1)\)
+</span>
+为例：
+<span>
+  \[\partial_a T^b{}_c := (\mathrm{d} x^\mu)_a \left({\partial \over\partial x^\nu } \right)^b \left(\mathrm{d} x^\sigma \right)_c\partial_\mu T^\nu{}_\sigma\]
+</span>
+
+其中坐标分量项的定义是<span>
+  \(\partial_\nu T^\nu {}_\sigma={\partial T^\mu{}_{\sigma}\over\partial x^\mu }\)
+</span>
+，即“导数的坐标分量等于坐标分量的偏导数”</p>
+<p>这种偏导算符只在这种坐标系下有定义，这叫做该坐标系的<strong>普通导数算符</strong></p>
+</div>
+<p>与之对应的有<strong>协变导数算符</strong>(covariant derivative)<span>
+  \(\nabla_a\)
+</span>
+，它们与坐标系（或其他人为因素）无关。
+普通导数算符作用与该系的任意坐标基矢和任一对偶坐标基矢结果为0：<span>
+  \(\partial_a(\partial/\partial x^\nu)^b = 0,\partial_a(\mathrm{d} x^\nu)_b=0\)
+</span>
+
+这时可以依据<span>
+  \(\partial_a\)
+</span>
+表示<span>
+  \(\nabla_a\)
+</span>
+，写出<strong>克氏符</strong>:</p>
+<div class="def" name="Christoffel symbol"  style="">
+<span>
+  \(\nabla_a \omega_b = \partial_a \omega_b -\Gamma^c{}_{ab}\omega_c\)
+</span>
+
+</div>
+<p>问题：&ldquo;克氏符是不是张量？&rdquo;
+克氏符是否为张量和语境有关，称其为张量和非张量并不矛盾。
+我们取定两个坐标系<span>
+  \(\{x^\mu\}\)
+</span>
+,<span>
+  \(\{x&#39;^\mu\}\)
+</span>
+，可以分别诱导出两个克氏符<span>
+  \(\Gamma^a{}_{bc},\bar\Gamma^a{}_{bc}\)
+</span>
+。二者关系如下：</p>
+<table>
+<thead>
+<tr>
+<th>诱导导数算符\表示坐标系</th>
+<th><span>
+  \(\{x^\mu\}\)
+</span>
+</th>
+<th><span>
+  \(\{x&#39;^\nu\}\)
+</span>
+</th>
+<th>符合坐标系变换？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span>
+  \(\partial_a\mapsto \Gamma^a{}_{bc}\)
+</span>
+</td>
+<td><span>
+  \(\Gamma^\sigma_{\mu\nu}(1)\)
+</span>
+</td>
+<td><span>
+  \(\Gamma&#39;^\sigma_{\mu\nu}(2)\)
+</span>
+</td>
+<td>是</td>
+</tr>
+<tr>
+<td><span>
+  \(\partial_a&#39;\mapsto \bar\Gamma^a{}_{bc}\)
+</span>
+</td>
+<td><span>
+  \(\bar\Gamma^\sigma_{\mu\nu}(3)\)
+</span>
+</td>
+<td><span>
+  \(\bar\Gamma&#39;^\sigma_{\mu\nu}(4)\)
+</span>
+</td>
+<td>是</td>
+</tr>
+<tr>
+<td>认为克氏符是张量可以作如下理解：在<strong>给定坐标系下</strong>的克氏符分别为(1)和(3)，它们在基变换下满足张量变换律<span>
+  \((1)\to(2),(4)\to(3)\)
+</span>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>认为不是张量的人做了如下理解：在每个坐标系导数算符诱导出的克氏符必须在<strong>该坐标系下表示</strong>（只强调<span>
+  \((1),(4)\)
+</span>
+），而<span>
+  \((1)\lrArr(4)\)
+</span>
+不满足张量变换律。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>克氏符是张量，但是<strong>依赖于坐标系</strong>的。与之类似地，<span>
+  \(\partial_a v^b\)
+</span>
+也是依赖于坐标系的张量：<span>
+  \(\partial_av^b\ne \partial_a&#39; v^b\)
+</span>
+
+定义<span>
+  \(v^\nu{}_{,\mu}\)
+</span>
+和<span>
+  \(v^\nu{}_{;\mu}\)
+</span>
+:
+<span>
+  \[\partial_av^b =(\mathrm{d} x^\mu)_a \left({\partial \over\partial x^\nu } \right)^b v^\nu{}_{,\mu} \\ 
+\partial_a&#39; v^b = (\mathrm{d} x&#39;^\mu )_a \left({\partial \over\partial x&#39;^\nu }\right)^b \partial&#39;_\mu v&#39;^\nu\]
+</span>
+
+用微分流形选定的<span>
+  \(\nabla_a\)
+</span>
+：
+<span>
+  \(\nabla_av^b =(\mathrm{d} x^\mu)_a\left({\partial \over\partial x^\nu } \right)^bv^\nu {}_{;\mu}\)
+</span>
+
+容易证明二者的关系为：</p>
+<div class="thm" name="3-1-7"  style="">
+<span>
+  \[v^\nu{}_{;\mu}=v^\nu{}_{,\mu}&#43;\Gamma^\nu{}_{\mu\sigma}v^\sigma\\ 
+\omega_{\nu;\mu} = \omega_{\nu,\mu} -\Gamma^\sigma{}_{\mu\nu}\omega_{\sigma}\]
+</span>
+
+</div>
+<p>对易子与导数算符：对易子的定义<span>
+  \([u,v]^a\)
+</span>
+不需要流形<span>
+  \(M\)
+</span>
+有附加结构，但它的定义不能脱离被作用对象：标量场<span>
+  \(f\)
+</span>
+。有了导数算符后就可以借助任意导数算符来写出它的显表达式：</p>
+<div class="thm" name="3-1-9"  style="">
+<span>
+  \[[u,v]^a=u^b\nabla_b v^a-v^b\nabla_b u^a\]
+</span>
+
+</div>
+<div class="pf" name="证明"  style="">
+<p><span>
+  \(\forall f\in \mathscr F\)
+</span>
+,借助<span>
+  \(v(f)=v^a\nabla_a f\)
+</span>
+，有：
+<span>
+  \[\begin{aligned}
+[u,v] (f) &amp;\equiv u(v(f))-v(u(f))\overset {(4)} = u^b\nabla_b (v^a\nabla_a f)-v^b\nabla_b (u^a\nabla_a f)\\ 
+&amp;\overset {(2),(3)}= u^b(\nabla_a v^a)\nabla_a f &#43; v^au^b\nabla_b\nabla_a f-v^b(\nabla_b u^a)f - u^av^b\nabla_b\nabla_a f\\ 
+&amp;\overset{(5)}=(u^b\nabla_b v^a-v^b\nabla_b u^a)\nabla_a f\\ 
+\end{aligned}\]
+</span>
+</p>
+<p>再由<span>
+  \([u,v](f)=[u,v]^a\nabla_a f\)
+</span>
+，即可得证</p>
+</div>
+<h2 id="32-矢量场沿曲线的导数和平移">
+  3.2 矢量场沿曲线的导数和平移
+  <a class="anchor" href="#32-%e7%9f%a2%e9%87%8f%e5%9c%ba%e6%b2%bf%e6%9b%b2%e7%ba%bf%e7%9a%84%e5%af%bc%e6%95%b0%e5%92%8c%e5%b9%b3%e7%a7%bb">#</a>
+</h2>
+<h3 id="321-矢量场沿曲线的平移">
+  3.2.1 矢量场沿曲线的平移
+  <a class="anchor" href="#321-%e7%9f%a2%e9%87%8f%e5%9c%ba%e6%b2%bf%e6%9b%b2%e7%ba%bf%e7%9a%84%e5%b9%b3%e7%a7%bb">#</a>
+</h3>
+<p>有了导数的微分流形中，我们可以讨论一个向量场是否是沿一条曲线平移的：</p>
+<div class="def" name="平移"  style="">
+<p>设<span>
+  \(v^a\)
+</span>
+是沿曲线<span>
+  \(C(t)\)
+</span>
+的矢量场，<span>
+  \(v^a\)
+</span>
+称为<strong>沿<span>
+  \(C(t)\)
+</span>
+的平移[parallelly transported along C(t)]</strong>，若<span>
+  \(T^b\nabla_b v^a = 0,\)
+</span>
+其中<span>
+  \(T^a\equiv(\partial/\partial t)^a\)
+</span>
+是曲线的切矢。</p>
+</div>
+<div class="thm" name="3-2-2"  style="">
+<p>给定线上一点<span>
+  \(C(t_0)\)
+</span>
+和这一点的<span>
+  \(v^a|_{C(t_0)}\)
+</span>
+，能找到唯一一个沿线平移的向量场<span>
+  \(v^a\)
+</span>
+</p>
+<div class="pf"  style="">
+<p><span>
+  \[\begin{aligned}
+T^b\nabla_b v^a &amp;= T^b(\partial_b v^a&#43;\Gamma^a{}_{bc}v^c)\\ 
+&amp;= T^b\left((\mathrm{d} x^\nu)_b \left({\partial \over\partial x^\mu } \right)^a \partial_\nu v^\mu &#43;\Gamma^a{}_{bc}v^c\right)\\
+&amp;= T^\nu \left({\partial \over\partial x^\mu } \right)^a {\partial v^\mu \over\partial x^\nu } &#43;\Gamma^a{}_{\nu\sigma}T^\nu v^\sigma(把重复抽象指标换成具体指标)\\ 
+&amp;= \left({\partial  \over\partial x^\mu } \right)^a ({\partial v^\mu \over\partial x^\nu } T^\nu &#43; \Gamma^\mu {}_{\nu\sigma}T^\nu v^\sigma)\\ 
+0&amp;=\frac{\mathrm{d} v^\mu (t)}{\mathrm{d} t}&#43;\Gamma^\mu{}_{\nu\sigma}T^\nu v^\sigma
+\end{aligned}\]
+</span>
+
+这是n个代求的一元函数<span>
+  \(v^\mu(t)\)
+</span>
+满足的微分方程，可以用来求解这个矢量场。因此线上一点可以确定唯一的平移vector field</p>
+</div>
+</div>
+<!-- 
+图文混排方式：
+<div class="column">    <div class="item">
+
+在一般流形中，我们不能谈及两个不同点的矢量<span>
+  \(v^a|_{p},u^a|_{q}\)
+</span>
+是否相等，因为它们存在于两个不同的切空间<span>
+  \(V_p,V_q\)
+</span>
+，如右图所示
+
+</div>    <div class="item">
+ 
+<img src="http://60.205.203.160:8000/home/ipad_2023-01-12_22-46-45.png"  style="">
+
+</div>    </div>
+-->
+<img src="http://60.205.203.160:8000/home/ipad_2023-01-12_22-46-45.png"  style="width:50%;float:right;">
+在一般流形中，我们不能谈及两个不同点的矢量<span>
+  \(v^a|_{p},u^a|_{q}\)
+</span>
+是否相等，因为它们存在于两个不同的切空间<span>
+  \(V_p,V_q\)
+</span>
+，如右图所示
+<p>但当我们确定了导数<span>
+  \(\nabla_a\)
+</span>
+后，我们可以从p到q画一条线<span>
+  \(C\)
+</span>
+，把<span>
+  \(v^a|_p\)
+</span>
+沿线平移到q点得到<span>
+  \(\tilde v^a|_q\)
+</span>
+，然后比较<span>
+  \(\tilde v^a|_q\)
+</span>
+是否等于<span>
+  \(u^a|_{q}\)
+</span>
+。
+但如果我们选一条不同的curve <span>
+  \(C&#39;\)
+</span>
+，得到的平移结果是否一样呢？并不总是如此。这叫做曲线相关的。一般只有欧氏、闵氏这样的简单空间中，平移才是曲线无关的。
+这时我们发现，<span>
+  \(\nabla_a\)
+</span>
+的存在为两个切空间建立了（<del>哪怕是曲线相关的</del>）<strong>联络(Connection)</strong></p>
+<h3 id="322-与度规相适配的导数算符">
+  3.2.2 与度规相适配的导数算符
+  <a class="anchor" href="#322-%e4%b8%8e%e5%ba%a6%e8%a7%84%e7%9b%b8%e9%80%82%e9%85%8d%e7%9a%84%e5%af%bc%e6%95%b0%e7%ae%97%e7%ac%a6">#</a>
+</h3>
+<p>如果我们再假设<span>
+  \(M\)
+</span>
+上还选定了度规<span>
+  \(g_{ab}\)
+</span>
+，矢量之间就可谈及内积。
+为使得平移概念与欧式空间中熟知的平移一致，需要补充要求：<span>
+  \(u^a,v^a\)
+</span>
+是<span>
+  \(C(t)\)
+</span>
+上矢量场，<span>
+  \(u^av_a\)
+</span>
+在<span>
+  \(C(t)\)
+</span>
+上是常数（即两矢量平移时内积不变）。设<span>
+  \(T^a\)
+</span>
+为<span>
+  \(C(t)\)
+</span>
+的切矢，这一要求等价于
+<span>
+  \[0=T^c\nabla_c(g_{ab}u^av^b)=g_{ab}u^aT^c\nabla_cv^b&#43;g_{ab}v^bT^c\nabla_c u^a&#43;u^av^bT^c\nabla_c g_{ab}=u^aT^bv^c \nabla_cg_{ab}\\\]
+</span>
+
+上式对任意的u和v成立，因此二者适配的充要条件为：</p>
+<div class="thm" name="度规与导数算符适配"  style="">
+<p>导数算符<span>
+  \(\nabla_c\)
+</span>
+与度规<span>
+  \(g_{ab}\)
+</span>
+<strong>适配</strong>，当且仅当<span>
+  \(\nabla_c g_{ab} = 0\)
+</span>
+</p>
+</div>
+<p>（注：由于平移性质<span>
+  \(T^b\nabla_b u^a=0,T^b\nabla_b v^a=0\)
+</span>
+）
+给定度规<span>
+  \(g_{ab}\)
+</span>
+，一定<strong>存在唯一</strong>的<span>
+  \(\nabla_c\)
+</span>
+，使得上式成立.</p>
+<div class="thm" name="3-2-3"  style="">
+<p>流形上选定度规场<span>
+  \(g_{ab}\)
+</span>
+后，存在唯一的<span>
+  \(\nabla_a\)
+</span>
+使得<span>
+  \(\nabla_a g_{bc}=0\)
+</span>
+</p>
+<div class="pf"  style="">
+<p><span>
+  \[\begin{aligned}
+0=\nabla_a g_{bc} &amp;= \tilde\nabla_a g_{bc} -C^d{}_{ab}g_{dc} - C^d{}_{ac}g_{bd}\\ 
+&amp;= \tilde \nabla_a g_{bc}-C_{cab}-C_{bac}
+\end{aligned}\]
+</span>
+
+轮换指标，得到：
+<span>
+  \[\begin{aligned}
+C_{cab}&#43;C_{bac}=\tilde\nabla_a g_{bc}\\ 
+C_{cba}&#43;C_{abc}=\tilde\nabla_b g_{ac}\\ 
+C_{bac}&#43;C_{acb} = \tilde\nabla_cg_{ab}\\ 
+\end{aligned}\]
+</span>
+
+用<span>
+  \((1)&#43;(2)-(3)\)
+</span>
+，就得到适配的导数算符相对于<span>
+  \(\tilde \nabla_a\)
+</span>
+的<span>
+  \(C^a{}_{bc}\)
+</span>
+的表达式：
+<span>
+  \[C_{cab}=\frac 1 2 (\tilde\nabla_a g_{bc} &#43;\tilde\nabla_b g_{ac} -\tilde\nabla_c g_{ab})\]
+</span>
+
+或：
+<span>
+  \[C^c{}_{ab} = \frac 1 2 g^{cd} (\tilde \nabla_a g_{bd}&#43;\tilde \nabla_bg_{ad}-\tilde \nabla_dg_{ab})\]
+</span>
+
+这便是从非适配的导数算符得到适配导数算符的<span>
+  \(C^c{}_{ab}\)
+</span>
+的方式，也是唯一解，因此只存在唯一与<span>
+  \(g_{bc}\)
+</span>
+适配的导数算符。</p>
+</div>
+<div class="pink" name="remark"  style="">
+<p>给定<span>
+  \(\nabla_a\)
+</span>
+,<strong>不存在</strong>唯一的度规<span>
+  \(g_{ab}\)
+</span>
+与之适配</p>
+</div>
+</div>
+<p>给定一组不适配的<span>
+  \(\tilde \nabla_a\)
+</span>
+和<span>
+  \(g_{bc}\)
+</span>
+，如何找到与度规适配的导数算符<span>
+  \(\nabla_a\)
+</span>
+?上面的证明已经给出了答案。</p>
+<p>继续证明的推导，用<span>
+  \(\partial_a\)
+</span>
+充当<span>
+  \(\tilde\nabla_a\)
+</span>
+，
+<span>
+  \[\Gamma^c{}_{ab} = g^{cd}\Gamma_{dab} = \frac{1}{2}g^{cd} (\partial_ag_{bd}&#43;\partial_bg_{ad}-\partial_dg_{ab})\]
+</span>
+
+用具体指标：
+<span>
+  \[\begin{aligned}
+\Gamma^\sigma{}_{\mu\nu} &amp;= \Gamma^c{}_{ab} (\mathrm{d} x^\sigma)_c (\partial/\partial x^\mu)^a (\partial/\partial x^\nu)^b\\ 
+&amp;=\frac 1 2 g^{\sigma \rho}(g_{\nu\rho,\mu}&#43;g_{\mu\rho,\nu}-g_{\mu\nu,\rho})\\ 
+&amp;=\frac 1 2 g^{\sigma\rho}(g_{\rho\mu,\nu}&#43;g_{\nu\rho,\mu}-g_{\mu\nu,\rho})(指标不断轮换，好记)
+\end{aligned}\]
+</span>
+</p>
+<div class="pink" name="remark"  style="">
+<p>上式推导中用到：</p>
+<ol>
+<li>重复抽象指标可直接化为具体指标：<span>
+  \(g^{cd} g_{bd}=g^{c\mu}g_{b\mu}\)
+</span>
+</li>
+<li>抽象指标的向实际指标的转换：<span>
+  \((\mathrm{d} x^\sigma)_c g^{cd}=(\mathrm{d} x^\sigma)_c (\partial/\partial x^\mu)^c g^{\mu d}=\delta^\sigma_\mu g^{\mu d}=g^{\sigma d}\)
+</span>
+</li>
+</ol>
+</div>
+<h3 id="323-矢量场沿曲线导数与沿曲线的平移之间的关系">
+  3.2.3 矢量场沿曲线导数与沿曲线的平移之间的关系
+  <a class="anchor" href="#323-%e7%9f%a2%e9%87%8f%e5%9c%ba%e6%b2%bf%e6%9b%b2%e7%ba%bf%e5%af%bc%e6%95%b0%e4%b8%8e%e6%b2%bf%e6%9b%b2%e7%ba%bf%e7%9a%84%e5%b9%b3%e7%a7%bb%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb">#</a>
+</h3>
+<p>考虑最简单的欧式空间。</p>
+<div class="def" name="定义2"  style="">
+<p><span>
+  \(p\)
+</span>
+点矢量<span>
+  \(\vec {\tilde v}\)
+</span>
+称为<span>
+  \(q\)
+</span>
+点的矢量<span>
+  \(\vec v\)
+</span>
+<strong>平移至<span>
+  \(p\)
+</span>
+点</strong>的结果，若二者在统一笛卡尔系的分量相等。</p>
+</div>
+<div class="def" name="定义3"  style="">
+<p>欧式空间中曲线<span>
+  \(C(t)\)
+</span>
+上矢量场<span>
+  \(\vec v\)
+</span>
+<strong>沿线导数</strong><span>
+  \(\mathrm{d} \vec v/\mathrm{d} t\)
+</span>
+定义为
+<span>
+  \[\left.\frac{\mathrm{d} \vec v}{\mathrm{d} t}\right|_p:=\lim_{\Delta t\to 0} \frac{1}{\Delta t}(\vec {\tilde v}_p-\vec v|_p )\]
+</span>
+
+其中<span>
+  \(\vec {\tilde v}|_p\)
+</span>
+是把<span>
+  \(\vec v|_q\)
+</span>
+从线上邻点q平移到点p的结果，<span>
+  \(\Delta t\equiv t(q)-t(p),\forall p\in C(t)\)
+</span>
+</p>
+</div>
+<p>可以证明，<span>
+  \(T^b\partial_bv^a\)
+</span>
+和<span>
+  \(\mathrm{d} \vec v/\mathrm{d} t\)
+</span>
+相等。我们只需证明第<span>
+  \(i\)
+</span>
+分量相等：
+<span>
+  \((\mathrm{d} x^i)_aT^b\partial_bv^a=T^b\partial_b(\mathrm{d} x^i)_a v^a=T^b\partial_b v^i=T(v^i)=\mathrm{d} v^i/\mathrm{d} t\)
+</span>
+
+将结论推广到任意<span>
+  \(\nabla_a\)
+</span>
+的流形M的任意曲线，便将<span>
+  \(T^b\nabla_b v^a\)
+</span>
+称为<span>
+  \(v^a\)
+</span>
+沿<span>
+  \(C(t)\)
+</span>
+的导数。有时也用<span>
+  \(Dv^a/\mathrm{d} t\)
+</span>
+标记这一导数，即<span>
+  \[D v^a/\mathrm{d} t \equiv T^b \nabla_b v^a\]
+</span>
+.
+这个定义没法推广到带有任意联络<span>
+  \(\nabla_a\)
+</span>
+的流形，因为平移在一般的空间是曲线以来的。我们用导数<span>
+  \(T^b\nabla_bv^a\)
+</span>
+定义了矢量<span>
+  \(v^a\)
+</span>
+沿曲线的平移，但这么定义比较抽象。我们可以借助平移的概念反过来定义导数，即：</p>
+<div class="thm" name="3.2.4"  style="">
+<p>设<span>
+  \(v^a\)
+</span>
+是沿<span>
+  \((M,\nabla_a)\)
+</span>
+的曲线<span>
+  \(C(t)\)
+</span>
+上的矢量场，<span>
+  \(T^b\)
+</span>
+是<span>
+  \(C(t)\)
+</span>
+的切矢，<span>
+  \(p,q\)
+</span>
+是<span>
+  \(C(t)\)
+</span>
+上邻点，则：
+<span>
+  \[T^b\nabla_b v^a|_p = \lim_{\Delta t\to 0}\frac 1 {\Delta t}(\tilde v^a|_p - v^a|_{p})\]
+</span>
+
+其中<span>
+  \(\Delta t\equiv t(q)-t(p)\)
+</span>
+,<span>
+  \(\tilde v^a|_p\)
+</span>
+是<span>
+  \(v^a|_q\)
+</span>
+沿<span>
+  \(C(t)\)
+</span>
+平移至<span>
+  \(p\)
+</span>
+点的结果。</p>
+</div>
+<!-- <embed src="file:///D:/PKU/notes/%E5%B9%BF%E7%9B%B8/chap2.html"/> -->
+<h2 id="33-测地线">
+  3.3 测地线
+  <a class="anchor" href="#33-%e6%b5%8b%e5%9c%b0%e7%ba%bf">#</a>
+</h2>
+<p>曲线<span>
+  \(C(t)\)
+</span>
+的切矢<span>
+  \(T^a\)
+</span>
+是<span>
+  \(C(t)\)
+</span>
+上的矢量场。如果它本身是沿<span>
+  \(C(t)\)
+</span>
+的平移，则这是一条测地线。</p>
+<div class="def" name="测地线"  style="">
+<p><span>
+  \((M,\nabla_a)\)
+</span>
+上的曲线<span>
+  \(\gamma(t)\)
+</span>
+称为<strong>测地线(geodesic)</strong>，若其切矢<span>
+  \(T^a\)
+</span>
+满足<span>
+  \(T^b\nabla_b T^a = 0\)
+</span>
+</p>
+<div class="pink" name="remark"  style="">
+<ol>
+<li>测地线的充要条件是其切矢沿线平移。</li>
+<li><span>
+  \(T^b\nabla_b T^a = 0\)
+</span>
+称为<strong>测地线方程</strong></li>
+<li>若<span>
+  \(M\)
+</span>
+上有度规场<span>
+  \(g_{ab}\)
+</span>
+,则<span>
+  \((M,g_{ab})\)
+</span>
+的测地线是指<span>
+  \((M,\nabla_a)\)
+</span>
+的测地线，其中<span>
+  \(\nabla_a\)
+</span>
+与<span>
+  \(g_{ab}\)
+</span>
+适配</li>
+</ol>
+</div>
+</div>
+<p><span>
+  \(T^b\nabla_b v^a = T^b(\partial_b v^a&#43;\Gamma^a{}_{bc}v^c)=0\)
+</span>
+，得到满足的微分方程：<span>
+  \(\mathrm{d} v^a/\mathrm{d} t&#43;\Gamma^a{}_{bc}T^bv^c=0\)
+</span>
+，代入<span>
+  \(v^a=T^a\)
+</span>
+:
+<span>
+  \[\frac{\mathrm{d} T^\mu }{\mathrm{d} t}&#43;\Gamma^\mu{}_{\nu\sigma} T^{\nu}T^{\sigma}=0\]
+</span>
+
+设测地线<span>
+  \(\gamma(t)\)
+</span>
+的表达式为<span>
+  \(x^\nu=x^\nu(t)\)
+</span>
+，则<span>
+  \(T^\mu = \mathrm{d} x^\mu/\mathrm{d} t\)
+</span>
+,上式写为：
+<span>
+  \[\frac{\mathrm{d}^2 x^\mu }{\mathrm{d} t^2}&#43;\Gamma^\mu {}_{\nu\sigma}\frac{\mathrm{d} x^\nu}{\mathrm{d} t}\frac{\mathrm{d} x^\sigma }{\mathrm{d} t}=0\]
+</span>
+
+下面举几个常用的例子：</p>
+<ol>
+<li>欧式度规在笛卡尔系的克氏符为0，测地线方程通解为:<span>
+  \(x^\mu(t)=a^\mu t&#43;b^\mu\)
+</span>
+.因此测地线可以视作欧式空间中直线向广义黎曼空间的推广，在闵氏空间也有类似的结论。</li>
+<li><span>
+  \(S^2\)
+</span>
+是三维欧式空间的二维球面，以球心为原点建系，三维欧式线元为<span>
+  \(\mathrm{d} s^2=\mathrm{d} r^2&#43;r^2(\mathrm{d} \theta^2&#43;\sin^2\theta \mathrm{d} \phi^2)\)
+</span>
+，若线元在<span>
+  \(S^2\)
+</span>
+上，则<span>
+  \(r=R,\mathrm{d} r=0\)
+</span>
+，因此得到诱导线元<span>
+  \(\mathrm{d} \hat s^2 = R^2(\mathrm{d} \theta^2&#43;\sin^2\theta \mathrm{d} \phi^2)\)
+</span>
+，在坐标分量的度规<span>
+  \(g_{\theta\theta}=R^2,g_{\phi\phi}=R^2\sin^2\theta,g_{\theta\phi}=g_{\phi\theta}=0\)
+</span>
+,测地线为大圆弧</li>
+</ol>
+<div class="thm" name="3-3-1"  style="">
+<p>设<span>
+  \(\gamma(t)\)
+</span>
+为测地线，则其重参数化<span>
+  \(\gamma&#39;(t&#39;)=\gamma(t)\)
+</span>
+的切矢<span>
+  \(T&#39;^a\)
+</span>
+满足
+<span>
+  \[T&#39;^b\nabla_b T&#39;^a = \alpha T&#39;^a\]
+</span>
+</p>
+<div class="pf"  style="">
+<p><span>
+  \[T^a = \left({\partial \over\partial t} \right)^a = \frac{\mathrm{d} t&#39;}{\mathrm{d} t}\left({\partial \over\partial t&#39;} \right)^a\]
+</span>
+
+代入即得证</p>
+</div>
+</div>
+<div class="thm" name="3-3-2"  style="">
+<p>若曲线切矢<span>
+  \(T^a\)
+</span>
+满足<span>
+  \(T^b\nabla_b T^a = \alpha(t) T^a\)
+</span>
+，则存在<span>
+  \(t&#39;=t&#39;(t)\)
+</span>
+使得<span>
+  \(\gamma&#39;(t&#39;)\)
+</span>
+为测地线。能将曲线变为测地线的参数叫该曲线的<strong>仿射参数(affine parameter)</strong></p>
+</div>
+<div class="thm" name="3-3-3"  style="">
+<p><span>
+  \(t\)
+</span>
+为某测地线仿射参数，则该线任意参数<span>
+  \(t&#39;\)
+</span>
+是仿射参数的充要条件为<span>
+  \(t&#39;=at&#43;b\)
+</span>
+</p>
+</div>
+<div class="thm" name="3-3-4"  style="">
+<p>给定流形上一点<span>
+  \(p\)
+</span>
+，和这一点的一个切矢<span>
+  \(v^a\)
+</span>
+,则存在唯一的测地线过该点且切矢等于<span>
+  \(v^a\)
+</span>
+，简称“一点一矢定一测”</p>
+<div class="pf"  style="">
+<p>之前已经给出测地线满足的常微分方程组
+<span>
+  \[\frac{\mathrm{d} ^2x^\mu }{\mathrm{d} t^2}&#43;\Gamma^\mu{}_{\nu\sigma} \frac{\mathrm{d} x^\nu}{\mathrm{d} t}\frac{\mathrm{d} x^\sigma }{\mathrm{d} t}=0\]
+</span>
+
+给出的点p和切矢，可以看成给出了二阶常微分方程的一点值和一阶导数（即初始条件），根据常微分方程理论，我们可以确定唯一一个解。</p>
+</div>
+</div>
+<p>因为切矢<span>
+  \(T^a\)
+</span>
+沿测地线平移,故内积<span>
+  \(g_{ab}T^aT^b\)
+</span>
+为常数。证明可考虑<span>
+  \(T^c\nabla_c(g_{ab}T^aT^b)\)
+</span>
+是否为零：
+<span>
+  \[\begin{aligned}
+&amp;T^c\nabla_c(g_{ab}T^aT^b)\\
+=&amp;\nabla_c(g_{ab})T^cT^aT^b&#43;T^ag_{ab}T^c\nabla_cT^b&#43;T^bg_{ab}T^c\nabla_cT^a \\ 
+=&amp;0
+\end{aligned}\]
+</span>
+
+(5)中第一项导数算符与度规适配，因此为<span>
+  \(0\)
+</span>
+;后两项为测地线切矢沿自身平移的性质
+因此,<span>
+  \(g_{ab}T^aT^b\)
+</span>
+只会恒正、恒负或恒为0，不存在分段类时/类空的测地线</p>
+<p>在欧式空间中，两点之间线段最短；但在黎曼空间中，是否有类似的结论？</p>
+<div class="thm" name="3-3-6"  style="">
+<p>设<span>
+  \(g_{ab}\)
+</span>
+是流形M上的洛伦兹度规场，<span>
+  \(p,q\in M\)
+</span>
+，则<span>
+  \(p,q\)
+</span>
+之间的光滑类空（类时）曲线为测地线当且仅当其线长取极值。</p>
+</div>
+<p>一元函数取极值可以是极小值<span>
+  \(f&#39;&#39;(x)&gt;0\)
+</span>
+，极大值<span>
+  \(f&#39;&#39;(x)&lt;0\)
+</span>
+，或既非极小值又非极大值<span>
+  \(f&#39;&#39;(x)=0\)
+</span>
+，线长也有三种可能：
+对<span>
+  \(g_{ab}\)
+</span>
+正定的情况，<span>
+  \(p,q\)
+</span>
+之间曲线长度一定不会是极大值，取了最小值的一定是测地线，但测地线不一定是取最小值的曲线。</p>
+<p>对洛伦兹度规的情况，考虑二维闵氏空间<span>
+  \((\mathbb{R}^2,\eta_{ab})\)
+</span>
+，<span>
+  \(\eta_{ab} = \eta_{\mu\nu}(\mathrm{d} x^\mu)_a(\mathrm{d} x^\nu)_b\)
+</span>
+，线元为<span>
+  \(\mathrm{d} s^2 = \eta_{\mu\nu}\mathrm{d} x^\mu\mathrm{d} x^\nu=-(\mathrm{d} x^0)^2&#43;(\mathrm{d} x^1)^2\)
+</span>
+,对于类时联系的两点，有线长<span>
+  \(l=\int_p^q \sqrt{-\mathrm{d} s^2}\)
+</span>
+ 。我们总可以把两点通过洛伦兹变换将其均落在时间轴上。
+<img src="http://60.205.203.160:8000/home/ipad_2023-01-04_12-15-10.png"  style="">
+如上图所示，粉色的测地线<span>
+  \(C_1\)
+</span>
+与近邻的橙色曲线<span>
+  \(C_2\)
+</span>
+比较，有：
+<span>
+  \[\int_{C_2}\sqrt{-\mathrm{d} s^2}=\int_{C_2}\sqrt{-(-\mathrm{d} t^2&#43;\mathrm{d} x^2)}&lt;\int_{C_1}\sqrt{\mathrm{d} t^2}=t_q-t_p\]
+</span>
+
+即，此时测地线取极大值</p>
+<h2 id="34-黎曼曲率张量">
+  3.4 黎曼曲率张量
+  <a class="anchor" href="#34-%e9%bb%8e%e6%9b%bc%e6%9b%b2%e7%8e%87%e5%bc%a0%e9%87%8f">#</a>
+</h2>
+<p>导数算符无挠性保证<span>
+  \([\nabla_a,\nabla_b]f=0\)
+</span>
+，但对矢量场和更高阶的张量场未必为0.黎曼曲率张量是用来衡量这种非对易性的量。</p>
+<div class="thm" name="3-4-1"  style="">
+<p>容易证明，
+<span>
+  \[[\nabla_a,\nabla_b](f\omega_c)=f[\nabla_a,\nabla_b]\omega_c\]
+</span>
+</p>
+</div>
+<p>下面的定理说明，导数算符的对易子作用于矢量场上，值只与矢量场的这一点有关，因此可以像克氏符一样做线性展开：</p>
+<div class="thm" name="3-4-2"  style="">
+<p>设<span>
+  \(\omega_c,\omega_c&#39;\in\mathscr F(0,1)\)
+</span>
+，且<span>
+  \(\omega&#39;_c|_p=\omega_c|_p\)
+</span>
+,则
+<span>
+  \[[[\nabla_a,\nabla_b]\omega_c&#39;]|_{p} = [[\nabla_a,\nabla_b]\omega_c]|_p\]
+</span>
+</p>
+</div>
+<div class="def" name="黎曼曲率张量场"  style="">
+<p>定义黎曼曲率<span>
+  \(R_{abc}{}^d\)
+</span>
+为
+<span>
+  \[(\nabla_a\nabla_b-\nabla_b\nabla_a)\omega_c = R_{abc}{}^d\omega_d, \quad \forall\omega_c\in\mathscr F(0,1)\]
+</span>
+</p>
+</div>
+<div class="thm" name="3-4-3"  style="">
+<p>欧式空间和闵氏空间的黎曼曲率张量场为0.</p>
+<div class="pf"  style="">
+<p>欧/闵式空间任意笛卡尔/洛伦兹系的普通导数算符<span>
+  \(\partial_a\)
+</span>
+是与<span>
+  \(\delta_{bc}\)
+</span>
+适配的导数算符，而
+<span>
+  \[(\partial_a\partial_b-\partial_b\partial_a)\omega_c = (\mathrm{d} x^\mu)_a(\mathrm{d} x^\nu)_b(\mathrm{d} x^\sigma)_c (\partial_\mu\partial_\mu\omega_\sigma-\partial_\nu\partial_\mu\omega_\sigma)=0\]
+</span>
+</p>
+</div>
+</div>
+<p>因此称欧式空间和闵氏空间都是平直空间。闵氏空间类似于欧式空间，因此称为<strong>伪欧空间</strong>。</p>
+<div class="thm" name="3.4.4"  style="">
+<span>
+  \[[\nabla_a,\nabla_b]v^c = -R_{abd}{}^cv^d\]
+</span>
+
+<div class="pf"  style="">
+<p>随意取<span>
+  \(\omega_c\in\mathscr F(0,1)\)
+</span>
+与<span>
+  \(v^c\)
+</span>
+缩并形成标量，作用导数对易子应为0：
+<span>
+  \[\begin{aligned}
+0&amp;=(\nabla_a\nabla_b-\nabla_b\nabla_a)(v^c\omega_c) \\&amp;= v^c[\nabla_a,\nabla_b]\omega_c&#43;\omega_c[\nabla_a,\nabla_b]v^c\\
+\omega_c[\nabla_a,\nabla_b]v^c &amp;= -v^cR_{abc}{}^d\omega_d\\ 
+[\nabla_a,\nabla_b]v^c &amp;= -R_{abd}{}^cv^d\\ 
+\end{aligned}\]
+</span>
+</p>
+</div>
+</div>
+<p>黎曼曲率的性质</p>
+<ol>
+<li><span>
+  \(R_{abc}{}^d = -R_{bac}{}^d\)
+</span>
+</li>
+</ol>
+<p>易证。</p>
+<ol start="2">
+<li>循环恒等式：<span>
+  \(R_{[abc]}{}^d=0\)
+</span>
+</li>
+</ol>
+<div class="pf"  style="">
+<p>对任意<span>
+  \(\omega_d\)
+</span>
+,有：
+<span>
+  \[R_{[abc]}{}^d\omega_d = \nabla_{[a}\nabla_b\omega_{c]}-\nabla_{[b}\nabla_a\omega_{c]} = 2\nabla_{[a}\nabla_b\omega_{c]}\]
+</span>
+即证
+<span>
+  \[\nabla_{[a}\nabla_b\omega_{c]}=0\]
+</span>
+
+令<span>
+  \(\tilde \nabla_a = \partial_a\)
+</span>
+，得到：
+<span>
+  \[\begin{aligned}
+\nabla_a(\nabla_b\omega_c)&amp;=\partial_a(\nabla_b\omega_c)-\Gamma^d{}_{ab}\nabla_d\omega_c-\Gamma^d{}_{ac}\nabla_b\omega_d \\ 
+&amp;= \partial_a(\partial_b-\Gamma^e{}_{bc}\omega_e)-\Gamma^d{}_{ab}\nabla_d\omega_c-\Gamma^d{}_{ac}\nabla_b\omega_d \\ 
+\nabla_{[a}\nabla_b\omega_{c]} &amp;= \partial_{[a}\partial_b\omega_{c]}-\partial_{[a}\omega_{|e|}\Gamma^e{}_{bc]}-\omega_e\partial_{[a}\Gamma^{e}{}_{bc]}-\Gamma^d{}_{[ab}\nabla_{|d|}\omega_{c]}-\Gamma^{d}{}_{[ac}\nabla_{b]}\omega_d\\ 
+&amp;=0
+\end{aligned}\]
+</span>
+
+最后一步用到<span>
+  \(\Gamma^e_{bc}=\Gamma^e{}_{cb},\partial_a\partial_b=\partial_b\partial_a\)
+</span>
+</p>
+</div>
+<ol start="3">
+<li>Bianchi恒等式：<span>
+  \(\nabla_{[a}R_{bc]d}{}^e=0\)
+</span>
+</li>
+</ol>
+<p>若存在度规场<span>
+  \(g_{ab}\)
+</span>
+，且与导数适配：<span>
+  \(\nabla_ag_{bc}=0\)
+</span>
+,定义<span>
+  \(R_{abcd}\equiv g_{de}R_{abc}{}^e\)
+</span>
+则曲率张量还有性质：</p>
+<ol start="4">
+<li>
+<span>
+  \(R_{abcd}=-R_{abdc}\)
+</span>
+
+</li>
+<li>
+<span>
+  \(R_{abcd} = R_{cdab}\)
+</span>
+
+</li>
+</ol>
+<p>定义<span>
+  \((0,2)\)
+</span>
+型张量的trace为经过度规升降后的(1,1)型张量的trace:
+<span>
+  \[T_{ab}\to T^a{}_b = g^{ac}T_{cb}\\ 
+T^a{}_a = g^{ac}T_{ca}\]
+</span>
+
+对于四阶曲率张量，可以定义<span>
+  \(C^2_4=6\)
+</span>
+种trace：<span>
+  \[g^{ab}R_{abcd},\\ g^{ac}R_{abcd},\\ g^{ad}R_{abcd},\\ g^{bc}R_{abcd},\\ g^{bd}R_{abcd},\\ g^{cd}R_{abcd}\]
+</span>
+
+但由于前两指标和后两指标分别反对称，第一个和第六个一定=0；同时有第2个=第5个，第3个=第4个。同时第3、4个+第2、5个=0，因此曲率张量只有一种独立的缩并。记
+<span>
+  \[g^{ac}R_{abcd}\equiv R_{bd}\\ 
+g^{bd}R_{abcd}\equiv R_{ac}\]
+</span>
+
+<span>
+  \(R_{ac}\)
+</span>
+称为<strong>里奇（Ricci）张量</strong>。如果在流形上没有定义度规<span>
+  \(g_{ab}\)
+</span>
+，我们能否定义里奇张量？答案是肯定的。因为曲率张量<span>
+  \(R_{abc}{}^d\)
+</span>
+天生为(1,3)型张量，可以直接定义缩并<span>
+  \(R_{ac}\equiv R_{abc}{}^b\)
+</span>
+
+记<span>
+  \(R \equiv g^{ac}R_{ac}\)
+</span>
+为<strong>标量曲率(Scalar Curvature)</strong>，它的定义依赖于度规。
+此外，还应掌握<span>
+  \(R_{abc}{}^d\)
+</span>
+的无迹部分，叫做<strong>Weyl张量</strong>:
+<span>
+  \[C_{abcd} \equiv R_{abcd}-\frac{2}{n-2}(g_{a[c}R_{d]b}-g_{b[c}R_{d]a}) &#43; \frac{2}{(n-1)(n-2)}Rg_{a[c}g_{d]b}\]
+</span>
+</p>
+<div class="def" name="爱因斯坦张量"  style="">
+<p>广义黎曼空间的<strong>爱因斯坦张量</strong><span>
+  \(G_{ab}\)
+</span>
+定义为：
+<span>
+  \[G_{ab}\equiv R_{ab} -\frac 1 2 Rg_{ab}\]
+</span>
+</p>
+</div>
+<div class="thm" name="3-4-8"  style="">
+<span>
+  \[\nabla^a G_{ab}\equiv g^{ac}\nabla_c G_{ab} = 0\]
+</span>
+
+</div>
+<h3 id="342-由度规计算黎曼曲率">
+  3.4.2 由度规计算黎曼曲率
+  <a class="anchor" href="#342-%e7%94%b1%e5%ba%a6%e8%a7%84%e8%ae%a1%e7%ae%97%e9%bb%8e%e6%9b%bc%e6%9b%b2%e7%8e%87">#</a>
+</h3>
+<p>在<span>
+  \((M,g_{ab})\)
+</span>
+上选定一个基底场，由度规可以决定唯一的联络<span>
+  \(\nabla_a\)
+</span>
+，因而有确定的黎曼张量<span>
+  \(R_{abc}{}^d\)
+</span>
+.下面计算它的分量。</p>
+<div class="pink" name="概念辨析"  style="">
+<p>坐标:<span>
+  \(\{x^\mu\}\)
+</span>
+
+坐标基底场：<span>
+  \(\{({\partial \over\partial x^\mu } )^a\}\)
+</span>
+,坐标基底场之间的分量一定对易。
+对偶坐标基底场：<span>
+  \(\{(\mathrm{d} x^\mu)_a\}\)
+</span>
+
+某个非坐标基底场：<span>
+  \(\{(e_\mu)^a\},\{(e^\mu)_a\}\)
+</span>
+</p>
+<p>对于平面极坐标系，坐标<span>
+  \(r,\theta\)
+</span>
+,基底场<span>
+  \({\partial \over\partial r} ,{\partial \over\partial \theta}\)
+</span>
+，这时它不是正交归一的(<span>
+  \(\frac{1}{r}{\partial \over\partial \theta }\)
+</span>
+是归一矢)，但归一化后的矢量不是对易的。</p>
+</div>
+<p><span>
+  \[\begin{aligned}
+\nabla_a\nabla_b\omega_c &amp;= \partial_a\nabla_b\omega_c-\Gamma^d{}_{ab}\nabla_d\omega_c-\Gamma^d{}_{ac}\nabla_b\omega_d\\ 
+&amp;=(\partial_a(\partial_b\omega_c-\Gamma^e{}_{bc}\omega_e))-\cdots\\ 
+&amp;=\partial_a\partial_b\omega_c-\Gamma^e{}_{bc}\partial_a\omega_e-\omega_e\partial_a\Gamma^e{}_{bc}-\Gamma^d{}_{ab}\nabla_d\omega_c-\Gamma^d{}_{ac}(\partial_b\omega_d-\Gamma^e{}_{bd}\omega_e)
+\end{aligned}\]
+</span>
+
+对a,b做反对称:
+<span>
+  \[\begin{aligned}
+\nabla_{[a}\nabla_{b]}\omega_c &amp;=\partial_{[a}\partial_{b]}\omega_c-\Gamma^e{}_{c[b}\partial_{a]}\omega_e-\omega_e\partial_{[a}\Gamma^e{}_{b]c}-\Gamma^d{}_{[ab]}\nabla_d\omega_c-\Gamma^d{}_{c[a}(\partial_{b]}\omega_d-\Gamma^e{}_{b]d}\omega_e)\\ 
+&amp;= -\partial_{[a}\Gamma^e{}_{b]c}\omega_e&#43;\Gamma^d{}_{c[a}\Gamma^e{}_{b]d}\omega_e\\ 
+&amp;= -\partial_{[a}\Gamma^d{}_{b]c}\omega_d&#43;\Gamma^e{}_{c[a}\Gamma^d{}_{b]e}\omega_d
+\end{aligned}\]
+</span>
+
+第1、4项为0，第二项和第五项相消，原式为：
+<span>
+  \[\begin{aligned}
+R_{abc}{}^d\omega_d&amp;=2\nabla_{[a}\nabla_{b]}\omega_c\\ 
+&amp;=-2(\partial_{[a}\Gamma^d{}_{b]c}\omega_d-\Gamma^e{}_{c[a}\Gamma^d{}_{b]e}\omega_d),\forall \omega_d\\ 
+R_{abc}{}^d&amp;=-(\partial_a\Gamma^d{}_{bc}-\partial_b\Gamma^d{}_{ac})&#43;\Gamma^e{}_{ca}\Gamma^d{}_{be}-\Gamma^e{}_{cb}\Gamma^d{}_{ae}\\ 
+R_{\mu\nu\sigma}{}^\rho &amp;= \partial_{\nu}\Gamma^\rho{}_{\mu\sigma}-\partial_\mu\Gamma^\rho{}_{\nu\sigma}&#43;\Gamma^{\lambda}{}_{\sigma\mu}\Gamma^\rho{}_{\nu\lambda}-\Gamma^\lambda{}_{\sigma\nu}\Gamma^{\rho}{}_{\mu\lambda}
+\end{aligned}\]
+</span>
+
+由<span>
+  \(g_{\mu\nu}\)
+</span>
+计算<span>
+  \(\Gamma^\rho{}_{\mu\sigma}=\frac 1 2 g^{\rho\nu}(g_{\nu\mu,\sigma}&#43;g_{\sigma\nu,\mu}-g_{\mu\sigma,\nu})\)
+</span>
+,然后就能得到<span>
+  \(R_{\mu\nu\sigma}{}^\rho\)
+</span>
+的值</p>
+<div class="blue" name="选读3.4"  style="">
+<ol>
+<li>若度规<span>
+  \(g_{ab}\)
+</span>
+在某坐标系分量全为常数，则其克氏符全为0:<span>
+  \(\Gamma^\sigma{}_{\mu\nu} = 0\)
+</span>
+，从而黎曼张量<span>
+  \(R_{abc}{}^d=0\)
+</span>
+，因而在坐标域内是平直度规。反之，若已知<span>
+  \(R_{abc}{}^d=0\)
+</span>
+，也一定存在坐标系使<span>
+  \(g_{ab}\)
+</span>
+坐标分量为常数，证明略。</li>
+<li>可以由克氏符的缩并<span>
+  \(\Gamma^\mu{}_{\mu\sigma}\)
+</span>
+计算任意坐标系下的散度公式<span>
+  \(\vec \nabla \cdot \vec v=\nabla_av^a\)
+</span>
+。</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/lifeisphy/notes/edit/main/exampleSite/content/docs/GR/%e7%ac%ac%e4%b8%89%e7%ab%a0%20%e9%bb%8e%e6%9b%bc%e6%9b%b2%e7%8e%87%e5%bc%a0%e9%87%8f.md" target="_blank" rel="noopener">
+      <img src="/notes/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#黎曼内禀曲率张量">黎曼（内禀）曲率张量</a>
+      <ul>
+        <li><a href="#32-矢量场沿曲线的导数和平移">3.2 矢量场沿曲线的导数和平移</a>
+          <ul>
+            <li><a href="#321-矢量场沿曲线的平移">3.2.1 矢量场沿曲线的平移</a></li>
+            <li><a href="#322-与度规相适配的导数算符">3.2.2 与度规相适配的导数算符</a></li>
+            <li><a href="#323-矢量场沿曲线导数与沿曲线的平移之间的关系">3.2.3 矢量场沿曲线导数与沿曲线的平移之间的关系</a></li>
+          </ul>
+        </li>
+        <li><a href="#33-测地线">3.3 测地线</a></li>
+        <li><a href="#34-黎曼曲率张量">3.4 黎曼曲率张量</a>
+          <ul>
+            <li><a href="#342-由度规计算黎曼曲率">3.4.2 由度规计算黎曼曲率</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

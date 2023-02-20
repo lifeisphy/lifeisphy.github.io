@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="6.1 四维表述基础#这里所讲的狭义相对论（SR）与普物中的很相似，许多概念在此只作提及，重点看广义相对论（GR）中存在不同的地方。
+一些物理名词与数学名词的对应：
+Phys Math innertial coordinates Lorenzian coordinates interval Minkowski line element background spacetime 4-dim Minkowski space observer(point mass) timelike curve inertial observer timelike geodesics 所谓事件，就是时间一瞬和空间一点的结合。我们可以将炸弹爆炸、两车相撞等都抽象为事件。
+粒子是对空间中有质量的点的抽象。与粒子物理学中的质子、中子等有联系，但也不尽相同。我们把粒子分为有静质量和无静质量两类，后者也称为光子。
+世界线的表示称为时空图。在时空图上，我们能表示不同世界线的演化过程。
+观者（Observer）是进行物理观测的人，一般也抽象为质点。为了观测，观测者手中应有一个走时准确的钟，称为标准钟，该钟的读数称为固有时。观者也有自己的运动轨迹，形成一条世界线。
+观者中有一类特殊的观者，称为惯性观者。惯性观者相对于所在的惯性坐标系是静止的。惯性观者形成的世界线\(C(t)\)是类时测地线： \[\begin{aligned}\partial_{b}(\partial /\partial t)^a &amp;= 0 \\\left( \frac{\partial}{\partial t}\right)^b\partial_{b}\left( \frac{\partial}{\partial t} \right)^a &amp;= 0&amp; \end{aligned}\]其中第一式是由于一个系的普通导数算符作用到坐标基矢上必然为0.
+参考系的定义与狭义相对论不同。参考系\(\mathscr{R}\)是无数多观者的集合，这些观者应满足条件：对时空中任意一点，有且仅有一个观者的世界线经过这点。该定义是对狭义相对论中参考系定义的推广：在狭义相对论中，对于一个惯性参考系，该系的所有观者均相对静止，形成的世界线均平行于\(t\)轴。
+所有惯性观者构成的参考系称为惯性参考系
+牛顿力学、狭义相对论以及广义相对论的时空及其附加结构： \[\begin{aligned}\text{Newton:}&amp;(\mathbb{R}^4,?)\\\text{SR:}&amp;(\mathbb{R}^4,\eta_{ab})\\\text{GR:}&amp;(M,g_{ab})\end{aligned}\]狭义相对论是发生在四维闵可夫斯基空间中的物理学。 狭义相对论中，一个质点的速率定义为： \[u:=\frac{\sqrt{ \mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2 }}{\mathrm{d}t}\]\[\begin{aligned}\mathrm{d}s^2 &amp; = -\mathrm{d}t^2&#43;\mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2 = \\&amp;=-\mathrm{d}t^2(1-\frac{\mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2}{dt^2}) \\&amp;=-\mathrm{d}t^2(1-u^2)\end{aligned}\]于是我们有 \[\begin{aligned}\text{null}\leftrightarrow&amp; \mathrm{d}s^2=0\leftrightarrow u=1\\\text{time like}\leftrightarrow&amp; \mathrm{d}s^2&lt;0\leftrightarrow u&lt;1 \\\text{space like}\leftrightarrow&amp; \mathrm{d}s^2&gt;0\end{aligned}\]设\(\{x^\mu\}\)是洛伦兹坐标系，我们通过微分同胚\(\phi\)将其变换为坐标系\(\{x&#39;^\mu\}\)。当变换满足什么条件时，新的参考系是洛伦兹坐标系？ 在第四章我们曾讲过，微分同胚映射\(\phi\)是等度规映射即可满足条件。Killing矢量场产生的单参微分同胚群即为单参等度规群。对于闵氏空间，有10个独立的Killing矢量场，分别为4个时空平移，3个空间转动和3个boost。">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="第六章 狭义相对论" />
+<meta property="og:description" content="6.1 四维表述基础#这里所讲的狭义相对论（SR）与普物中的很相似，许多概念在此只作提及，重点看广义相对论（GR）中存在不同的地方。
+一些物理名词与数学名词的对应：
+Phys Math innertial coordinates Lorenzian coordinates interval Minkowski line element background spacetime 4-dim Minkowski space observer(point mass) timelike curve inertial observer timelike geodesics 所谓事件，就是时间一瞬和空间一点的结合。我们可以将炸弹爆炸、两车相撞等都抽象为事件。
+粒子是对空间中有质量的点的抽象。与粒子物理学中的质子、中子等有联系，但也不尽相同。我们把粒子分为有静质量和无静质量两类，后者也称为光子。
+世界线的表示称为时空图。在时空图上，我们能表示不同世界线的演化过程。
+观者（Observer）是进行物理观测的人，一般也抽象为质点。为了观测，观测者手中应有一个走时准确的钟，称为标准钟，该钟的读数称为固有时。观者也有自己的运动轨迹，形成一条世界线。
+观者中有一类特殊的观者，称为惯性观者。惯性观者相对于所在的惯性坐标系是静止的。惯性观者形成的世界线\(C(t)\)是类时测地线： \[\begin{aligned}\partial_{b}(\partial /\partial t)^a &amp;= 0 \\\left( \frac{\partial}{\partial t}\right)^b\partial_{b}\left( \frac{\partial}{\partial t} \right)^a &amp;= 0&amp; \end{aligned}\]其中第一式是由于一个系的普通导数算符作用到坐标基矢上必然为0.
+参考系的定义与狭义相对论不同。参考系\(\mathscr{R}\)是无数多观者的集合，这些观者应满足条件：对时空中任意一点，有且仅有一个观者的世界线经过这点。该定义是对狭义相对论中参考系定义的推广：在狭义相对论中，对于一个惯性参考系，该系的所有观者均相对静止，形成的世界线均平行于\(t\)轴。
+所有惯性观者构成的参考系称为惯性参考系
+牛顿力学、狭义相对论以及广义相对论的时空及其附加结构： \[\begin{aligned}\text{Newton:}&amp;(\mathbb{R}^4,?)\\\text{SR:}&amp;(\mathbb{R}^4,\eta_{ab})\\\text{GR:}&amp;(M,g_{ab})\end{aligned}\]狭义相对论是发生在四维闵可夫斯基空间中的物理学。 狭义相对论中，一个质点的速率定义为： \[u:=\frac{\sqrt{ \mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2 }}{\mathrm{d}t}\]\[\begin{aligned}\mathrm{d}s^2 &amp; = -\mathrm{d}t^2&#43;\mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2 = \\&amp;=-\mathrm{d}t^2(1-\frac{\mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2}{dt^2}) \\&amp;=-\mathrm{d}t^2(1-u^2)\end{aligned}\]于是我们有 \[\begin{aligned}\text{null}\leftrightarrow&amp; \mathrm{d}s^2=0\leftrightarrow u=1\\\text{time like}\leftrightarrow&amp; \mathrm{d}s^2&lt;0\leftrightarrow u&lt;1 \\\text{space like}\leftrightarrow&amp; \mathrm{d}s^2&gt;0\end{aligned}\]设\(\{x^\mu\}\)是洛伦兹坐标系，我们通过微分同胚\(\phi\)将其变换为坐标系\(\{x&#39;^\mu\}\)。当变换满足什么条件时，新的参考系是洛伦兹坐标系？ 在第四章我们曾讲过，微分同胚映射\(\phi\)是等度规映射即可满足条件。Killing矢量场产生的单参微分同胚群即为单参等度规群。对于闵氏空间，有10个独立的Killing矢量场，分别为4个时空平移，3个空间转动和3个boost。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-02-09T22:03:25+00:00" />
+<meta property="article:modified_time" content="2023-02-09T22:03:25+00:00" />
+<title>第六章 狭义相对论 | Hugo Book</title>
+<link rel="manifest" href="/notes/manifest.json">
+<link rel="icon" href="/notes/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/notes/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
+  <script defer src="/notes/flexsearch.min.js"></script>
+  <script defer src="/notes/en.search.min.b1e2619f3a3f7b5d16866c68c5ab69d292d27f6db9161841a025b999621af378.js" integrity="sha256-seJhnzo/e10Whmxoxatp0pLSf225FhhBoCW5mWIa83g=" crossorigin="anonymous"></script>
+
+  <script defer src="/notes/sw.min.f02d8041fe15fd4a1d7a0fe50c02c2f57a3ec87d69231797beeed7968a47d96e.js" integrity="sha256-8C2AQf4V/Uodeg/lDALC9Xo&#43;yH1pIxeXvu7XlopH2W4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/notes/"><img src="/notes/favicon.jpg" alt="Logo" /><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/" class="">实变函数与泛函分析</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" class="">2-1 Lebesgue外测度，可测集</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" class="">1-集合的势与无穷</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/" class="">Lebesgue可测函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/sigma/" class="">sigma</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/" class="">CS106L笔记</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/4/" class="">4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/3/" class="">3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/" class="">广义相对论</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" class="">第一章 拓扑空间简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/" class="">第二章 流形和张量场</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" class="">第三章 黎曼曲率张量</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" class="">第四章 李导数、Killing场和超曲面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="">第五章 微分形式及其积分</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="active">第六章 狭义相对论</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" class="">群论拓扑</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/lifeisphy"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/notes/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>第六章 狭义相对论</strong>
+
+  <label for="toc-control">
+    
+    <img src="/notes/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+
+<link rel="stylesheet" href= "/notes/katex/katex.min.css" >
+<script defer src= "/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/katex-macros.js"></script>
+<link rel="stylesheet" href="/notes/css/1.css"></style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError :false,
+                macros
+            });
+        });
+</script>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#61-四维表述基础">6.1 四维表述基础</a></li>
+        <li><a href="#62-典型效应分析">6.2 典型效应分析</a></li>
+        <li><a href="#63-质点运动学与动力学">6.3 质点运动学与动力学</a></li>
+        <li><a href="#64-连续介质的能动张量">6.4 连续介质的能动张量</a></li>
+        <li><a href="#65-理想流体动力学">6.5 理想流体动力学</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="61-四维表述基础">
+  6.1 四维表述基础
+  <a class="anchor" href="#61-%e5%9b%9b%e7%bb%b4%e8%a1%a8%e8%bf%b0%e5%9f%ba%e7%a1%80">#</a>
+</h2>
+<p>这里所讲的狭义相对论（SR）与普物中的很相似，许多概念在此只作提及，重点看广义相对论（GR）中存在不同的地方。</p>
+<p>一些物理名词与数学名词的对应：</p>
+<table>
+<thead>
+<tr>
+<th>Phys</th>
+<th>Math</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>innertial coordinates</td>
+<td>Lorenzian coordinates</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>Minkowski line element</td>
+</tr>
+<tr>
+<td>background spacetime</td>
+<td>4-dim Minkowski space</td>
+</tr>
+<tr>
+<td>observer(point mass)</td>
+<td>timelike curve</td>
+</tr>
+<tr>
+<td>inertial observer</td>
+<td>timelike geodesics</td>
+</tr>
+</tbody>
+</table>
+<p>所谓<strong>事件</strong>，就是时间一瞬和空间一点的结合。我们可以将炸弹爆炸、两车相撞等都抽象为事件。</p>
+<p>粒子是对空间中有质量的点的抽象。与粒子物理学中的质子、中子等有联系，但也不尽相同。我们把粒子分为有静质量和无静质量两类，后者也称为光子。</p>
+<p>世界线的表示称为时空图。在时空图上，我们能表示不同世界线的演化过程。</p>
+<p>观者（Observer）是进行物理观测的人，一般也抽象为质点。为了观测，观测者手中应有一个走时准确的钟，称为标准钟，该钟的读数称为固有时。观者也有自己的运动轨迹，形成一条世界线。</p>
+<p>观者中有一类特殊的观者，称为惯性观者。惯性观者相对于所在的惯性坐标系是静止的。惯性观者形成的世界线
+<link rel="stylesheet" href="/notes/katex/katex.min.css" />
+<script defer src="/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/auto-render.min.js" onload="renderMathInElement(document.body,{'macros':macros});"></script><span>
+  \(C(t)\)
+</span>
+是类时测地线：
+<span>
+  \[\begin{aligned}
+\partial_{b}(\partial /\partial t)^a &amp;= 0  \\
+\left( \frac{\partial}{\partial t}\right)^b\partial_{b}\left( \frac{\partial}{\partial t} \right)^a &amp;= 0&amp; 
+\end{aligned}\]
+</span>
+
+其中第一式是由于一个系的普通导数算符作用到坐标基矢上必然为0.</p>
+<p>参考系的定义与狭义相对论不同。参考系<span>
+  \(\mathscr{R}\)
+</span>
+是无数多观者的集合，这些观者应满足条件：对时空中任意一点，有且仅有一个观者的世界线经过这点。该定义是对狭义相对论中参考系定义的推广：在狭义相对论中，对于一个惯性参考系，该系的所有观者均相对静止，形成的世界线均平行于<span>
+  \(t\)
+</span>
+轴。</p>
+<p>所有惯性观者构成的参考系称为惯性参考系</p>
+<p>牛顿力学、狭义相对论以及广义相对论的时空及其附加结构：
+<span>
+  \[\begin{aligned}
+\text{Newton:}&amp;(\mathbb{R}^4,?)\\
+\text{SR:}&amp;(\mathbb{R}^4,\eta_{ab})\\
+\text{GR:}&amp;(M,g_{ab})
+\end{aligned}\]
+</span>
+</p>
+<p>狭义相对论是发生在四维闵可夫斯基空间中的物理学。
+狭义相对论中，一个质点的速率定义为：
+<span>
+  \[u:=\frac{\sqrt{ \mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2 }}{\mathrm{d}t}\]
+</span>
+
+<span>
+  \[\begin{aligned}
+\mathrm{d}s^2  &amp; = -\mathrm{d}t^2&#43;\mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2 = \\
+&amp;=-\mathrm{d}t^2(1-\frac{\mathrm{d}x^2&#43;\mathrm{d}y^2&#43;\mathrm{d}z^2}{dt^2}) \\
+&amp;=-\mathrm{d}t^2(1-u^2)
+\end{aligned}\]
+</span>
+
+于是我们有
+<span>
+  \[\begin{aligned}
+\text{null}\leftrightarrow&amp; \mathrm{d}s^2=0\leftrightarrow u=1\\
+\text{time like}\leftrightarrow&amp; \mathrm{d}s^2&lt;0\leftrightarrow u&lt;1 \\
+\text{space like}\leftrightarrow&amp; \mathrm{d}s^2&gt;0
+\end{aligned}\]
+</span>
+</p>
+<p>设<span>
+  \(\{x^\mu\}\)
+</span>
+是洛伦兹坐标系，我们通过微分同胚<span>
+  \(\phi\)
+</span>
+将其变换为坐标系<span>
+  \(\{x&#39;^\mu\}\)
+</span>
+。当变换满足什么条件时，新的参考系是洛伦兹坐标系？
+在第四章我们曾讲过，微分同胚映射<span>
+  \(\phi\)
+</span>
+是等度规映射即可满足条件。Killing矢量场产生的单参微分同胚群即为单参等度规群。对于闵氏空间，有10个独立的Killing矢量场，分别为4个时空平移，3个空间转动和3个boost。</p>
+<p>固有时和标准时</p>
+<div class="def" name="标准钟"  style="">
+<p>一个钟称为标准钟/理想钟，若它在自身世界线上任两点读数<span>
+  \(\tau_{1},\tau_{2}\)
+</span>
+差为线长：
+<span>
+  \[\tau_{2}-\tau_{1}=\int _{p_{1}}^{p_{2}} \, \sqrt{ -\mathrm{d}s^{2}  }dx\]
+</span>
+</p>
+</div>
+<div class="pink" name="remark"  style="">
+<p>应注意<strong>走时率</strong>和<strong>初始设定</strong>的区别。标准钟只要求走时率，而参考系内钟的同步只涉及初始设定。</p>
+</div>
+<p>狭义相对论中的对钟方式：设有两个观者<span>
+  \(G,G&#39;\)
+</span>
+,<span>
+  \(G\)
+</span>
+在<span>
+  \(\tau_{1}\)
+</span>
+时间发出光信号，<span>
+  \(G&#39;\)
+</span>
+在<span>
+  \(\tau_{2}\)
+</span>
+时收到后立刻反射回<span>
+  \(G\)
+</span>
+，<span>
+  \(G\)
+</span>
+在<span>
+  \(\tau_{3}\)
+</span>
+时收到该信号。则可以约定<span>
+  \(G\)
+</span>
+系以<span>
+  \(\frac{\tau_{1}&#43;\tau_{3}}{2}\)
+</span>
+作为零点，<span>
+  \(G&#39;\)
+</span>
+系以<span>
+  \(\tau_{2}\)
+</span>
+作为零点。</p>
+<div class="def" name="坐标时"  style="">
+<p>坐标域中任一点p的<span>
+  \(x^0\)
+</span>
+值称为事件<span>
+  \(p\)
+</span>
+在该系的<strong>坐标时</strong>。惯性坐标系的坐标时为惯性坐标时。</p>
+</div>
+<p>坐标时与固有时不同，它可以脱离世界线进行定义。
+固有时和惯性坐标时之间的联系：<span>
+  \(\frac{\mathrm{d}t}{\mathrm{d}\tau}=\gamma_{u}\)
+</span>
+，其中<span>
+  \(\gamma_{u}\equiv (1-u^2)^{-\frac{1}{2}}\)
+</span>
+，<span>
+  \(u\)
+</span>
+是质点相对于<span>
+  \(\mathscr{R}\)
+</span>
+的速率。</p>
+<p>非相对论中，空间的引力场由引力势<span>
+  \(\phi\)
+</span>
+描述，它同质量密度<span>
+  \(\mu\)
+</span>
+之间满足泊松方程：
+<span>
+  \[\nabla^2\phi = 4\pi \mu\]
+</span>
+
+除引力外不受力的质点称为<strong>自由质点</strong>，单位质量自由质点的运动满足方程：
+<span>
+  \[\frac{\mathrm{d}^2x^i}{\mathrm{d}t^2} = -\frac{\partial \phi}{\partial x^i},\qquad i=1,2,3\]
+</span>
+
+其中<span>
+  \(t\)
+</span>
+是牛顿绝对时间，<span>
+  \(x^i\)
+</span>
+是空间笛卡尔坐标。
+牛顿引力论的背景时空为牛顿时空，由流形<span>
+  \(\mathbb{R}^4\)
+</span>
+及其上的如下内禀结构组成：</p>
+<ol>
+<li>存在绝对时间<span>
+  \(t:\mathbb{R}^4\to R\)
+</span>
+</li>
+<li>存在导数算符<span>
+  \(\nabla_{a}\)
+</span>
+，在特定坐标系<span>
+  \(\{x^\mu\}\)
+</span>
+上的克氏符满足：
+<span>
+  \[\Gamma^i{}_{00}=\partial f/\partial x^i,\qquad i=1,2,3,其他\Gamma^\mu{}_{\nu\sigma}=0\]
+</span>
+
+设<span>
+  \(\gamma(\lambda)\)
+</span>
+是牛顿时空的测地线，则其坐标满足方程组：
+<span>
+  \[\frac{d^2x^\mu}{d\lambda^2}&#43;\Gamma^\mu{}_{\nu\lambda} \frac{dx^\nu}{d\lambda}\frac{dx^\sigma}{d\lambda}=0\qquad \mu=0,1,2,3\]
+</span>
+
+可解出<span>
+  \(t=\alpha\lambda&#43;\beta\)
+</span>
+，因此当<span>
+  \(\alpha \ne 0\)
+</span>
+，<span>
+  \(t\)
+</span>
+是测地线的仿射参数。对于其他坐标<span>
+  \(x^i\)
+</span>
+，有
+<span>
+  \[\frac{\mathrm{d}^2x^i}{\mathrm{d}t^2}&#43;\frac{ \partial f }{ \partial x ^i}=0,\qquad i=1,2,3\]
+</span>
+
+只要把<span>
+  \(f\)
+</span>
+解释为引力势<span>
+  \(\phi\)
+</span>
+,把<span>
+  \(x^i\)
+</span>
+解释为伽利略坐标，则牛顿时空中以绝对时间<span>
+  \(t\)
+</span>
+为仿射参数的测地线对应于自由质点的世界线。
+把克里斯托弗张量代入，可以求出黎曼张量和里奇张量：
+<span>
+  \[R_{0i0}{}^j = \frac{\partial^2\phi}{\partial x^i\partial x^j},\qquad其他=0\]
+</span>
+
+<span>
+  \[R_{00}=4\pi\mu,\qquad 其他R_{\mu\nu}=0\]
+</span>
+
+因此牛顿时空不平之。但<span>
+  \(\nabla_{a}\)
+</span>
+在每个绝对同时面上的诱导算符是平直的（<span>
+  \(\Gamma^i{}_{jk}=0,i,j,k=1,2,3\)
+</span>
+）一个笛卡尔系的普通导数算符正是<span>
+  \(\nabla_{a}\)
+</span>
+诱导出的导数算符。</li>
+</ol>
+<h2 id="62-典型效应分析">
+  6.2 典型效应分析
+  <a class="anchor" href="#62-%e5%85%b8%e5%9e%8b%e6%95%88%e5%ba%94%e5%88%86%e6%9e%90">#</a>
+</h2>
+<p>本章列出的典型效应包括：尺缩效应、钟慢效应、孪生子效应（佯谬）以及车库佯谬。内容请见原书。</p>
+<h2 id="63-质点运动学与动力学">
+  6.3 质点运动学与动力学
+  <a class="anchor" href="#63-%e8%b4%a8%e7%82%b9%e8%bf%90%e5%8a%a8%e5%ad%a6%e4%b8%8e%e5%8a%a8%e5%8a%9b%e5%ad%a6">#</a>
+</h2>
+<p>守恒量：在物理过程中保持常值（不随时间而变）的量，强调物理过程
+不变量：不随参考系、坐标系和观者等人为因素而变化的量，强调坐标系的变换</p>
+<div class="def" name="四维速度"  style="">
+<p>质点的<strong>四位速度</strong>被定义为质点世界线（以固有时<span>
+  \(\tau\)
+</span>
+为参数）的切矢：<span>
+  \(U^a:= \left( \frac{ \partial  }{ \partial \tau } \right)^a\)
+</span>
+</p>
+</div>
+<div class="thm" name="6-3-1"  style="">
+<p>令<span>
+  \(U_{a} = \eta_{ab}U^b\)
+</span>
+，则<span>
+  \(U^aU_{a}= -1\)
+</span>
+</p>
+<div class="pf"  style="">
+<p>固有时是类时曲线的线长参数，而以线长为参数的切矢有单位长度。</p>
+</div>
+</div>
+<p>为观测质点运动，可选择一个参考系。作为一个观者<span>
+  \(G\)
+</span>
+,为观测与自己有一定距离的事件，必然要通过一定的信号传递，而信号传递就要花一定时间。理论上最明确的是在事件发生处零距离地p直接观测，称为<strong>当时当地观测</strong>。此时只需要给出观者所在世界线在该点的切矢<span>
+  \(Z^a\)
+</span>
+，于是可以提炼出<strong>瞬时观者</strong>的概念。瞬时观者有两个要素：点p，以及p点一个指向未来的类时单位矢量<span>
+  \(Z^a\)
+</span>
+,记作<span>
+  \((p,Z^a)\)
+</span>
+。
+作为观者，除了可以通过固有时确定观念外，还可以确定空间方向。该点p处的所有空间矢量集合<span>
+  \(W_{p}\)
+</span>
+是三维的。而<span>
+  \(p\)
+</span>
+作为<span>
+  \(\mathbb{R}^4\)
+</span>
+一点，切空间<span>
+  \(V_{p}\)
+</span>
+是四位的。二者关系为：p点全部空间矢量均与p点的四速度<span>
+  \(Z^a\)
+</span>
+正交：
+<span>
+  \[W_{p} = \{w^a\in V_{p}\mid \eta_{ab}w^aZ^b=0\}\]
+</span>
+
+设<span>
+  \(w^a\in V_{p}\)
+</span>
+,当<span>
+  \(w^a\in W_{p}\)
+</span>
+时，就称<span>
+  \(w^a\)
+</span>
+对观者G而言是<strong>空间矢量</strong>。在这个子空间上，<span>
+  \(\eta_{ab}\)
+</span>
+的诱导度规为：<span>
+  \(h_{ab}=\eta_{ab}&#43;Z_{a}Z_{b}\)
+</span>
+，<span>
+  \(h^a{}_{b}=\delta^a{}_{b}&#43;Z^aZ_{b}\)
+</span>
+是从<span>
+  \(V_{p}\to W_{p}\)
+</span>
+的投影映射，即<span>
+  \(h^a{}_{b}v^b\in W_{p}\)
+</span>
+是<span>
+  \(v^a\in V_{p}\)
+</span>
+在<span>
+  \(W_{p}\)
+</span>
+上投影</p>
+<p>设<span>
+  \(L(\tau)\)
+</span>
+与某观测者<span>
+  \(G\)
+</span>
+交于点<span>
+  \(p\)
+</span>
+，讨论<span>
+  \(L\)
+</span>
+在<span>
+  \(p\)
+</span>
+点的相对3速度。首先，对L的四速度在参考系下分解：
+<span>
+  \[U^a = \left( \frac{ \partial  }{ \partial \tau }  \right)^a=\left( \frac{ \partial  }{ \partial t }  \right)^a\frac{ \mathrm d t }{ \mathrm d \tau } &#43;\left( \frac{ \partial  }{ \partial x^i }  \right)^a\frac{ \mathrm d x^i }{ \mathrm d \tau } =Z^a\frac{ \mathrm d t }{ \mathrm d \tau } &#43;\left( \frac{ \partial  }{ \partial x^i }  \right)^a\frac{ \mathrm d x^i }{ \mathrm d \tau }\]
+</span>
+
+质点<span>
+  \(L\)
+</span>
+相对<span>
+  \(G\)
+</span>
+<strong>三速度</strong>定义为：
+<span>
+  \[u^a:=\left( \frac{ \partial  }{ \partial x^i }  \right)^a\frac{ \mathrm d x^i }{ \mathrm d t }\]
+</span>
+
+这是<span>
+  \(U^a\)
+</span>
+的空间投影，即<span>
+  \(h^a{}_{b}U^b\)
+</span>
+.引入<span>
+  \(\gamma=\frac{\mathrm{d}t}{\mathrm{d\tau}}\)
+</span>
+，<span>
+  \(u^a=\frac{h^a{}_{b}U^b}{\gamma}\)
+</span>
+。
+定义三速率为其长度：<span>
+  \(u=\sqrt{ u^au_{a} }\)
+</span>
+.
+如果瞬时观者<span>
+  \(p,Z^a\)
+</span>
+恰好与被观测例子世界线<span>
+  \(L\)
+</span>
+相切，则<span>
+  \((p,Z^a)\)
+</span>
+称为该粒子的瞬时静止观者，这时由<span>
+  \(p,Z^a\)
+</span>
+决定的测地线称为粒子<span>
+  \(L\)
+</span>
+在<span>
+  \(p\)
+</span>
+时刻的瞬时静止惯性观者</p>
+<div class="def" name="4-动量"  style="">
+<p>4-动量<span>
+  \(P^a\)
+</span>
+定义为：<span>
+  \(P^a=mU^a\)
+</span>
+</p>
+</div>
+<div class="thm" name="6-3-3"  style="">
+<p>质点的4-动量可借助瞬时观者<span>
+  \(p,Z^a\)
+</span>
+做3+1分解：
+<span>
+  \[P^a =mU^a =m(\gamma Z^a&#43;\gamma u^a)= EZ^a &#43; p^a\]
+</span>
+
+其中<span>
+  \(E=-P^aZ_{a}\)
+</span>
+</p>
+</div>
+<p>由上式可推出质量、能量和3动量的关系：
+<span>
+  \[P^aP_{a} = (EZ^a &#43; p^a)(EZ_{a}&#43;p_{a}) = -E^2 &#43; p^2\]
+</span>
+
+又<span>
+  \(P^aP_{a}=mU^amU_{a}=-m^2\)
+</span>
+，于是<span>
+  \(E^2=m^2&#43;p^2\)
+</span>
+</p>
+<div class="def" name="4-加速度"  style="">
+<p>质点的4-加速(4-acceleration)定义为：
+<span>
+  \[A^a:= U^b\partial_{b} U^a\]
+</span>
+
+其中<span>
+  \(U^a\)
+</span>
+是质点的4速度，<span>
+  \(\partial_{b}\)
+</span>
+是与<span>
+  \(\eta_{ab}\)
+</span>
+适配的导数算符(<span>
+  \(\partial_{a}\eta_{bc}=0\)
+</span>
+)</p>
+</div>
+<div class="thm" name="6-3-4"  style="">
+<p>质点世界线上各点的4加速<span>
+  \(A^a\)
+</span>
+与4速<span>
+  \(U^a\)
+</span>
+正交，即<span>
+  \(A^aU_{a}=\eta_{ab}U^bA^a=0\)
+</span>
+</p>
+<div class="pf"  style="">
+<p>利用<span>
+  \(U^b\partial_{b}(U^aU_{a})=2U_{a}U^b\partial_{b}U^a\)
+</span>
+，以及普通导数算符与度规适配证明。</p>
+</div>
+</div>
+<div class="def" name="3-加速度"  style="">
+<p>设质点世界线<span>
+  \(L(\tau)\)
+</span>
+在惯性系<span>
+  \(\{t,x^i\}\)
+</span>
+的参数表达式为<span>
+  \(t=t(\tau),x^i=x^i(\tau)\)
+</span>
+，则它相对该系的3-加速度定义为
+<span>
+  \[a^a = \frac{ d^{2}x^i }{ dt^{2} }\left( \frac{ \partial  }{ \partial x^i }  \right)^a\]
+</span>
+
+其中<span>
+  \(x^i(t)\)
+</span>
+是<span>
+  \(x^i(\tau)\)
+</span>
+和<span>
+  \(t(\tau)\)
+</span>
+结合得到的函数。</p>
+</div>
+<div class="thm" name="6-3-5"  style="">
+<p>质点的4加速<span>
+  \(A^a\)
+</span>
+在惯性系<span>
+  \(\mathscr{R}\)
+</span>
+的分量为
+<span>
+  \[A^0 = \gamma^4 \vec{u}\cdot \vec{a} , A^i = \gamma^2 a^i &#43;\gamma^4 (\vec{u}\cdot \vec{a})u^i\]
+</span>
+</p>
+</div>
+<div class="thm" name="6-3-6"  style="">
+<p>质点的4-加速等于它相对于瞬时静止惯性系的3加速</p>
+</div>
+<div class="def" name="4力"  style="">
+<p>4力的定义为：<span>
+  \(F^a = U^b\partial_{b}P^a\)
+</span>
+，<span>
+  \(U^a,P^a\)
+</span>
+分别为质点的4速度与4动量；若质点的静质量在运动中是个常数，则<span>
+  \(F^a = mU^b\partial_{b}U^a = mA^a\)
+</span>
+</p>
+</div>
+<div class="thm" name="6-3-7"  style="">
+<p>质点所受4-力在惯性坐标系<span>
+  \(\{x^\mu\}\)
+</span>
+的空间分量<span>
+  \(F^i\)
+</span>
+等于它所受3力对应分量<span>
+  \(f^i\)
+</span>
+的<span>
+  \(\gamma\)
+</span>
+倍，4力的时间分量<span>
+  \(F^0\)
+</span>
+等于3力的功率<span>
+  \(\vec{f}\cdot \vec{u}\)
+</span>
+的<span>
+  \(\gamma\)
+</span>
+倍：
+<span>
+  \[F^i=\gamma f^i, F^0 = \gamma \vec{f}\cdot \vec{u}\]
+</span>
+
+其中<span>
+  \(\gamma\equiv (1-u^2)^{-\frac{1}{2}}\)
+</span>
+</p>
+</div>
+<p>为了观测，每个观者除了需要标准钟外还需要一个三维标架。3标架即为3根单位长的且两两正交的架子。由他们可抽象处观者世界线上的三个正交归一空间矢量场<span>
+  \(\{(e_{i})^a,i=1,2,3\}\)
+</span>
+。连同<span>
+  \((e_{0})^a=Z^a\)
+</span>
+在内，构成了四维标架场。今后谈及观者的4标架场无声明时都指右手标架场。
+对于惯性观者，要求其是做惯性运动的无自转观者。做惯性运动等价于观者世界线为测地线；而无自转则是对线上的4-标架场上的要求。关于“转与不转”的定义，对于惯性观者，要求空间部分的坐标架矢量是沿世界线平移的；对于非惯性观者，请见第七章。</p>
+<h2 id="64-连续介质的能动张量">
+  6.4 连续介质的能动张量
+  <a class="anchor" href="#64-%e8%bf%9e%e7%bb%ad%e4%bb%8b%e8%b4%a8%e7%9a%84%e8%83%bd%e5%8a%a8%e5%bc%a0%e9%87%8f">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>En</th>
+<th>Ch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flow</td>
+<td>流</td>
+</tr>
+<tr>
+<td>flux</td>
+<td>流密度</td>
+</tr>
+<tr>
+<td>tetrad</td>
+<td>4标架</td>
+</tr>
+<tr>
+<td>triad</td>
+<td>3标架</td>
+</tr>
+</tbody>
+</table>
+<p>对于连续介质，我们关注的不是个别粒子，而是空间每点的能量密度、动量密度、能流密度、动量流密度等，可见连续介质在很多方面类似电磁场，可与之统称为物质场。设小体积<span>
+  \(V\)
+</span>
+内静质量<span>
+  \(m\)
+</span>
+,相对某惯性系3速度为<span>
+  \(\vec{u}\)
+</span>
+，则3动量<span>
+  \(\vec{p}=\gamma m \vec{u}=\frac{E}{c^2}\vec{u}\)
+</span>
+。于是同除V，得到：
+<span>
+  \[\text{3动量密度}=\frac{1}{c^2}\text{能量密度}\times \vec{u}=\frac{1}{c^2}\text{能流密度}\]
+</span>
+
+正如质点的能量和3动量同一组成4动量矢量<span>
+  \(P^a\)
+</span>
+一样，电磁场这些分量组成<span>
+  \((0,2)\)
+</span>
+型张量<span>
+  \(T_{ab}\)
+</span>
+，称为能动张量，是4维闵氏时空的张量场，各种3维密度是其不同分量。事实上，任何物质场都有能动张量<span>
+  \(T_{ab}\)
+</span>
+，具有性质：</p>
+<ol>
+<li><span>
+  \(T_{ab}=T_{ba}\)
+</span>
+</li>
+<li>任何封闭物质场有：<span>
+  \(\partial^aT_{ab}=0\)
+</span>
+，对应了能量、动量和角动量守恒。</li>
+<li>对任意瞬时观者<span>
+  \((p,(e_{\mu})^a),(e_{0})^a=Z^a\)
+</span>
+有：
+<ol>
+<li><span>
+  \(\mu\equiv T_{ab}Z^aZ^b=T_{00}\)
+</span>
+是该观者测得的能量密度</li>
+<li><span>
+  \(w_{i}\equiv -T_{ab}Z^a(e_{i})^b=-T_{0i}\)
+</span>
+是观测者测得的3动量密度的<span>
+  \(i\)
+</span>
+分量，同时也是<span>
+  \(\frac{\text{Energy Flux}}{c^2}\)
+</span>
+的<span>
+  \(i\)
+</span>
+分量</li>
+<li><span>
+  \(T_{ab}(e_{i})^a(e_{j})^b=T_{ij}\)
+</span>
+是该观测者测得的3应力张量的ij分量。即：取小面元和其法向量<span>
+  \(n_{b}\)
+</span>
+，则法向量所指一侧的物质受另一侧物质作用力为：<span>
+  \(F^a=\sum_{b=1}^3 T^{ab}n_{b},\qquad a=1,2,3\)
+</span>
+。或者如下解释<span>
+  \(\hat{T}^{ab}=T^{ij}(e_{i})^a(e_{j})^b\)
+</span>
+的物理意义：<span>
+  \(T^{ij}=T_{ij}=\Delta S\text{一侧物质对它侧物质的力的j分量}\)
+</span>
+。同时，由于力是动量的变化率，这意味着三维空间下的<span>
+  \(\hat{T}_{ab}\)
+</span>
+也是<strong>3动量流密度张量</strong>:
+<span>
+  \[\hat{T}^{ab}(e^i)_{b} = \text{单位时间内沿}(e_{i})^a方向穿过它的与(e_{i})^a垂直的单位面积3动量\]
+</span>
+</li>
+</ol>
+</li>
+</ol>
+<p><span>
+  \(\vec{p}=\gamma m \vec{u}=\frac{1}{c^2}E\vec{u}\)
+</span>
+，对等式同乘<span>
+  \(\frac{1}{V}\)
+</span>
+
+<span>
+  \(\implies \text{momentum density}=\frac{1}{c^2}\times \text{energy density}\times \vec{u}\)
+</span>
+
+上式类比<span>
+  \(\vec{j}=\rho \vec{u}\)
+</span>
+，其中<span>
+  \(\vec{j}\)
+</span>
+是<span>
+  \(\rho\)
+</span>
+对应的物理量的“密度”。因此就得到，<span>
+  \(\text{momentum density} = \frac{1}{c^2}\times \text{energy flux}\)
+</span>
+</p>
+<div class="def" name="4动量密度"  style="">
+<p><span>
+  \(W^a := -T^a{}_{b}Z^b\)
+</span>
+叫瞬时观者<span>
+  \((p,Z^a)\)
+</span>
+测得的4动量密度。</p>
+</div>
+<div class="thm" name="6-4-1"  style="">
+<p>瞬时观者<span>
+  \((p,(e_{\mu})^a)\)
+</span>
+,<span>
+  \((e_{0})^a=Z^a\)
+</span>
+测得的4动量密度可做如下分解：</p>
+<div class="pf"  style="">
+<p>其中分量分别为：
+<span>
+  \(W^0 = W^a(e^0)_{a}=-T^a{}_{b}Z^b(-Z_{a})=T_{ab}Z^bZ^a\)
+</span>
+是测得的能量密度(<span>
+  \(Z^a=(e_{0})^a,Z_{a}=-(e^0)_{a}\)
+</span>
+)
+<span>
+  \(W^i=W^a(e^i)_{a}=-T^a{}_{b}Z^b(e^i)_{a}=-T_{ab}Z^b(e^{i})^a\)
+</span>
+,<span>
+  \(w^i=W_{i}=-T_{ab}Z^b(e_{i})^a\)
+</span>
+
+于是<span>
+  \(W^a=W^0Z^a&#43;W^i(e_{i})^a = \mu Z^a &#43;w^i(e_{i})^a=\mu Z^a&#43;w^a\)
+</span>
+</p>
+</div>
+</div>
+<p>注：上式与<span>
+  \(P^a=EZ^a&#43;p^a\)
+</span>
+很像，两者都是把4-矢量做3+1分解；但要注意，本章中被分解的4动量密度<span>
+  \(W^a\)
+</span>
+从定义开始就是<strong>依赖观者</strong>的；而<span>
+  \(P^a\)
+</span>
+是绝对的、不依赖观者的。</p>
+<div class="thm" name="6-4-2"  style="">
+<span>
+  \(\partial^aT_{ab}=0\implies能量守恒\)
+</span>
+
+<div class="pf"  style="">
+<p>设<span>
+  \(t,x,y,z\)
+</span>
+为惯性系<span>
+  \(\mathscr{R}\)
+</span>
+的坐标，令<span>
+  \(Z^a\equiv \left( \frac{ \partial  }{ \partial t } \right)^a\)
+</span>
+，则对<span>
+  \(W^a\equiv -T^a{}_{b}Z^b\)
+</span>
+求导得：
+<span>
+  \[\partial_{a}W^a =\partial_{a}(-T^a{}_{b}Z^b)=-Z^b\partial^aT_{ab}-T^a{}_{b}\partial_{a}Z^b\]
+</span>
+
+上式第一项为0，第二项也为0<span>
+  \(\partial_{a}Z^b = \partial_{a}\left( \frac{ \partial  }{ \partial t } \right)^b=0\)
+</span>
+，因而
+<span>
+  \[\partial_{a}W^a = 0\]
+</span>
+
+从而根据
+<span>
+  \[0=\partial_{\mu}W^\mu=\frac{ \partial \mu }{ \partial t } &#43;\vec{\nabla}\cdot \vec{w}\]
+</span>
+
+得出能量守恒。</p>
+</div>
+</div>
+<h2 id="65-理想流体动力学">
+  6.5 理想流体动力学
+  <a class="anchor" href="#65-%e7%90%86%e6%83%b3%e6%b5%81%e4%bd%93%e5%8a%a8%e5%8a%9b%e5%ad%a6">#</a>
+</h2>
+<div class="def" name="理想流体"  style="">
+<p><strong>理想流体</strong>是这样一种物质场，其能动张量为：
+<span>
+  \[T_{ab}=\mu U_{a}U_{b}&#43; p(\eta_{ab}&#43;U_{a}U_{b})=(\mu&#43;p)U_{a}U_{b}&#43;p\eta_{ab}\]
+</span>
+
+其中<span>
+  \(\mu,p\)
+</span>
+是函数(标量场)，<span>
+  \(U^a\)
+</span>
+是矢量场，满足<span>
+  \(U^aU_{a}=-1\)
+</span>
+，叫理想流体的4-速度场。
+流体本身可以看成一个参考系。在流形上某一点<span>
+  \(p\)
+</span>
+的<strong>瞬时静止观者(rest observer)</strong>（也称<strong>瞬时随动观者或共动观者(comoving observer)</strong>）满足<span>
+  \((p,(e_{\mu})^a)\)
+</span>
+的4-速度<span>
+  \((e_{0})^a\)
+</span>
+满足<span>
+  \((e_{0})^a=U^a|_{p}\)
+</span>
+</p>
+</div>
+<p>对共动观者，
+<span>
+  \[T_{ab}(e_{0})^a(e_{0})^b = T_{ab}U^aU^b=(\mu&#43;p)U_{a}U_{b}U^aU^b&#43;p\eta_{ab}U^aU^b=\mu&#43;p-p=\mu\]
+</span>
+
+可见<span>
+  \(\mu\)
+</span>
+是共动观者测得的能量密度，也叫固有能量密度。设<span>
+  \(\{(e_{i})^a\}\)
+</span>
+代表共动观者的3-标架，则
+<span>
+  \[T_{ab}(e_{i})^a(e_{j})^b = p\eta_{ab}(e_{i})^a(e_{j})^b = p\delta_{ij}\]
+</span>
+
+即共动观者测得的3维应力张量的矩阵是对角矩阵，只有压强而无切向应力。而且由<span>
+  \(T_{11}=T_{22}=T_{33}=p\)
+</span>
+知道这个压强是各向同性的。<span>
+  \(T_{ab}(e_{0})^a(e_{i})^b = 0\)
+</span>
+表明共动观者测得能流密度为0，因而没有热传导。
+理想气体压强<span>
+  \(p\)
+</span>
+与质量密度<span>
+  \(\mu\)
+</span>
+有如下熟知关系：
+<span>
+  \[p=\frac{\mu \bar{u^2}}{3}\]
+</span>
+
+因此对于非相对论流体，<span>
+  \(p\ll \mu\)
+</span>
+(取<span>
+  \(c=1\)
+</span>
+)。而相对论流体不同。恒温箱内达到热平衡的电磁辐射可以看成极端相对论流体，称为黑体辐射，也可叫做光子气。其压强和能量密度也满足类似关系：<span>
+  \(p=\frac{\mu}{3}\)
+</span>
+。黑体辐射之所以可以看作理想流体，关键在于其光子相对于各向同性参考系有个充分杂乱的随机运动。从探照灯出来的光束不能看作理想流体，因为不存在一个参考系，在该系下光束是各向同性的。</p>
+<p>下面来推导相对论理想流体中的质量守恒和Euler方程的推广。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/lifeisphy/notes/edit/main/exampleSite/content/docs/GR/%e7%ac%ac%e5%85%ad%e7%ab%a0%20%e7%8b%ad%e4%b9%89%e7%9b%b8%e5%af%b9%e8%ae%ba.md" target="_blank" rel="noopener">
+      <img src="/notes/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#61-四维表述基础">6.1 四维表述基础</a></li>
+        <li><a href="#62-典型效应分析">6.2 典型效应分析</a></li>
+        <li><a href="#63-质点运动学与动力学">6.3 质点运动学与动力学</a></li>
+        <li><a href="#64-连续介质的能动张量">6.4 连续介质的能动张量</a></li>
+        <li><a href="#65-理想流体动力学">6.5 理想流体动力学</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

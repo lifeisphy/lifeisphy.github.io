@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="chap4:Lie derivatives, Killing fields, hypersurfaces#4.1 流形间的映射#设\(M,N\)为流形，\(\phi:M\to N\)为光滑映射，\(\mathscr F_M\)和\(\mathscr F_N\)分别为M和N上光滑函数的集合,\(\mathscr F_M(k,l),\mathscr F_N(k,l)\)分别为M和N上光滑张量场集合,由\(\phi\)自然诱导出一系列映射：
+\(\phi^*:\mathscr F_N\to\mathscr F_M\)定义为： \[(\phi^*f)|_p :=f|_{\phi(p)},\forall f\in\mathscr F_N,p\in M\]或者写成：\((\phi^*f)(p)=f(\phi(p))\)线性 \(\phi^*(fg)=\phi^*(f)\phi^*(g)\)\(\phi_*:V_p\to V_{\phi(p)}\)定义为： \[(\phi_*v)(f):=v(\phi^*f),\forall f\in\mathscr F_N\]\(\phi_*\)是线性映射：\(\phi_*(\alpha u^a&#43;\beta v^a) = \alpha\phi_*u^a&#43;\beta\phi_* v^a\)拉回映射可延拓至\(\phi^*:\mathscr F_N(0,l)\to \mathscr F_M(0,l)\)：对任意\(T\in\mathscr F_N(0,l)\)，定义\(\phi^*T\in \mathscr F_M(0,l)\)为： \[(\phi^*T)_{a_1\cdots a_l}|_p (v_1)^{a_1}\cdots (v_l)^{a_l}:= T_{a_1\cdots a_l}|_{\phi(p)} (\phi_*v_1)^{a_1}\cdots (\phi_*v_l)^{a_l},\forall p\in M,v_1\cdots v_l\in V_p\]推前映射\(\phi_*\)可按如下方式延拓为\(p\)到\(\phi(p)\)张量空间的映射：\(\phi_*:\mathscr T_{V_p}(k,0)\to \mathscr T_{V_{\phi(p)}}(k,0)\): \[(\phi_* T)^{a_1\cdots a_k}(\omega^1)_{a_1}\cdots(\omega^k)_{a_k}:=T^{a_1\cdots a_k}(\phi^*\omega^1)_{a_1}\cdots (\phi^*\omega^k)_{a_k},\\ \forall \omega^1\cdots\omega^k \in V^* _{\phi(p)},T\in\mathscr T_{V_p}(k,0)\]其中\(\phi^*\omega_a\)定义为\((\phi^*\omega)_av^a\equiv \omega_a(\phi_*v)^a\)拉回映射的延拓是拉回映射\(k=1\)时的特例，拉回映射是把N上的\((0,l)\)型张量场变成M上同类型张量场，是场之间的变换； 推前映射的延拓是推前映射\(l=0\)时的特例，推前映射是把\(p\)点\((k,0)\)型张量变为像点\(\phi(p)\)点的同型张量，但不能变成场和场之间的映射，因为对N上任意一个点\(q\)，M中不一定存在它的原像\(p=\phi^{-1}(q)\)，因此张量场在\(q\)处的值就无法定义。">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="第四章 李导数、Killing场和超曲面" />
+<meta property="og:description" content="chap4:Lie derivatives, Killing fields, hypersurfaces#4.1 流形间的映射#设\(M,N\)为流形，\(\phi:M\to N\)为光滑映射，\(\mathscr F_M\)和\(\mathscr F_N\)分别为M和N上光滑函数的集合,\(\mathscr F_M(k,l),\mathscr F_N(k,l)\)分别为M和N上光滑张量场集合,由\(\phi\)自然诱导出一系列映射：
+\(\phi^*:\mathscr F_N\to\mathscr F_M\)定义为： \[(\phi^*f)|_p :=f|_{\phi(p)},\forall f\in\mathscr F_N,p\in M\]或者写成：\((\phi^*f)(p)=f(\phi(p))\)线性 \(\phi^*(fg)=\phi^*(f)\phi^*(g)\)\(\phi_*:V_p\to V_{\phi(p)}\)定义为： \[(\phi_*v)(f):=v(\phi^*f),\forall f\in\mathscr F_N\]\(\phi_*\)是线性映射：\(\phi_*(\alpha u^a&#43;\beta v^a) = \alpha\phi_*u^a&#43;\beta\phi_* v^a\)拉回映射可延拓至\(\phi^*:\mathscr F_N(0,l)\to \mathscr F_M(0,l)\)：对任意\(T\in\mathscr F_N(0,l)\)，定义\(\phi^*T\in \mathscr F_M(0,l)\)为： \[(\phi^*T)_{a_1\cdots a_l}|_p (v_1)^{a_1}\cdots (v_l)^{a_l}:= T_{a_1\cdots a_l}|_{\phi(p)} (\phi_*v_1)^{a_1}\cdots (\phi_*v_l)^{a_l},\forall p\in M,v_1\cdots v_l\in V_p\]推前映射\(\phi_*\)可按如下方式延拓为\(p\)到\(\phi(p)\)张量空间的映射：\(\phi_*:\mathscr T_{V_p}(k,0)\to \mathscr T_{V_{\phi(p)}}(k,0)\): \[(\phi_* T)^{a_1\cdots a_k}(\omega^1)_{a_1}\cdots(\omega^k)_{a_k}:=T^{a_1\cdots a_k}(\phi^*\omega^1)_{a_1}\cdots (\phi^*\omega^k)_{a_k},\\ \forall \omega^1\cdots\omega^k \in V^* _{\phi(p)},T\in\mathscr T_{V_p}(k,0)\]其中\(\phi^*\omega_a\)定义为\((\phi^*\omega)_av^a\equiv \omega_a(\phi_*v)^a\)拉回映射的延拓是拉回映射\(k=1\)时的特例，拉回映射是把N上的\((0,l)\)型张量场变成M上同类型张量场，是场之间的变换； 推前映射的延拓是推前映射\(l=0\)时的特例，推前映射是把\(p\)点\((k,0)\)型张量变为像点\(\phi(p)\)点的同型张量，但不能变成场和场之间的映射，因为对N上任意一个点\(q\)，M中不一定存在它的原像\(p=\phi^{-1}(q)\)，因此张量场在\(q\)处的值就无法定义。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-01-11T16:59:05+00:00" />
+<meta property="article:modified_time" content="2023-01-11T16:59:05+00:00" />
+<title>第四章 李导数、Killing场和超曲面 | Hugo Book</title>
+<link rel="manifest" href="/notes/manifest.json">
+<link rel="icon" href="/notes/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/notes/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
+  <script defer src="/notes/flexsearch.min.js"></script>
+  <script defer src="/notes/en.search.min.b1e2619f3a3f7b5d16866c68c5ab69d292d27f6db9161841a025b999621af378.js" integrity="sha256-seJhnzo/e10Whmxoxatp0pLSf225FhhBoCW5mWIa83g=" crossorigin="anonymous"></script>
+
+  <script defer src="/notes/sw.min.f02d8041fe15fd4a1d7a0fe50c02c2f57a3ec87d69231797beeed7968a47d96e.js" integrity="sha256-8C2AQf4V/Uodeg/lDALC9Xo&#43;yH1pIxeXvu7XlopH2W4=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/notes/"><img src="/notes/favicon.jpg" alt="Logo" /><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/" class="">实变函数与泛函分析</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/" class="">2-1 Lebesgue外测度，可测集</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/" class="">1-集合的势与无穷</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/" class="">Lebesgue可测函数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/memo/sigma/" class="">sigma</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/" class="">CS106L笔记</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/4/" class="">4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/CS106L-cpp/3/" class="">3</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/" class="">广义相对论</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/" class="">第一章 拓扑空间简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/" class="">第二章 流形和张量场</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/" class="">第三章 黎曼曲率张量</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/" class="active">第四章 李导数、Killing场和超曲面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="">第五章 微分形式及其积分</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/" class="">第六章 狭义相对论</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/" class="">群论拓扑</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/lifeisphy"  target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/notes/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>第四章 李导数、Killing场和超曲面</strong>
+
+  <label for="toc-control">
+    
+    <img src="/notes/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+
+<link rel="stylesheet" href= "/notes/katex/katex.min.css" >
+<script defer src= "/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/katex-macros.js"></script>
+<link rel="stylesheet" href="/notes/css/1.css"></style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError :false,
+                macros
+            });
+        });
+</script>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#chap4lie-derivatives-killing-fields-hypersurfaces">chap4:Lie derivatives, Killing fields, hypersurfaces</a>
+      <ul>
+        <li><a href="#41-流形间的映射">4.1 流形间的映射</a></li>
+        <li><a href="#42-李导数">4.2 李导数</a></li>
+        <li><a href="#43-killing-矢量场">4.3 Killing 矢量场</a></li>
+        <li><a href="#44-超曲面">4.4 超曲面</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chap4lie-derivatives-killing-fields-hypersurfaces">
+  chap4:Lie derivatives, Killing fields, hypersurfaces
+  <a class="anchor" href="#chap4lie-derivatives-killing-fields-hypersurfaces">#</a>
+</h1>
+<h2 id="41-流形间的映射">
+  4.1 流形间的映射
+  <a class="anchor" href="#41-%e6%b5%81%e5%bd%a2%e9%97%b4%e7%9a%84%e6%98%a0%e5%b0%84">#</a>
+</h2>
+<p>设
+<link rel="stylesheet" href="/notes/katex/katex.min.css" />
+<script defer src="/notes/katex/katex.min.js"></script>
+<script defer src="/notes/katex/auto-render.min.js" onload="renderMathInElement(document.body,{'macros':macros});"></script><span>
+  \(M,N\)
+</span>
+为流形，<span>
+  \(\phi:M\to N\)
+</span>
+为光滑映射，<span>
+  \(\mathscr F_M\)
+</span>
+和<span>
+  \(\mathscr F_N\)
+</span>
+分别为M和N上光滑函数的集合,<span>
+  \(\mathscr F_M(k,l),\mathscr F_N(k,l)\)
+</span>
+分别为M和N上光滑张量场集合,由<span>
+  \(\phi\)
+</span>
+自然诱导出一系列映射：</p>
+<div class="def" name="pull back map拉回映射"  style="">
+<p><span>
+  \(\phi^*:\mathscr F_N\to\mathscr F_M\)
+</span>
+定义为：
+<span>
+  \[(\phi^*f)|_p :=f|_{\phi(p)},\forall f\in\mathscr F_N,p\in M\]
+</span>
+
+或者写成：<span>
+  \((\phi^*f)(p)=f(\phi(p))\)
+</span>
+</p>
+<div class="prop" name="性质"  style="">
+<ol>
+<li>线性</li>
+<li><span>
+  \(\phi^*(fg)=\phi^*(f)\phi^*(g)\)
+</span>
+</li>
+</ol>
+</div>
+</div>
+<div class="def" name="push forward map推前映射"  style="">
+<p><span>
+  \(\phi_*:V_p\to V_{\phi(p)}\)
+</span>
+定义为：
+<span>
+  \[(\phi_*v)(f):=v(\phi^*f),\forall f\in\mathscr F_N\]
+</span>
+</p>
+<div class="prop" name="性质"  style="">
+<p><span>
+  \(\phi_*\)
+</span>
+是线性映射：<span>
+  \(\phi_*(\alpha u^a&#43;\beta v^a) = \alpha\phi_*u^a&#43;\beta\phi_* v^a\)
+</span>
+</p>
+</div>
+</div>
+<div class="def" name="拉回映射的延拓"  style="">
+<p>拉回映射可延拓至<span>
+  \(\phi^*:\mathscr F_N(0,l)\to \mathscr F_M(0,l)\)
+</span>
+：对任意<span>
+  \(T\in\mathscr F_N(0,l)\)
+</span>
+，定义<span>
+  \(\phi^*T\in \mathscr F_M(0,l)\)
+</span>
+为：
+<span>
+  \[(\phi^*T)_{a_1\cdots a_l}|_p (v_1)^{a_1}\cdots (v_l)^{a_l}:= T_{a_1\cdots a_l}|_{\phi(p)} (\phi_*v_1)^{a_1}\cdots (\phi_*v_l)^{a_l},\forall p\in M,v_1\cdots v_l\in V_p\]
+</span>
+</p>
+</div>
+<div class="def" name="推前映射的延拓"  style="">
+<p>推前映射<span>
+  \(\phi_*\)
+</span>
+可按如下方式延拓为<span>
+  \(p\)
+</span>
+到<span>
+  \(\phi(p)\)
+</span>
+张量空间的映射：<span>
+  \(\phi_*:\mathscr T_{V_p}(k,0)\to \mathscr T_{V_{\phi(p)}}(k,0)\)
+</span>
+:
+<span>
+  \[(\phi_* T)^{a_1\cdots a_k}(\omega^1)_{a_1}\cdots(\omega^k)_{a_k}:=T^{a_1\cdots a_k}(\phi^*\omega^1)_{a_1}\cdots (\phi^*\omega^k)_{a_k},\\ 
+\forall \omega^1\cdots\omega^k \in V^* _{\phi(p)},T\in\mathscr T_{V_p}(k,0)\]
+</span>
+
+其中<span>
+  \(\phi^*\omega_a\)
+</span>
+定义为<span>
+  \((\phi^*\omega)_av^a\equiv \omega_a(\phi_*v)^a\)
+</span>
+</p>
+</div>
+<p>拉回映射的延拓是拉回映射<span>
+  \(k=1\)
+</span>
+时的特例，拉回映射是把N上的<span>
+  \((0,l)\)
+</span>
+型张量场变成M上同类型张量场，是场之间的变换；
+推前映射的延拓是推前映射<span>
+  \(l=0\)
+</span>
+时的特例，推前映射是把<span>
+  \(p\)
+</span>
+点<span>
+  \((k,0)\)
+</span>
+型张量变为像点<span>
+  \(\phi(p)\)
+</span>
+点的同型张量，但不能变成场和场之间的映射，因为对N上任意一个点<span>
+  \(q\)
+</span>
+，M中不一定存在它的原像<span>
+  \(p=\phi^{-1}(q)\)
+</span>
+，因此张量场在<span>
+  \(q\)
+</span>
+处的值就无法定义。</p>
+<p>但如果映射是一个微分同胚（一一到上，且正逆映射均为<span>
+  \(C^\infty\)
+</span>
+），则推前映射可以改为<span>
+  \((k,0)\)
+</span>
+型张量<strong>场</strong>之间的映射。因为逆映射<span>
+  \(\phi^{-1}\)
+</span>
+也是微分同胚，因此也有pull back/push forward,而逆映射的pull back正是正映射的push forward，即<span>
+  \(\phi^{-1 *}:\mathscr F_M(0,l)\to\mathscr F_N(0,l)\)
+</span>
+。因此可以进一步将推前映射<span>
+  \(\phi_*\)
+</span>
+推广为<span>
+  \(\phi_*:\mathscr F_M(k,l)\to\mathscr F_N (k,l)\)
+</span>
+.例如，对<span>
+  \((1,1)\)
+</span>
+型张量而言，
+<span>
+  \[(\phi_*T)^a{}_b|_q \omega_av^b \equiv T^a{}_b|_{\phi^{-1}(q)}(\phi^*\omega)_a(\phi^*v)^b,\qquad \forall q\in N,\omega_a\in V_q^*,v^b \in V_q\]
+</span>
+</p>
+<div style="page-break-after:always"></div>
+<p>其中<span>
+  \((\phi^*v)^b\)
+</span>
+应理解为<span>
+  \((\phi_*^{-1}v)^b\)
+</span>
+
+考虑<span>
+  \(M,N\)
+</span>
+之间存在微分同胚<span>
+  \(\phi\)
+</span>
+，将<span>
+  \(p\)
+</span>
+映射到<span>
+  \(\phi(p)\)
+</span>
+。设在含p区域<span>
+  \(O_1\)
+</span>
+中有坐标<span>
+  \(\{x^\mu\}\)
+</span>
+,含<span>
+  \(\phi(p)\)
+</span>
+的区域有坐标<span>
+  \(\{y^\mu\}\)
+</span>
+，从而可以在M中的<span>
+  \(\phi^{-1}[O_2]\)
+</span>
+中定义坐标<span>
+  \(x&#39;^\mu\)
+</span>
+为:<span>
+  \(x&#39;^\mu(p)\equiv y^\mu(\phi(p))\)
+</span>
+，如右图所示。<img src="http://60.205.203.160:8000/home/ipad_2023-01-12_10-27-52.png"  style="width:50%;float:right;">
+在M中<span>
+  \(O_1\cap \phi^{-1}[O_2]\)
+</span>
+的区域中有坐标变换：<span>
+  \(\{x^\mu\}\to\{x&#39;^\mu\}\)
+</span>
+
+有两种看待微分同胚的观点：</p>
+<ul>
+<li>主动观点：把<span>
+  \(p\)
+</span>
+变为<span>
+  \(\phi(p)\)
+</span>
+</li>
+<li>被动观点：把<span>
+  \(\phi\)
+</span>
+看成坐标变换<span>
+  \(\{x^\mu\}\to\{x&#39;^\mu\}\)
+</span>
+</li>
+</ul>
+<p>Claim:<span>
+  \((\phi_*T)^\mu{}_{\nu}|_{\phi(p)}=T&#39;^\mu{}_{\nu}|_p\)
+</span>
+,<span>
+  \(T&#39;\)
+</span>
+代表用坐标系<span>
+  \(\{x&#39;^\mu\}\)
+</span>
+表示下的分量
+上式左边是新点<span>
+  \(\phi(p)\)
+</span>
+、新张量<span>
+  \(\phi_*T\)
+</span>
+在老坐标系<span>
+  \(\{y^\mu\}\)
+</span>
+下分量，右边是老点<span>
+  \(p\)
+</span>
+、老张量<span>
+  \(T\)
+</span>
+在新坐标系<span>
+  \(\{x&#39;^\mu\}\)
+</span>
+下分量。</p>
+<p>对于微分同胚<span>
+  \(\phi\)
+</span>
+，曲线<span>
+  \(C(t)\)
+</span>
+即其上一点p，有曲线的像<span>
+  \(\phi(C(t))\)
+</span>
+和像点<span>
+  \(\phi(p)\)
+</span>
+,该点切矢<span>
+  \(v\)
+</span>
+的像<span>
+  \(\phi_*(v)\)
+</span>
+正是新的曲线的切矢，即&quot;曲线的像的切矢=曲线的切矢的像&quot;，如图所示<img src="http://60.205.203.160:8000/home/ipad_2023-01-12_10-49-15.png"  style="width:50%;float:right;"></p>
+<p>对于坐标线的坐标基矢，就有：
+<span>
+  \[\phi_*[\left({\partial \over\partial x&#39;^\mu } \right)^a\mid_p]=\left({\partial \over\partial y^\mu } \right)^a\mid_{\phi(p)}\\
+\phi_*[(dx&#39;^\mu)_a|_p]= (dy^\mu)_a|_{\phi(p)}\]
+</span>
+</p>
+<h2 id="42-李导数">
+  4.2 李导数
+  <a class="anchor" href="#42-%e6%9d%8e%e5%af%bc%e6%95%b0">#</a>
+</h2>
+<p>2.2曾提到，<span>
+  \(M\)
+</span>
+上的光滑矢量场<span>
+  \(v^a\)
+</span>
+给出一个单参微分同胚群<span>
+  \(\phi:\mathbb{R} \times M\to M\)
+</span>
+，用它可以定义一个张量场的Lie导数：</p>
+<div class="def" name="Lie Derivative"  style="">
+<p><span>
+  \[\mathscr L_v T^{a_1\cdots a_k}{}_{b_1\cdots b_l} \equiv \lim_{t\to 0} \frac 1 t (\phi_t^* T^{a_1\cdots a_k}{}_{b_1\cdots b_l}-T^{a_1\cdots a_k}{}_{b_1\cdots b_l})\]
+</span>
+
+称为张量场<span>
+  \(T^{a_1\cdots a_k}{}_{b_1\cdots b_l}\)
+</span>
+沿矢量场<span>
+  \(v^a\)
+</span>
+的<strong>李导数(Lie derivative)</strong></p>
+<div class="pink" name="注"  style="">
+<p><span>
+  \(\phi_t^*\)
+</span>
+为线性映射，因此李导数是<span>
+  \(\mathscr F_{M}(k,l)\)
+</span>
+到自身的线性映射。</p>
+</div>
+</div>
+<div class="thm" name="4-2-1"  style="">
+<span>
+  \(\mathscr L_vf=v(f),\qquad \forall f\in\mathscr F\)
+</span>
+
+<div class="pf"  style="">
+<p>任意<span>
+  \(p\in M\)
+</span>
+,设<span>
+  \(C(t)\)
+</span>
+是<span>
+  \(\phi\)
+</span>
+过<span>
+  \(p\)
+</span>
+的轨道，<span>
+  \(p=C(0)\)
+</span>
+,则<span>
+  \(\phi_t(p)=C(t)\)
+</span>
+,且<span>
+  \(v^a|_p \equiv ({\partial \over\partial t} )^a|_p\)
+</span>
+是<span>
+  \(C(t)\)
+</span>
+在p点切矢，故
+<span>
+  \[\begin{aligned}
+\mathscr L_v f|_p &amp;= \lim_{t\to 0}\frac 1 t (\phi_t^*f-f)|_p=\lim_{ t\to 0}\frac 1 t [f(\phi_t(p))-f(p)]\\ 
+&amp;= \lim_{t\to 0}\frac 1 t[f(C(t))-f(C(0))] = {\mathrm d\over \mathrm dt}(f\circ C)|_{t=0}=v(f)|_p
+\end{aligned}\]
+</span>
+</p>
+</div>
+</div>
+<p>下面介绍一种对计算李导数很有用的坐标系。对于<span>
+  \(\{x^1,x^2\}\)
+</span>
+组成的网格，要确定坐标域中点的坐标，只需要确定它位于哪两条坐标线交点。求李导数要给定矢量场<span>
+  \(v^a\)
+</span>
+，可选定它的积分曲线为<span>
+  \(x^1\)
+</span>
+坐标线（<span>
+  \(t=x^1\)
+</span>
+），再随意选定不平行的切矢作为<span>
+  \(x^2\)
+</span>
+坐标线，得到的坐标系称为矢量场<span>
+  \(v^a\)
+</span>
+的<strong>适配坐标系</strong>。换句话说，就是<span>
+  \(v^a=(\partial/\partial x^1)^a\)
+</span>
+.定义可以向高维推广。</p>
+<div class="thm" name="4-2-2"  style="">
+<p>张量场<span>
+  \(T^{a_1\cdots a_k}{}_{b_1\cdots b_l}\)
+</span>
+沿<span>
+  \(v^a\)
+</span>
+的李导数在其适配坐标系分量为<span>
+  \[(\mathscr L_v T)^{\mu_1\cdots \mu_k}{}_{\nu_1\cdots \nu_l}={\partial T^{\mu_1\cdots \mu_k}{}_{\nu_1\cdots \nu_l}\over\partial x^1}\]
+</span>
+</p>
+</div>
+<div class="pf"  style="">
+<p>仅以<span>
+  \(n=2,k=l=1\)
+</span>
+为例，由
+<span>
+  \[\phi_t^* = (\phi_t^{-1})_*=\phi_{-t*},\]
+</span>
+
+在任意适配坐标系的分量式为：
+<span>
+  \[(\mathscr L_vT)^\mu{}_\nu |_p = \lim_{t\to 0} \frac 1 t [(\phi_{-t*}T)^\mu{}_\nu |_p-T^\mu{}_\nu|_p],\qquad \forall p\in M\]
+</span>
+
+令<span>
+  \(q\equiv \phi_t(p)\)
+</span>
+,因为p和q相距很近，可认为在同一坐标域内。对<span>
+  \(\phi_{-t}\)
+</span>
+而言，<span>
+  \(q\)
+</span>
+为老点，“新点<span>
+  \(p\)
+</span>
+新张量<span>
+  \(\phi_{-t*}\)
+</span>
+在老坐标<span>
+  \(x^\mu\)
+</span>
+分量=老点<span>
+  \(q\)
+</span>
+老张量<span>
+  \(T\)
+</span>
+在新坐标<span>
+  \(x&#39;^\mu\)
+</span>
+分量”得到
+<span>
+  \[(\phi_{-t*}T)^\mu{}_\nu |_p = T&#39;^\mu{}_\nu|_q = \left[{\partial x&#39;^\mu \over\partial x^\rho } {\partial x^\sigma \over\partial x&#39;^\nu } T^\rho{}_\sigma\right]_q\]
+</span>
+
+新坐标通过<span>
+  \(x&#39;^\mu(p)\equiv y^\mu(\phi(p))\)
+</span>
+由新老坐标系的变换<span>
+  \(\phi_{-t}\)
+</span>
+决定。取<span>
+  \(\bar p\)
+</span>
+和<span>
+  \(\bar q=\phi_t(\bar p)\)
+</span>
+，由适配坐标定义，<span>
+  \(x^1(\bar q)=x^1(\bar p)&#43;t,x^2(\bar q)=x^2(\bar p)\)
+</span>
+。
+<span>
+  \[x&#39;^1(\bar q)\equiv x^1(\bar p)=x^1(\bar q)-t\\
+x&#39;^2(\bar q)\equiv x^2(\bar p)=x^2(\bar q)\]
+</span>
+
+即<span>
+  \(x&#39;^1=x^1-t,x&#39;^2=x^2,\cdots\)
+</span>
+
+于是得出所有偏导数均为<span>
+  \(\delta^\mu_\nu\)
+</span>
+:
+<span>
+  \[(\phi_{-t*}T)^\mu{}_\nu |_p = T&#39;^\mu{}_\nu|_q = \left[{\partial x&#39;^\mu \over\partial x^\rho } {\partial x^\sigma \over\partial x&#39;^\nu } T^\rho{}_\sigma\right]_q=T^\mu{}_\nu|_q\]
+</span>
+
+于是<span>
+  \((\mathscr L_vT)^\mu{}_\nu |_p = {\partial T^\mu{}_\nu \over\partial x^1} |_p\)
+</span>
+</p>
+</div>
+<div class="thm" name="4-2-3"  style="">
+<span>
+  \[\mathscr L_v u^a = [v,u]^a,\qquad \forall u^a,v^a\in\mathscr F(1,0)\\
+或：\mathscr L_vu^a=v^b\nabla_bu^a-u^b\nabla_bv^a\]
+</span>
+
+</div>
+<div class="pf"  style="">
+<p>使用适配坐标系：
+<span>
+  \[\begin{aligned}
+[v,u]^\mu&amp; =(\mathrm{d} x^\mu)_a[v,u]^a = (\mathrm{d} x^\mu)_a(v^b\partial_bu^a-u_b\partial_bv^a) \xlongequal{v^a=({\partial \over\partial x^1} )^a}v^b\partial_b u^\mu\\ 
+&amp;\xlongequal{(4)} v(u^\mu)={\partial u^\mu \over\partial x^1} =(\mathscr L_v u)^\mu
+\end{aligned}\]
+</span>
+</p>
+</div>
+<div class="thm" name="4-2-4"  style="">
+<span>
+  \[\mathscr L_v\omega_a = v^b\nabla_b\omega_a&#43;\omega_b\nabla_av^b,\forall v\in \mathscr F(1,0),\qquad\omega_a\in\mathscr F(0,1)\]
+</span>
+
+</div>
+<div class="thm" name="4-2-5"  style="">
+<span>
+  \[\newcommand\aaaa{{a_1 \cdots a_k}}
+\newcommand\bbbb{{b_1\cdots b_l}}
+\mathscr L_vT^{\aaaa}{}_{\bbbb} = v^c\nabla_cT^{\aaaa}{}_{\bbbb}-\sum_{i=1}^{k} T^{a_1\cdots c\cdots a_k}{}_\bbbb\nabla_cv^{a_i} &#43;\sum_{j=1}^{l} T^{\aaaa}{}_{b_1\cdots c\cdots b_l}\nabla_{b_j}v^c\]
+</span>
+
+</div>
+<h2 id="43-killing-矢量场">
+  4.3 Killing 矢量场
+  <a class="anchor" href="#43-killing-%e7%9f%a2%e9%87%8f%e5%9c%ba">#</a>
+</h2>
+<p>李导数的定义不要求流形M有附加结构。但若选定了度规场<span>
+  \(g_{ab}\)
+</span>
+,则对微分同胚映射<span>
+  \(\phi:M\to M\)
+</span>
+可以提出更高要求：<span>
+  \(\phi^*g_{ab}=g_{ab}\)
+</span>
+</p>
+<div class="def" name="定义1：等度规(isometry)"  style="">
+<p>微分同胚<span>
+  \(\phi:M\to M\)
+</span>
+称为等度规映射，简称等度规，若<span>
+  \(\phi^*g_{ab}=g_{ab}\)
+</span>
+</p>
+</div>
+<p>M上有一类矢量场，为光滑矢量场。我们已经知道，每个光滑矢量场给出一个单参微分同胚群。如果M上指定了度规场<span>
+  \(g_{ab}\)
+</span>
+，则众多光滑矢量场中还可挑出一部分，它们给出的单参微分同胚群是单参等度规群。</p>
+<div class="def" name="定义2"  style="">
+<p><span>
+  \((M,g_{ab})\)
+</span>
+上的矢量场<span>
+  \(\xi^a\)
+</span>
+称为<strong>Killing矢量场</strong>,若它给出的单参微分同胚群是单参等度规群。
+<span>
+  \(\xi^a\)
+</span>
+ is Killing 等价于<span>
+  \(\mathscr L_{\xi}g_{ab}\equiv\lim_{t\to 0}(\phi_t^* g_{ab}-g_{ab})=\lim_{t\to 0}(g_{ab}-g_{ab})=0\)
+</span>
+</p>
+</div>
+<div class="thm" name="4-3-1"  style="">
+<p><span>
+  \(\xi^a\)
+</span>
+为Killing矢量场的充要条件有：</p>
+<ol>
+<li><span>
+  \(\mathscr L_{\xi}g_{ab}=0\)
+</span>
+</li>
+<li><span>
+  \(\nabla_a\xi_b&#43;\nabla_b\xi_a=0\)
+</span>
+</li>
+<li><span>
+  \(\nabla_{(a}\xi_{b)}=0\)
+</span>
+</li>
+<li><span>
+  \(\nabla_a\xi_b=\nabla_{[a}\xi_{b]}\)
+</span>
+</li>
+</ol>
+<div class="pf"  style="">
+<p>证明1和2等价：
+<span>
+  \[0=\mathscr L_{\xi}g_{ab} = \xi^c\nabla_cg_{ab} &#43;g_{cb} \nabla_b\xi^c&#43;g_{ac}\nabla_b\xi^c\\\]
+</span>
+选一个<span>
+  \(\nabla_a\)
+</span>
+使得<span>
+  \(\nabla_cg_{ab}=0\)
+</span>
+，于是<span>
+  \(g_{ab}\)
+</span>
+可任意进出导数算符，作用在<span>
+  \(\xi^c\)
+</span>
+上：
+<span>
+  \[0=\mathscr L_\xi g_{ab}=\nabla_a\xi_b&#43;\nabla_b\xi_a\]
+</span>
+定理3和4容易从中得到</p>
+</div>
+</div>
+<div class="thm" name="4-3-2"  style="">
+<p>若存在坐标系<span>
+  \(\{x^\mu\}\)
+</span>
+使得度规<span>
+  \(g_{ab}\)
+</span>
+全部分量满足<span>
+  \({\partial g_{\mu\nu}\over\partial x^1} =0\)
+</span>
+，则<span>
+  \(({\partial \over\partial x^1} )^a\)
+</span>
+是坐标域上的Killing矢量场</p>
+</div>
+<div class="pf"  style="">
+<p><span>
+  \(\{x^1\}\)
+</span>
+是<span>
+  \(({\partial \over\partial x^1}) ^a\)
+</span>
+的适配坐标系，于是有：
+<span>
+  \[(\mathscr L_{{\partial \over\partial x^1} }g)_{\mu\nu}={\partial g_{\mu\nu }\over\partial x^1} =0\]
+</span>
+</p>
+</div>
+<div class="thm" name="4-3-3"  style="">
+<p>设<span>
+  \(\xi^a\)
+</span>
+为Killing 矢量场，<span>
+  \(T^a\)
+</span>
+为一条测地线切矢，则<span>
+  \(T^a\nabla_a(T^b\xi_b)=0\)
+</span>
+，即内积<span>
+  \(T^b\xi_b\)
+</span>
+沿测地线为常数。</p>
+<div class="pf"  style="">
+<p><span>
+  \[T^b\nabla_b(\xi_aT^a)=\xi_aT^b\nabla_bT^a &#43; T^aT^b\nabla_a\xi_b=T^bT^a\nabla_a\xi_b=0\]
+</span>
+
+其中第二步是因为异种括弧缩并为0：<span>
+  \(T^bT^a\nabla_a\xi_b=T^{(b}T^{a)}\nabla_{[a}\xi_{b]}=0\)
+</span>
+</p>
+</div>
+</div>
+<p>若<span>
+  \(\xi^a,\eta^a\)
+</span>
+为Killing矢量场，则它们的线性组合与对易子都是Killing矢量场。</p>
+<div class="thm" name="4-3-4"  style="">
+<p><span>
+  \((M,g_{ab})\)
+</span>
+上有最多<span>
+  \(n(n&#43;1)/2\)
+</span>
+个独立的Killing矢量场(<span>
+  \(n=\dim M\)
+</span>
+)，即M上所有Killing矢量场的几何的维数都小于<span>
+  \(n(n&#43;1)/2\)
+</span>
+</p>
+</div>
+<p>一般而言求Killing矢量场需要求解偏微分方程，但在一些情况下可以简化。下面举欧式空间与伪欧空间的例子：</p>
+<div class="example" name="例1"  style="">
+<p><span>
+  \((\mathbb{R}^2,\delta_{ab})\)
+</span>
+中，<span>
+  \(g_{xx}=g_{yy}=1,g_{xy}=g_{yx}=0\)
+</span>
+，于是由4-3-2得<span>
+  \(({\partial \over\partial x})^a ,{\partial \over\partial y}\)
+</span>
+都是Killing vector field，d代表平移对称性。
+第三个：<span>
+  \(\mathrm{d} s^2 =\mathrm{d} r^2&#43;r^2\mathrm{d} \varphi^2\)
+</span>
+,于是<span>
+  \(({\partial \over\partial \varphi})^a\)
+</span>
+也为Killing vector field ，代表旋转对称性。
+<span>
+  \(\partial/\partial \varphi\)
+</span>
+的积分曲线是一个个绕坐标原点的同心圆。</p>
+</div>
+<div class="example" name="例2"  style="">
+<p><span>
+  \((\mathbb{R}^3,\delta_{ab})\)
+</span>
+有6个独立Killing场，3个平移与3个旋转。旋转部分可写成：<span>
+  \(-y({\partial \over\partial x}) ^a&#43;x({\partial \over\partial y} )^a,-x({\partial \over\partial z} )^a&#43;z({\partial \over\partial x} )^a,y({\partial \over\partial z})^a-z({\partial \over\partial y} )^a\)
+</span>
+</p>
+</div>
+<div class="example" name="例3"  style="">
+<p><span>
+  \((\mathbb{R}^2,\eta_{ab})\)
+</span>
+，<span>
+  \(\mathrm{d} s^2=-\mathrm{d} t^2&#43;\mathrm{d} x^2\)
+</span>
+，定义坐标变换<span>
+  \(\{x,t\}\to \{\psi,\eta\}\)
+</span>
+为：
+<span>
+  \[x=\psi\ch \eta,t=\psi\sh \eta\]
+</span>
+则<span>
+  \(\mathrm{d} s^2 = \mathrm{d} \psi^2-\psi^2\mathrm{d} \eta^2\)
+</span>
+
+Killing vector field:<span>
+  \(({\partial \over\partial t})^a,({\partial \over\partial x} )^a,({\partial \over\partial \eta } )^a=t({\partial \over\partial x} )^a&#43;x({\partial \over\partial t} )^a\)
+</span>
+是一个boost。</p>
+<p>对<span>
+  \({\partial \over\partial \eta}\)
+</span>
+ 的积分得到<span>
+  \(\psi\)
+</span>
+为常数，于是
+<span>
+  \(x^2-t^2 = \psi^2=\text{const}\)
+</span>
+积分曲线为双曲线。</p>
+</div>
+<p>对四维闵氏空间，<span>
+  \(n=4\)
+</span>
+,独立Killing场有10组，其中4组平移，3组空间分量转动，3组boost(伪转动)。</p>
+<p>微分同胚是点的映射，这是一个主动观点，对应的被动观点是坐标变换。谈boost、Killing vector field时,我们用的是主动观点，对应的被动观点正是狭义相对论中的洛伦兹变换。</p>
+<div class="thm" name="4-3-5"  style="">
+<p>设<span>
+  \(\{x,t\}\)
+</span>
+是二维闵氏空间<span>
+  \((\mathbb{R}^2,\eta_{ab})\)
+</span>
+的洛伦兹坐标系，<span>
+  \(\phi_\lambda:\mathbb{R}^2\to\mathbb{R}^2\)
+</span>
+是伪转动Killing场<span>
+  \(\xi^a\equiv t({\partial \over\partial x} )^a&#43;x({\partial \over\partial t})^a\)
+</span>
+对应的单参等度规群的一个群元，则由<span>
+  \(\phi_\lambda\)
+</span>
+诱导的坐标变换<span>
+  \(\{x,t\}\to\{x&#39;,t&#39;\}\)
+</span>
+是洛伦兹变换。</p>
+<div class="pf"  style="">
+<p><span>
+  \(\xi^a\equiv ({\partial \over\partial \eta } )^a\)
+</span>
+的积分曲线的参数方程为<span>
+  \(\mathrm{d} x^\mu(\eta)/\mathrm{d} \eta = \xi^\mu\)
+</span>
+。代入<span>
+  \(\xi^a \equiv t({\partial \over\partial x} )^a &#43;x({\partial \over\partial t} )^a\)
+</span>
+,
+<span>
+  \[\frac{\mathrm{d} t(\eta)}{\mathrm{d} \eta }= x(\eta),\\ 
+\frac{\mathrm{d} x(\eta)}{\mathrm{d} \eta } = t(\eta)\\\]
+</span>
+初值：设<span>
+  \(C(\eta)\)
+</span>
+是满足<span>
+  \(p=C(0)\)
+</span>
+的积分曲线，即<span>
+  \(x(0)=x_p,t(0)=t_p\)
+</span>
+
+解得：
+<span>
+  \[x(\eta) =x_p \ch \eta&#43;t_p\sh \eta ,\\ 
+t(\eta) =x_p\sh \eta &#43;t_p\ch \eta \\\]
+</span>
+设<span>
+  \(q\equiv \phi_\lambda (p)\)
+</span>
+，则<span>
+  \(q\)
+</span>
+是<span>
+  \(C(\eta)\)
+</span>
+上参数<span>
+  \(\eta = \lambda\)
+</span>
+的点<span>
+  \(C(\lambda)\)
+</span>
+，则由<span>
+  \(\phi_\lambda\)
+</span>
+诱导得到的新坐标满足：
+<span>
+  \[x_p&#39; \equiv x_q = x_p\ch \lambda &#43; t_p\sh\lambda,\\
+t_p&#39; \equiv t_q = x_p \sh \lambda &#43; t_p\ch \lambda \\\]
+</span>
+令<span>
+  \(v\equiv \tanh \lambda,\gamma \equiv (1-v^2)^{1/2}=\ch \lambda\)
+</span>
+,则成为物理中熟悉的洛伦兹变换：
+<span>
+  \[x&#39;=\gamma(x&#43;vt),\qquad t&#39;=\gamma(t&#43;vx)\]
+</span>
+</p>
+</div>
+</div>
+<div class="thm" name="4-3-6"  style="">
+<p>设<span>
+  \(\{x^\mu\}\)
+</span>
+是<span>
+  \((\mathbb{R}^n,\eta_{ab})\)
+</span>
+的洛伦兹坐标系，则<span>
+  \(\{x&#39;^\mu\}\)
+</span>
+也是洛伦兹坐标系的充要条件为：它是由<span>
+  \(\{x^\mu\}\)
+</span>
+通过等度规映射<span>
+  \(\phi:\mathbb{R}^n\to\mathbb{R}^n\)
+</span>
+诱导而得。</p>
+<div class="pf"  style="">
+<p>A. 证明等度规映射诱导得到洛伦兹系：
+<span>
+  \(g&#39;_{\mu\nu}|_p\xlongequal{老老新=新新老}(\phi_*g)_{\mu\nu}|_{\phi(p)}=(\phi^{-1*}g)_{\mu\nu}|_{\phi(p)}\xlongequal{逆映射等度规}g_{\mu\nu}|_{\phi(p)}=\eta_{\mu\nu}\)
+</span>
+</p>
+<p>B. 洛伦兹系之间等度规：
+<span>
+  \((\phi^{-1*}g)_{\mu\nu}|_{p}=(\phi_*g)_{\mu\nu}|_p=g&#39;_{\mu\nu}|_{\phi^{-1}(p)}=\eta_{\mu\nu}=g_{\mu\nu}|_p\)
+</span>
+</p>
+</div>
+</div>
+<h2 id="44-超曲面">
+  4.4 超曲面
+  <a class="anchor" href="#44-%e8%b6%85%e6%9b%b2%e9%9d%a2">#</a>
+</h2>
+<div class="def" name="嵌入"  style="">
+<p>设<span>
+  \(M,S\)
+</span>
+为流形，<span>
+  \(\dim S\le \dim M \equiv n\)
+</span>
+，映射<span>
+  \(\phi:S\to M\)
+</span>
+称为<strong>嵌入(imbedding)</strong>，若<span>
+  \(\phi\)
+</span>
+是一一和<span>
+  \(C^\infty\)
+</span>
+的，且<span>
+  \(\forall p\in S,\phi_*:V_{p}\to V_{\phi_p}\)
+</span>
+非退化，即<span>
+  \(\phi_*v^a = 0\Rightarrow v^a=0\)
+</span>
+</p>
+</div>
+<div class="def" name="嵌入子流形，超曲面"  style="">
+<p>嵌入<span>
+  \(\phi:S\to M\)
+</span>
+称为M的一个嵌入子流形，简称<strong>子流形(imbedded submanifold)</strong>。也常把<span>
+  \(\phi [S]\)
+</span>
+称为子流形。若<span>
+  \(\dim S=n-1\)
+</span>
+，则<span>
+  \(\phi [S]\subset M\)
+</span>
+为M的一张<strong>超曲面(hypersurface)</strong>。</p>
+</div>
+<div class="example" name="例"  style="">
+<p>U是M的开子集，M的流形结构限制在U上，就构成了与M同维的子流形。令<span>
+  \(\phi: U\to M\)
+</span>
+为恒等映射，则<span>
+  \(U\equiv \phi [U]\)
+</span>
+为一个同维嵌入。</p>
+<p><span>
+  \(S^2\)
+</span>
+为二维单位球面，则<span>
+  \(\phi: S^2\to \mathbb{R}^3\)
+</span>
+给出<span>
+  \(\mathbb{R}^3\)
+</span>
+的嵌入子流形。这是<span>
+  \(\mathbb{R}^3\)
+</span>
+的一个超曲面。</p>
+</div>
+<p>研究比原流形M仅低一维的子流形的优势在于，在子流形S上任意一点<span>
+  \(q\)
+</span>
+，存在唯一一个方向的“矢量”<span>
+  \(\vec n\)
+</span>
+使得它与子流形上该点切空间中所有的矢量“正交”。但正交性只有在定义度规后才能谈及，在没有度规时，这个矢量则是对偶矢量，即“法余矢”<span>
+  \(n_a\)
+</span>
+</p>
+<div class="def" name="法余矢"  style="">
+<p>设<span>
+  \(\phi [S]\)
+</span>
+是超曲面，<span>
+  \(q\in \phi [S]\)
+</span>
+,非零对偶矢量<span>
+  \(n_a\in V_q^*\)
+</span>
+称为q点<strong>法余矢(normal covector)</strong>，若<span>
+  \(n_aw^a=0,\forall w^a\in W_q\)
+</span>
+</p>
+</div>
+<div class="thm" name="4-4-1"  style="">
+<p>超曲面上任意一点必有法余矢，且该点全部法余矢之间只差一实因子。</p>
+</div>
+<div class="thm" name="4-4-2"  style="">
+<p>设<span>
+  \(\phi [S]\)
+</span>
+由<span>
+  \(f=\text{const}\)
+</span>
+给出，则<span>
+  \(\nabla_a f\)
+</span>
+给出的是超曲面的法余矢</p>
+<div class="pf"  style="">
+<p><span>
+  \(\forall w^a\in W_q\)
+</span>
+,<span>
+  \(W_q\)
+</span>
+为子流形该点切空间。<span>
+  \(w^a\)
+</span>
+总切于超曲面上一曲线<span>
+  \(C(t)\)
+</span>
+,故<span>
+  \(w^a\nabla_a f= {\partial \over\partial t} f = 0\)
+</span>
+</p>
+</div>
+</div>
+<p>若有了度规<span>
+  \(g^{ab}\)
+</span>
+，则可以定义法矢量<span>
+  \(n^a =g^{ab}n_b\)
+</span>
+。对洛伦兹度规，<span>
+  \(n^a\)
+</span>
+有可能属于<span>
+  \(W_q\)
+</span>
+.</p>
+<div class="thm" name="4-4-3"  style="">
+<p><span>
+  \(n^a\in W_q\)
+</span>
+当且仅当<span>
+  \(n^an_a = 0\)
+</span>
+</p>
+<div class="pf"  style="">
+<p>若<span>
+  \(n^a\in W_q\)
+</span>
+,<span>
+  \(n_aw^a=0,n_an^a=0\)
+</span>
+
+由<span>
+  \(n^an_a=0\)
+</span>
+，对任意一个法余矢<span>
+  \(n_a\)
+</span>
+,存在基底<span>
+  \(\{(e_\mu)^a\}\)
+</span>
+使得<span>
+  \(n_a=(e^1)_a,(e_k)^a\in W_q,k\ge 2\)
+</span>
+.故<span>
+  \(n^1=n^a(e^1)_a=0\)
+</span>
+，<span>
+  \(n^a=\sum_{p=2}^nn^p(e_p)^a\in W_q\)
+</span>
+</p>
+</div>
+</div>
+<div class="def" name="超曲面性质"  style="">
+<p>超曲面是<strong>类空的</strong>，若法矢量处处类时(<span>
+  \(n^an_a&lt;0\)
+</span>
+);超曲面是<strong>类时的</strong>，若法矢量处处类空(<span>
+  \(n^an_a&gt;0\)
+</span>
+);超曲面是<strong>类光的(null)</strong>，若法矢量处处类光(<span>
+  \(n^an_a= 0\)
+</span>
+).</p>
+</div>
+<p>若法矢量不是类光的，以后都对法矢量进行归一化(<span>
+  \(n^an_a=\pm 1\)
+</span>
+)</p>
+<div class="def" name="诱导度规"  style="">
+<p>设<span>
+  \(\phi [S]\)
+</span>
+是流形M上的嵌入子流形，<span>
+  \(q\in \phi [S]\)
+</span>
+，<span>
+  \(W_q\)
+</span>
+是q点切于<span>
+  \(\phi [S]\)
+</span>
+的切空间。<span>
+  \(W_q\)
+</span>
+度规<span>
+  \(h_{ab}\)
+</span>
+叫做<span>
+  \(V_q\)
+</span>
+的度规<span>
+  \(g_{ab}\)
+</span>
+生出的<strong>诱导度规(induced metric)</strong>,若
+<span>
+  \[h_{ab}w_1^aw_2^b = g_{ab}w_1^aw_2^b,\qquad \forall w_1^a,w_2^b \in W_q\]
+</span>
+</p>
+</div>
+<p><span>
+  \(h_{ab}\)
+</span>
+还可以写成：<span>
+  \(h_{ab}=g_{ab}\mp n_an_b\)
+</span>
+，其中<span>
+  \(n_a,n_b\)
+</span>
+是单位法余矢。代入，根据正交性即可得到。</p>
+<p>考虑曲面是类光超曲面的情形：记<span>
+  \(W_q\)
+</span>
+为面上一点在面内的切空间，此时法矢量<span>
+  \(n^a\in W_q\)
+</span>
+.
+如果设<span>
+  \(h_{ab}\)
+</span>
+是诱导得到的度规，<span>
+  \(\forall w^b\in W_q\)
+</span>
+,<span>
+  \(h_{ab}n^aw^b=g_{ab}n^aw^b=0\)
+</span>
+。由度规的性质（对称，非退化），应有<span>
+  \(g(v,u)=0,\forall u\in W_q\qquad \Rightarrow v=0\)
+</span>
+
+法矢量<span>
+  \(n^a\)
+</span>
+在切空间内，且与<span>
+  \(W_q\)
+</span>
+中任意矢量内积为0，但它自身不是0。因此<span>
+  \(h_{ab}\)
+</span>
+是退化的，不能充当度规。故类光超曲面没有诱导度规。</p>
+<p>对于非类光超曲面的情形，利用度规可以对<span>
+  \(h_{cb}\)
+</span>
+进行指标升降：
+<span>
+  \(h^a{}_b\equiv g^{ac}h_{cb}=g^{ac}(g_{cb}\mp n_cn_b)= \delta^a{}_b \mp n^an_b\)
+</span>
+
+于是我们得到，对任意矢量<span>
+  \(v^a\)
+</span>
+，有：
+<span>
+  \[h^a{}_b v^b = v^a \mp n^a (n_b v^b)\\
+v^a\equiv h^a{}_b v^b \pm n^a(n_bv^b)\]
+</span>
+
+上式正是对<span>
+  \(v^a\)
+</span>
+的一个分解。可以证明，<span>
+  \(h^a{}_bv^b\)
+</span>
+没有法向分量：
+<span>
+  \(n_ah^a{}_b=n_a(\delta^a{}_b\mp n^an_b)=n_b\mp (\pm 1 n_b)=n_b-n_b = 0\)
+</span>
+</p>
+<p><span>
+  \(h^a{}_bv^b\)
+</span>
+事实上是向量<span>
+  \(v^a\)
+</span>
+在超曲面上的投影。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/lifeisphy/notes/edit/main/exampleSite/content/docs/GR/%e7%ac%ac%e5%9b%9b%e7%ab%a0%20%e6%9d%8e%e5%af%bc%e6%95%b0%e3%80%81Killing%e5%9c%ba%e5%92%8c%e8%b6%85%e6%9b%b2%e9%9d%a2.md" target="_blank" rel="noopener">
+      <img src="/notes/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#chap4lie-derivatives-killing-fields-hypersurfaces">chap4:Lie derivatives, Killing fields, hypersurfaces</a>
+      <ul>
+        <li><a href="#41-流形间的映射">4.1 流形间的映射</a></li>
+        <li><a href="#42-李导数">4.2 李导数</a></li>
+        <li><a href="#43-killing-矢量场">4.3 Killing 矢量场</a></li>
+        <li><a href="#44-超曲面">4.4 超曲面</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)+1;ele.style["fontSize"]=fs+"px"'>+</button>
+<button onclick='ele = document.getElementsByTagName("html")[0];comp = getComputedStyle(ele); console.log(comp.fontSize);fs=parseInt(comp.fontSize)-1;ele.style["fontSize"]=fs+"px"'>-</button>
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
