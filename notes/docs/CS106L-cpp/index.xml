@@ -1,34 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>CS106L笔记 on Hugo Book</title>
-    <link>https://lifeisphy.github.io/notes/docs/CS106L-cpp/</link>
-    <description>Recent content in CS106L笔记 on Hugo Book</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://lifeisphy.github.io/notes/docs/CS106L-cpp/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>4</title>
-      <link>https://lifeisphy.github.io/notes/docs/CS106L-cpp/4/</link>
-      <pubDate>Tue, 07 Feb 2023 11:11:53 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/CS106L-cpp/4/</guid>
-      <description>Link error#链接时，每一个程序文件都将被单独处理，这就允许一个文件中使用声明但未实现的函数。只有当链接过程结束，该函数依然未定义时才会报出错误。链接过程的具体细节这里不再阐述。
-举个例子：下面的例子可以实现字符串的小写转换：
-#include &amp;lt;iostream&amp;gt; #include &amp;lt;string&amp;gt; #include &amp;lt;cctype&amp;gt; string ConvertToLowerCase(string input); // prototype int main(){ string myString = &amp;#34;THIS IS A STRING!&amp;#34;; cout&amp;lt;&amp;lt;ConvertToLowerCase(myString); } string ConvertToLowerCase(string&amp;amp; input){ for(int k = 0; k&amp;lt;input.size(); ++k){ input[k] = tolower(input[k]); } return input; } 但该程序会出现链接错误。因为定义参数表类型与声明类型不相符：string&amp;amp; input声明的字符串为按引用传递，而声明中为按值传递。这就导致它们被视为两个不同函数，因而导致ConvertToLowerCase未被实现。
-Preprocessing commands##include &amp;lt;xxx&amp;gt; or &amp;quot;xxx.h&amp;quot;：直接将文件内容插入在当前位置
-#define phrase replacement：将文件中所有的phrase替换为replacement。如果是一整个表达式，需要加括号以指定计算优先级；replacement结尾不要加分号 #define的变式：#define phrase，此时replacement为空字符串
-#if statement,#elif statement,#else statement,#endif:用于条件控制 其中的statement子句可以是：
-#if MY_CONST&amp;gt; 137 #if MY_CONST*42 == MY_CONST #if sqrt(MY_CONST)&amp;lt;4 // illegal ,cannot call function sqrt #if MY_CONST == 3.</description>
-    </item>
-    
-    <item>
-      <title>3</title>
-      <link>https://lifeisphy.github.io/notes/docs/CS106L-cpp/3/</link>
-      <pubDate>Mon, 06 Feb 2023 19:47:38 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/CS106L-cpp/3/</guid>
-      <description>1.FileStream:#ifstream input(&amp;#34;data.txt&amp;#34;); ofstream output(&amp;#34;xxx.txt&amp;#34;); if(!input.is_open()) cerr&amp;lt;&amp;lt;&amp;#34;Couldn&amp;#39;t open the file data.txt&amp;#34;&amp;lt;&amp;lt;endl; string my_String = &amp;#34;data.txt&amp;#34;; ifstream(myString.c_str()); 2.Stream Manupulators:##include &amp;lt;iomanip&amp;gt;
-std::endl std::setw(n) set width+string=n setw被设置后只对紧邻的一次&amp;laquo;起作用 cout &amp;lt;&amp;lt; &amp;#39;[&amp;#39; &amp;lt;&amp;lt; left &amp;lt;&amp;lt; setw(10) &amp;lt;&amp;lt; &amp;#34;Hello!&amp;#34; &amp;lt;&amp;lt; &amp;#39;]&amp;#39; &amp;lt;&amp;lt; endl; // [ Hello!] cout &amp;lt;&amp;lt; &amp;#39;[&amp;#39; &amp;lt;&amp;lt; right &amp;lt;&amp;lt; setw(10) &amp;lt;&amp;lt; &amp;#34;Hello!&amp;#34; &amp;lt;&amp;lt; &amp;#39;]&amp;#39; &amp;lt;&amp;lt; endl; // [Hello! ] std::left/right 设置fill填充在左侧/右侧，即非填充内容是右对齐/左对齐 std::setfill 设置填充字符，对以后的输出均有效 std::boolalpha cout &amp;lt;&amp;lt; true &amp;lt;&amp;lt; endl; // Output: 1 cout &amp;lt;&amp;lt; boolalpha &amp;lt;&amp;lt; true &amp;lt;&amp;lt; endl; // Output: true hex,dec,oct 输出进制转换 ws: 跳过空白符 Example： Pring data in a table:table.</description>
-    </item>
-    
-  </channel>
-</rss>

@@ -1,172 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>数学 on Hugo Book</title>
-    <link>https://lifeisphy.github.io/notes/categories/%E6%95%B0%E5%AD%A6/</link>
-    <description>Recent content in 数学 on Hugo Book</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Feb 2023 22:03:25 +0000</lastBuildDate><atom:link href="https://lifeisphy.github.io/notes/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>第一章 拓扑空间简介</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/</link>
-      <pubDate>Sat, 12 Nov 2022 11:12:20 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/</guid>
-      <description>1.1 集合论初步#这部分比较简单，略
-1.2 拓扑空间#拓扑空间被定义为\((X,\mathscr{T})\)，其中 \[\mathscr T \subset 2^X\]是X的全部开集的集合。开集要满足任意并和有限交的封闭性。
-\(\mathscr T\)选取任意性：
-凝聚拓扑\(\mathscr T= \{X,\emptyset\}\)离散拓扑\(\mathscr T = 2^X\)通常拓扑，对\(\mathbb{R}^n\)来讲就是普通的开区间，和能表示为开区间并的子集 \(A\subset X\),指定拓扑\(A,\mathscr S\)A有可能不属于\(\mathscr T\)，可以定义\(\mathscr S\)为： \[\mathscr S:=\left\{V\subset A\middle|\exists O\in \mathscr T\text{such that}V=A\cap O\right\}\]\(\mathscr S\)为A的由\(\mathscr T\)导出的诱导拓扑。\((A,\mathscr S)\)为\((X,\mathscr T)\)的topological subspace
-\((X,\mathscr T)和(Y,\mathscr S)\)为拓扑空间，映射\(f:X\to Y\)连续，若 \[f^{-1}[O]\in \mathscr T\ \ \forall O\in \mathscr S\]映射f在点\(x\in X\)连续，若任意\(G&amp;#39;\in \mathscr S\ \text{such that}\ f(x)\in G&amp;#39;\),\(\exists G\in \mathscr T\)使得\(x\in G,f[G]\subset G&amp;#39;\).</description>
-    </item>
-    
-    <item>
-      <title>第二章 流形和张量场</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/</link>
-      <pubDate>Sat, 12 Nov 2022 13:33:59 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/</guid>
-      <description>2.1 微分流形#拓扑空间\((M,\mathscr T)\)称为n维微分流形(n-dimensional differentiable manifold)，若\(M\)有开覆盖\(\{O_\alpha\}\)满足： a. \(\forall O_\alpha ,\exists 同胚\Psi_\alpha:O_\alpha\to V_\alpha\)(\(V_\alpha\)为\(\mathbb{R}^n\)用通常拓扑衡量的开子集); b. \(\text{if}\ O_\alpha \cap O_\beta \ne \emptyset\)，复合映射\(\Psi_\beta\circ \Psi_\alpha^{-1}\)是\(C^\infty\)光滑的。
-\(\psi_\beta \circ \psi_\alpha^{-1}\)是\(\mathbb{R}^n\)的子集之间的映射，每个点都有n个自然坐标。因此它提供了n个n原函数。\(C^\infty\)表示每个n元函数都是无穷阶光滑的。尽管原来的拓扑空间没有坐标，但其中的开覆盖有了和\(\mathbb{R}^n\)的同胚之后就可以用\(\mathbb{R}^n\)的坐标去定义其中点的坐标。每个开覆盖对应的同胚不同，因此两个覆盖的交集就有了两套坐标\(\{x^\mu\},\{x^\nu\}\)，映射\(\psi_\beta\circ\psi_\alpha^{-1}\)提供的就是二者的一个坐标变换。
-\(C^\infty\)光滑对应的流形为光滑流形，类似还可定义\(C^r\)流形、解析流形
-\((O_\alpha,\psi_\alpha)\)称作图(chart),满足定义1的\(\{(O_\alpha,\psi_\alpha)\}\)为图册，条件b又称作相容性条件。
-例1：容易知道\(\mathbb{R}^n,\mathscr T_u\)是平凡流形。
-\(M=(S^1,\mathscr S)\)，其中\(S^1\)并不与\(\mathbb{R}\)同胚，因此要取至少两个图，才能证明其为流形。</description>
-    </item>
-    
-    <item>
-      <title>第三章 黎曼曲率张量</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/</link>
-      <pubDate>Sun, 25 Dec 2022 23:33:17 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/</guid>
-      <description>\[\global\def\ccc{c_1\cdots c_l}\global\def\bbb{b_1\cdots b_k}\global\def\ddd{d_1\cdots d_k&amp;#39;}\global\def\eee{e_1\cdots e_l&amp;#39;}\]黎曼（内禀）曲率张量#3.1 导数算符把nabla算子推广到任意流形，其上可以没有度规，所以要分清矢量和对偶矢量。在推广\(\vec\nabla\)时它更像对偶矢量，故记作\(\nabla_a\)。
-记\(\mathscr F_M(k,l)\)为流形M上全体\(C^\infty\)的\((k,l)\)型张量场集合(函数\(f\)视为标量场，因此\(\mathscr F_M(0,0)=\mathscr F_M\).)映射\(\nabla:\mathscr F_M(k,l)\to\mathscr F_M(k,l&amp;#43;1)\)称为M上的无挠导数算符，若它满足：
-线性性：\(\nabla_a(\alpha T^{\bbb}{}_{\ccc}&amp;#43;\beta S^{\bbb}{}_{\ccc})=\alpha \nabla_a T^{\bbb}{}_{\ccc}&amp;#43;\beta\nabla_a S^{\bbb}{}_{\ccc}\)满足Leibnitz律: \[\nabla_a(T^{\bbb}{}_{\ccc}S^{\ddd}{}_{\eee} )= T^{\bbb}_{\ccc}\nabla_a S^{\ddd}{}_{\eee} &amp;#43; S^{\ddd}{}_{\eee}\nabla_a T^{\bbb}{}_{\ccc}\]与缩并可换序; \(v(f)=v^a\nabla_a f\),\(\forall f\in\mathscr F_M,v\in \mathscr F_M(1,0)\); 无挠性(torsion-free):\(\nabla_a\nabla_b f=\nabla_b\nabla_a f,\forall f\in \mathscr F_M\)条件3记作\(\nabla\circ C=C\circ \nabla\),以后常写作</description>
-    </item>
-    
-    <item>
-      <title>第四章 李导数、Killing场和超曲面</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/</link>
-      <pubDate>Wed, 11 Jan 2023 16:59:05 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/</guid>
-      <description>chap4:Lie derivatives, Killing fields, hypersurfaces#4.1 流形间的映射#设\(M,N\)为流形，\(\phi:M\to N\)为光滑映射，\(\mathscr F_M\)和\(\mathscr F_N\)分别为M和N上光滑函数的集合,\(\mathscr F_M(k,l),\mathscr F_N(k,l)\)分别为M和N上光滑张量场集合,由\(\phi\)自然诱导出一系列映射：
-\(\phi^*:\mathscr F_N\to\mathscr F_M\)定义为： \[(\phi^*f)|_p :=f|_{\phi(p)},\forall f\in\mathscr F_N,p\in M\]或者写成：\((\phi^*f)(p)=f(\phi(p))\)线性 \(\phi^*(fg)=\phi^*(f)\phi^*(g)\)\(\phi_*:V_p\to V_{\phi(p)}\)定义为： \[(\phi_*v)(f):=v(\phi^*f),\forall f\in\mathscr F_N\]\(\phi_*\)是线性映射：\(\phi_*(\alpha u^a&amp;#43;\beta v^a) = \alpha\phi_*u^a&amp;#43;\beta\phi_* v^a\)拉回映射可延拓至\(\phi^*:\mathscr F_N(0,l)\to \mathscr F_M(0,l)\)：对任意\(T\in\mathscr F_N(0,l)\)，定义\(\phi^*T\in \mathscr F_M(0,l)\)为： \[(\phi^*T)_{a_1\cdots a_l}|_p (v_1)^{a_1}\cdots (v_l)^{a_l}:= T_{a_1\cdots a_l}|_{\phi(p)} (\phi_*v_1)^{a_1}\cdots (\phi_*v_l)^{a_l},\forall p\in M,v_1\cdots v_l\in V_p\]推前映射\(\phi_*\)可按如下方式延拓为\(p\)到\(\phi(p)\)张量空间的映射：\(\phi_*:\mathscr T_{V_p}(k,0)\to \mathscr T_{V_{\phi(p)}}(k,0)\): \[(\phi_* T)^{a_1\cdots a_k}(\omega^1)_{a_1}\cdots(\omega^k)_{a_k}:=T^{a_1\cdots a_k}(\phi^*\omega^1)_{a_1}\cdots (\phi^*\omega^k)_{a_k},\\ \forall \omega^1\cdots\omega^k \in V^* _{\phi(p)},T\in\mathscr T_{V_p}(k,0)\]其中\(\phi^*\omega_a\)定义为\((\phi^*\omega)_av^a\equiv \omega_a(\phi_*v)^a\)拉回映射的延拓是拉回映射\(k=1\)时的特例，拉回映射是把N上的\((0,l)\)型张量场变成M上同类型张量场，是场之间的变换； 推前映射的延拓是推前映射\(l=0\)时的特例，推前映射是把\(p\)点\((k,0)\)型张量变为像点\(\phi(p)\)点的同型张量，但不能变成场和场之间的映射，因为对N上任意一个点\(q\)，M中不一定存在它的原像\(p=\phi^{-1}(q)\)，因此张量场在\(q\)处的值就无法定义。</description>
-    </item>
-    
-    <item>
-      <title>第五章 微分形式及其积分</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/</link>
-      <pubDate>Thu, 26 Jan 2023 17:14:58 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/</guid>
-      <description>5.1 微分形式#先介绍\(n\)维空间\(V\)上的形式，再讨论\(n\)维流形\(M\)上的微分形式场。
-\(\omega_{a_{1}a_{2}\dots a_{l}}\in \mathscr T_{V}(0,l)\)叫\(V\)上的l次形式，若 \[\omega _{a_{1}a_{2}\cdots a_{l}}=\omega_{[a_{1}\dots a_{l}]}\]为书写方便，有时略去下标，将形式\(\omega_{a_{1}\dots a_{l}}\)写为\(\mathbf{ \omega}\)由定义知，1形式就是\(V\)上对偶矢量,\(\Lambda(1)=V^*\).约定把任意实数称为\(V\)上0形式，则\(\lambda(0)=\mathbb{R}\)若微分形式某分量有两个指标重复，则整个分量为0. 记\(\mathscr{T}_{V}(0,l)\)是全体(0,l)型矢量空间的集合，全体l-form的集合记为\(\Lambda(l)\)，则\(\Lambda(l)\subset \mathscr{T}_{V}(0,l)\)\[\dim \Lambda(l) = \begin{cases}\frac{n!}{l!(n-l)!},&amp;amp; l\ge n\\ \\0, &amp;amp; l&amp;lt;n\end{cases}\]proof:对\(n=3,l=2\)情形， \[\begin{aligned}\omega_{ab}&amp;amp;=\omega_{11}(e^1)_{a}(e^1)_{b} &amp;#43; \omega_{12}(e^1)_{a}(e^2)_{b}&amp;#43;\omega_{13}(e^1)_{a}(e^3)_{b}&amp;#43;\dots \\ \\&amp;amp;= \omega_{12}(e^1)_{a}\wedge(e^2)_{b}&amp;#43;\omega_{13}(e^1)_{a}\wedge (e^3)_{b}&amp;#43;\omega_{23}(e^2)_{a}\wedge(e^3)_{b} \\\end{aligned}\]推广到一般情形，就有： \[\omega_{ab}=\sum_{C}\omega_{\mu\nu}(e^\mu)_{a}\wedge (e^\nu)_{b}\\ \omega_{a_{1}\dots a_{l}}=\sum_{C}\omega_{\mu_{1}\dots\mu_{l}}(e^{\mu_{1}})_{a_{1}}\wedge \dots\wedge (e^{\mu_{l}})_{a_{l}}\]其中\(\sum_{c}\)表示对\(n\)个数中取\(l\)个数的各种组合求和，即，\(\Lambda(l)\)的基底矢量共\(C_n^l\)个 当\(l&amp;lt;n\)时，\(\Lambda(l)\)一定有重复指标，因而只有零元一个元素。</description>
-    </item>
-    
-    <item>
-      <title>第六章 狭义相对论</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</link>
-      <pubDate>Thu, 09 Feb 2023 22:03:25 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</guid>
-      <description>6.1 四维表述基础#这里所讲的狭义相对论（SR）与普物中的很相似，许多概念在此只作提及，重点看广义相对论（GR）中存在不同的地方。
-一些物理名词与数学名词的对应：
-Phys Math innertial coordinates Lorenzian coordinates interval Minkowski line element background spacetime 4-dim Minkowski space observer(point mass) timelike curve inertial observer timelike geodesics 所谓事件，就是时间一瞬和空间一点的结合。我们可以将炸弹爆炸、两车相撞等都抽象为事件。
-粒子是对空间中有质量的点的抽象。与粒子物理学中的质子、中子等有联系，但也不尽相同。我们把粒子分为有静质量和无静质量两类，后者也称为光子。
-世界线的表示称为时空图。在时空图上，我们能表示不同世界线的演化过程。
-观者（Observer）是进行物理观测的人，一般也抽象为质点。为了观测，观测者手中应有一个走时准确的钟，称为标准钟，该钟的读数称为固有时。观者也有自己的运动轨迹，形成一条世界线。
-观者中有一类特殊的观者，称为惯性观者。惯性观者相对于所在的惯性坐标系是静止的。惯性观者形成的世界线\(C(t)\)是类时测地线： \[\begin{aligned}\partial_{b}(\partial /\partial t)^a &amp;amp;= 0 \\\left( \frac{\partial}{\partial t}\right)^b\partial_{b}\left( \frac{\partial}{\partial t} \right)^a &amp;amp;= 0&amp;amp; \end{aligned}\]其中第一式是由于一个系的普通导数算符作用到坐标基矢上必然为0.
-参考系的定义与狭义相对论不同。参考系\(\mathscr{R}\)是无数多观者的集合，这些观者应满足条件：对时空中任意一点，有且仅有一个观者的世界线经过这点。该定义是对狭义相对论中参考系定义的推广：在狭义相对论中，对于一个惯性参考系，该系的所有观者均相对静止，形成的世界线均平行于\(t\)轴。
-所有惯性观者构成的参考系称为惯性参考系
-牛顿力学、狭义相对论以及广义相对论的时空及其附加结构： \[\begin{aligned}\text{Newton:}&amp;amp;(\mathbb{R}^4,?)\\\text{SR:}&amp;amp;(\mathbb{R}^4,\eta_{ab})\\\text{GR:}&amp;amp;(M,g_{ab})\end{aligned}\]狭义相对论是发生在四维闵可夫斯基空间中的物理学。 狭义相对论中，一个质点的速率定义为： \[u:=\frac{\sqrt{ \mathrm{d}x^2&amp;#43;\mathrm{d}y^2&amp;#43;\mathrm{d}z^2 }}{\mathrm{d}t}\]\[\begin{aligned}\mathrm{d}s^2 &amp;amp; = -\mathrm{d}t^2&amp;#43;\mathrm{d}x^2&amp;#43;\mathrm{d}y^2&amp;#43;\mathrm{d}z^2 = \\&amp;amp;=-\mathrm{d}t^2(1-\frac{\mathrm{d}x^2&amp;#43;\mathrm{d}y^2&amp;#43;\mathrm{d}z^2}{dt^2}) \\&amp;amp;=-\mathrm{d}t^2(1-u^2)\end{aligned}\]于是我们有 \[\begin{aligned}\text{null}\leftrightarrow&amp;amp; \mathrm{d}s^2=0\leftrightarrow u=1\\\text{time like}\leftrightarrow&amp;amp; \mathrm{d}s^2&amp;lt;0\leftrightarrow u&amp;lt;1 \\\text{space like}\leftrightarrow&amp;amp; \mathrm{d}s^2&amp;gt;0\end{aligned}\]设\(\{x^\mu\}\)是洛伦兹坐标系，我们通过微分同胚\(\phi\)将其变换为坐标系\(\{x&amp;#39;^\mu\}\)。当变换满足什么条件时，新的参考系是洛伦兹坐标系？ 在第四章我们曾讲过，微分同胚映射\(\phi\)是等度规映射即可满足条件。Killing矢量场产生的单参微分同胚群即为单参等度规群。对于闵氏空间，有10个独立的Killing矢量场，分别为4个时空平移，3个空间转动和3个boost。</description>
-    </item>
-    
-    <item>
-      <title>群论拓扑</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/</link>
-      <pubDate>Tue, 13 Dec 2022 19:55:38 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/</guid>
-      <description>Group theory补充：#\((X,\theta(X)),(Y,\theta(Y))\)都是拓扑空间，\(Z=X\otimes Y\)是X与Y的直积集，令 \[\theta(Z) = \left\{O=\bigcup_{O_1\in\tilde{O_1},O_2\in\tilde{O_2}} O_1\otimes O_2|\tilde{O_1}\in \theta(X),\tilde{O_2}\in\theta(Y)\right\}\]则\(\theta(Z)\)是Z上的一个拓扑，\((Z,\theta(Z))\)是X和Y的直积拓扑空间
-\((X,\theta)\)为连通拓扑空间，若\(\nexists\ 开集\ O_1,O_2\ \text{such that}\)\[O_1\cup O_2=X \\ P_1\cap O_2 = \emptyset \\\]则称\((X,\theta)\)是连通的拓扑空间；反之则是不连通的
-道路连通与连通的区别：道路连通的条件更加严格，道路连通的拓扑空间一定连通。
-\((X,\mathscr\theta(X)),(Y,\mathscr\theta(Y))\)是拓扑空间，如果\(f:X\to Y\)满足：\(\forall x\in X,\forall f(x)邻域 V_{f(x)}\subset Y\),则\(\exists x\)的邻域\(U_x\ \text{such that}\ f(U_x)\subset V_{f(x)}\)，则称映射\(f\)在\(x\)点连续
-\(f:X\to Y\)是两拓扑空间的映射，下面四条件等价：
-\(f\)是连续映射 \(Y\)中开集的原像为\(X\)中的开集 \(Y\)中闭集原像为闭集 \(\forall A\subset X\),\(f(\bar{A})\subset \overline{f(A)}\),\(\bar{A}\)为A的闭包 道路\(\alpha\)是连续映射\(I=[0,1]\to X\)，它连接\(\alpha(0)=x_0\)和\(\alpha(1)=x_1\),是连接两点的一条道路</description>
-    </item>
-    
-    <item>
-      <title>2-1 Lebesgue外测度，可测集</title>
-      <link>https://lifeisphy.github.io/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/</link>
-      <pubDate>Tue, 06 Dec 2022 14:16:11 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/</guid>
-      <description>1.Lebesgue外测度与可测集#测度是体积概念的推广
-E是\(\mathbb{R}^n\)点集，若\(E\)存在一系列开矩体\(I_k,k=1,2,\cdots\)，则它确定了一个非负实数 \[u = \sum_{k=1}^{\infty } |I_k|\]，记 \[m^*(E) = \inf\left\{u|u=\sum_{k=1}^{\infty } |I_k|,E\subset \bigcup_{k=1}^\infty I_k,I_k为开矩体 \right\}\]称\(m^*(E)\)为集合E的外测度
-非负 单调（有包含关系的集合测度单调增加） 次可加性（集合的并的外测度小于等于组成部分测度和） 平移不变性（给每个点均进行平移，得到的新集合测度不变） 一些例子：
-可数个点测度为0 n维实空间的超平面测度为0 Cantor集测度为0 2. Lebesgue可测集#Lebesgue外测度没有可加性，即有一些集合的外测度不具有可加性。除掉这些集合，得到的的集族具有可列可加性，成为体积、长度概念推广。
-设\(E\subset\mathbb{R}^n\),若\(\forall T\subset\mathbb{R}^n\)，有 \[m^*(T)=m^*(T\cap E)&amp;#43;m^*(T\cap E^c),\]则称E是Lebesgue可测集，简称可测集，记作\(\frak M\)可测集性质：
-\(\emptyset\in\frak M,m(\emptyset)=0\)\(E\in\frak M\Rightarrow E^c\in \frak M\)\(E,F\in\frak M,\Rightarrow E\cup F,E\cap F,E-F\in \frak M\)可列可加性：\(E_j\in\frak M,j=1,2,\cdots\Rightarrow\bigcup_{j=1}^\infty E_j \in\frak M\),若\(E_j\)之间互不相交，则满足可加性： \[m\left(\bigcup_{j=1}^\infty E_j \right)= \sum_{j=1}^{\infty } m(E_j)\]3.</description>
-    </item>
-    
-    <item>
-      <title>1-集合的势与无穷</title>
-      <link>https://lifeisphy.github.io/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/</link>
-      <pubDate>Wed, 14 Sep 2022 18:21:26 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/</guid>
-      <description>本文是参考了《实变函数与泛函分析》第一章写出的科普文，也希望能让各位对“有限”与“无限”的区别与联系有一个更数学的认识。 有限其实已经为我们所熟知了。但很多人碰到“无穷”这个概念时常常会感到十分困惑：无穷大是什么？无穷大的量之间该如何比较？本篇文章将带你走进这些问题的数学研究。
-集合#集合就是把一类不相同的事物聚集在一起。比如把三个人堆在一起，\(A=\{张三，李四，王五\}\)就构成一个集合，全体自然数堆在一起，\(\mathbb{N}=\{0,1,2,...\}\)也构成一个集合。集合中的每个事物叫做元素，元素可以是一本书，一个人，或者一粒沙子，总之什么都可以。对于一个元素\(x\)，它如果在集合\(S\)中，就叫做\(x\)属于集合S,记作\(x\in S\)。反之，若\(x\)不在集合中，则\(x\)不属于\(S\)，\(x\notin S\)。
-元素与集合之间存在“属于”或“不属于”的关系，而集合与集合之间则可以比较。比如集合A包含B，换言之B是A的子集，说的就是\(\forall a\in B,a\in A\)，记作\(B\subseteq A\),如果B和A不相同，则B是A的真子集，\(B\subset A\)显然，有些集合的元素个数是有限的，比如上面的\(A\)就只有3个元素，这叫做有限集，是我们熟悉的情况；但也有些集合元素个数无限，比如自然数集\(\mathbb{N}\)和实数集\(\mathbb{R}\)。这些叫做无限集。
-笛卡尔积#假设我们有两个集合\(A,B\)，从\(A\)中取出一个元素\(a\)，再从\(B\)中取出一元素\(b\)，它们的有序对\((a,b)\)构成的集合称作集合\(A,B\)的笛卡尔积笛卡尔积，记作\(A\times B\)。 用数学语言描述，就是： \[A\times B = \{(a,b)|\forall a\in A,b\in B\}\]笛卡尔积的使用也很常见。比如，\(\mathbb R\)表示实数，那么\(\mathbb R\times \mathbb R\)就是二维欧式空间，\(\mathbb R^n =\{(x_1,x_2,\cdots,x_n)|x_i\in \mathbb R,1\le i\le n\}\)是n维欧式空间。</description>
-    </item>
-    
-    <item>
-      <title>Lebesgue可测函数</title>
-      <link>https://lifeisphy.github.io/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Wed, 14 Sep 2022 18:21:26 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/</guid>
-      <description>Lebesgue 可测函数#definition: 设\(E\subset \mathbb R^n\)是可测集，f是E上的函数，如果对于任意常数t，集合 \[E(f&amp;gt;t)\equiv \{x\in \mathbb R^n | x \in E,f(x)&amp;gt;t \}\]都是可测集，则称f是E上的Lebesgue可测函数，简称为E上的可测函数，也可以称f在E上可测。约定以\(\mathcal M (E)\)记E上的Lebesgue可测函数全体。</description>
-    </item>
-    
-    <item>
-      <title>sigma</title>
-      <link>https://lifeisphy.github.io/notes/docs/memo/sigma/</link>
-      <pubDate>Wed, 14 Sep 2022 18:21:26 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/memo/sigma/</guid>
-      <description>\(\sigma\)代数#令\(\mathcal{F}\)是由集合X中的一些子集构成的集合组(\(\mathcal F \subset 2^X\))，如果满足：
-\[\begin{array}{rl}(1) &amp;amp;\emptyset \in \mathcal{F}\\(2)&amp;amp;若A\in \mathcal{F} ,则A^c\in \mathcal{F}\\(3)&amp;amp;若A_n \in \mathcal F , 则\bigcup_{n=1}^\infty A_n \in \mathcal F\end{array}\]那么\(\mathcal F\)是X的一个 \(\sigma\)代数
-为什么要可列并集也在\(\mathcal F\)内,不是交集什么的？因为要计算\(f\left(\bigcup_i A_i \right)\)的值，其中\(f\)是一种测度函数。所以任意可列并集必须在\(\mathcal F内\)。
-\(\emptyset\)和\(2^X\)是两个平凡的σ代数。
-有限多个开集的交是开集，任意多开集的并是开集； 有限多个闭集的并是闭集，任意多闭集的交是闭集。
-\(F_\sigma\)集，\(G_\delta\)集#开集与闭集的性质： \(F_\sigma\)集\(A\subset \mathbb R^n\)是可数个闭集的并集。 \(G_\delta\)集\(B\subset \mathbb R^n\)是可数个开集的交集。</description>
-    </item>
-    
-    <item>
-      <title>sigma</title>
-      <link>https://lifeisphy.github.io/notes/posts/sigma/</link>
-      <pubDate>Wed, 14 Sep 2022 18:21:26 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/posts/sigma/</guid>
-      <description>\(\sigma\)代数#令\(\mathcal{F}\)是由集合X中的一些子集构成的集合组(\(\mathcal F \subset 2^X\))，如果满足：\[\begin{array}{rl}(1) &amp;amp;\emptyset \in \mathcal{F}\\(2)&amp;amp;若A\in \mathcal{F} ,则A^c\in \mathcal{F}\\(3)&amp;amp;若A_n \in \mathcal F , 则\bigcup_{n=1}^\infty A_n \in \mathcal F\end{array}\]那么\(\mathcal F\)是X的一个\(\sigma\)代数
-为什么要可列并集也在\(\mathcal F\)内,不是交集什么的？因为要计算\(f\left(\bigcup_i A_i \right)\)的值，其中\(f\)是一种测度函数。所以任意可列并集必须在\(\mathcal F内\)。\(\emptyset\)和\(2^X\)是两个平凡的σ代数。有限多个开集的交是开集，任意多开集的并是开集； 有限多个闭集的并是闭集，任意多闭集的交是闭集。
-\(F_\sigma\)集，\(G_\delta\)集#开集与闭集的性质： \(F_\sigma\)集\(A\subset \mathbb R^n\)是可数个闭集的并集。 \(G_\delta\)集\(B\subset \mathbb R^n\)是可数个开集的交集。</description>
-    </item>
-    
-    <item>
-      <title>infinity</title>
-      <link>https://lifeisphy.github.io/notes/posts/infinity/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/posts/infinity/</guid>
-      <description>本文是参考了《实变函数与泛函分析》第一章写出的科普文，也希望能让各位对“有限”与“无限”的区别与联系有一个更数学的认识。 有限其实已经为我们所熟知了。但很多人碰到“无穷”这个概念时常常会感到十分困惑：无穷大是什么？无穷大的量之间该如何比较？本篇文章将带你走进这些问题的数学研究。
-集合#集合就是把一类不相同的事物聚集在一起。比如把三个人堆在一起，\(A=\{张三，李四，王五\}\)就构成一个集合，全体自然数堆在一起，\(\mathbb{N}=\{0,1,2,...\}\)也构成一个集合。集合中的每个事物叫做元素，元素可以是一本书，一个人，或者一粒沙子，总之什么都可以。对于一个元素\(x\)，它如果在集合\(S\)中，就叫做\(x\)属于集合S,记作\(x\in S\)。反之，若\(x\)不在集合中，则\(x\)不属于\(S\)，\(x\notin S\)。
-元素与集合之间存在“属于”或“不属于”的关系，而集合与集合之间则可以比较。比如集合A包含B，换言之B是A的子集，说的就是\(\forall a\in B,a\in A\)，记作\(B\subseteq A\),如果B和A不相同，则B是A的真子集，\(B\subset A\)显然，有些集合的元素个数是有限的，比如上面的\(A\)就只有3个元素，这叫做有限集，是我们熟悉的情况；但也有些集合元素个数无限，比如自然数集\(\mathbb{N}\)和实数集\(\mathbb{R}\)。这些叫做无限集。
-笛卡尔积#假设我们有两个集合\(A,B\)，从\(A\)中取出一个元素\(a\)，再从\(B\)中取出一元素\(b\)，它们的有序对\((a,b)\)构成的集合称作集合\(A,B\)的笛卡尔积笛卡尔积，记作\(A\times B\)。 用数学语言描述，就是： \[A\times B = \{(a,b)|\forall a\in A,b\in B\}\]笛卡尔积的使用也很常见。比如，\(\mathbb R\)表示实数，那么\(\mathbb R\times \mathbb R\)就是二维欧式空间，\(\mathbb R^n =\{(x_1,x_2,\cdots,x_n)|x_i\in \mathbb R,1\le i\le n\}\)是n维欧式空间。</description>
-    </item>
-    
-  </channel>
-</rss>

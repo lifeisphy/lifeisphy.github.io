@@ -1,82 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>泛函分析 on Hugo Book</title>
-    <link>https://lifeisphy.github.io/notes/tags/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/</link>
-    <description>Recent content in 泛函分析 on Hugo Book</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 06 Dec 2022 14:16:11 +0000</lastBuildDate><atom:link href="https://lifeisphy.github.io/notes/tags/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>2-1 Lebesgue外测度，可测集</title>
-      <link>https://lifeisphy.github.io/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/</link>
-      <pubDate>Tue, 06 Dec 2022 14:16:11 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/memo/chap2/2.1-Lebesgue%E5%A4%96%E6%B5%8B%E5%BA%A6%E5%8F%AF%E6%B5%8B%E9%9B%86/</guid>
-      <description>1.Lebesgue外测度与可测集#测度是体积概念的推广
-E是\(\mathbb{R}^n\)点集，若\(E\)存在一系列开矩体\(I_k,k=1,2,\cdots\)，则它确定了一个非负实数 \[u = \sum_{k=1}^{\infty } |I_k|\]，记 \[m^*(E) = \inf\left\{u|u=\sum_{k=1}^{\infty } |I_k|,E\subset \bigcup_{k=1}^\infty I_k,I_k为开矩体 \right\}\]称\(m^*(E)\)为集合E的外测度
-非负 单调（有包含关系的集合测度单调增加） 次可加性（集合的并的外测度小于等于组成部分测度和） 平移不变性（给每个点均进行平移，得到的新集合测度不变） 一些例子：
-可数个点测度为0 n维实空间的超平面测度为0 Cantor集测度为0 2. Lebesgue可测集#Lebesgue外测度没有可加性，即有一些集合的外测度不具有可加性。除掉这些集合，得到的的集族具有可列可加性，成为体积、长度概念推广。
-设\(E\subset\mathbb{R}^n\),若\(\forall T\subset\mathbb{R}^n\)，有 \[m^*(T)=m^*(T\cap E)&amp;#43;m^*(T\cap E^c),\]则称E是Lebesgue可测集，简称可测集，记作\(\frak M\)可测集性质：
-\(\emptyset\in\frak M,m(\emptyset)=0\)\(E\in\frak M\Rightarrow E^c\in \frak M\)\(E,F\in\frak M,\Rightarrow E\cup F,E\cap F,E-F\in \frak M\)可列可加性：\(E_j\in\frak M,j=1,2,\cdots\Rightarrow\bigcup_{j=1}^\infty E_j \in\frak M\),若\(E_j\)之间互不相交，则满足可加性： \[m\left(\bigcup_{j=1}^\infty E_j \right)= \sum_{j=1}^{\infty } m(E_j)\]3.</description>
-    </item>
-    
-    <item>
-      <title>1-集合的势与无穷</title>
-      <link>https://lifeisphy.github.io/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/</link>
-      <pubDate>Wed, 14 Sep 2022 18:21:26 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/memo/chap1/1-%E9%9B%86%E5%90%88%E7%9A%84%E5%8A%BF%E4%B8%8E%E6%97%A0%E7%A9%B7/</guid>
-      <description>本文是参考了《实变函数与泛函分析》第一章写出的科普文，也希望能让各位对“有限”与“无限”的区别与联系有一个更数学的认识。 有限其实已经为我们所熟知了。但很多人碰到“无穷”这个概念时常常会感到十分困惑：无穷大是什么？无穷大的量之间该如何比较？本篇文章将带你走进这些问题的数学研究。
-集合#集合就是把一类不相同的事物聚集在一起。比如把三个人堆在一起，\(A=\{张三，李四，王五\}\)就构成一个集合，全体自然数堆在一起，\(\mathbb{N}=\{0,1,2,...\}\)也构成一个集合。集合中的每个事物叫做元素，元素可以是一本书，一个人，或者一粒沙子，总之什么都可以。对于一个元素\(x\)，它如果在集合\(S\)中，就叫做\(x\)属于集合S,记作\(x\in S\)。反之，若\(x\)不在集合中，则\(x\)不属于\(S\)，\(x\notin S\)。
-元素与集合之间存在“属于”或“不属于”的关系，而集合与集合之间则可以比较。比如集合A包含B，换言之B是A的子集，说的就是\(\forall a\in B,a\in A\)，记作\(B\subseteq A\),如果B和A不相同，则B是A的真子集，\(B\subset A\)显然，有些集合的元素个数是有限的，比如上面的\(A\)就只有3个元素，这叫做有限集，是我们熟悉的情况；但也有些集合元素个数无限，比如自然数集\(\mathbb{N}\)和实数集\(\mathbb{R}\)。这些叫做无限集。
-笛卡尔积#假设我们有两个集合\(A,B\)，从\(A\)中取出一个元素\(a\)，再从\(B\)中取出一元素\(b\)，它们的有序对\((a,b)\)构成的集合称作集合\(A,B\)的笛卡尔积笛卡尔积，记作\(A\times B\)。 用数学语言描述，就是： \[A\times B = \{(a,b)|\forall a\in A,b\in B\}\]笛卡尔积的使用也很常见。比如，\(\mathbb R\)表示实数，那么\(\mathbb R\times \mathbb R\)就是二维欧式空间，\(\mathbb R^n =\{(x_1,x_2,\cdots,x_n)|x_i\in \mathbb R,1\le i\le n\}\)是n维欧式空间。</description>
-    </item>
-    
-    <item>
-      <title>Lebesgue可测函数</title>
-      <link>https://lifeisphy.github.io/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Wed, 14 Sep 2022 18:21:26 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/memo/Lebesgue%E5%8F%AF%E6%B5%8B%E5%87%BD%E6%95%B0/</guid>
-      <description>Lebesgue 可测函数#definition: 设\(E\subset \mathbb R^n\)是可测集，f是E上的函数，如果对于任意常数t，集合 \[E(f&amp;gt;t)\equiv \{x\in \mathbb R^n | x \in E,f(x)&amp;gt;t \}\]都是可测集，则称f是E上的Lebesgue可测函数，简称为E上的可测函数，也可以称f在E上可测。约定以\(\mathcal M (E)\)记E上的Lebesgue可测函数全体。</description>
-    </item>
-    
-    <item>
-      <title>sigma</title>
-      <link>https://lifeisphy.github.io/notes/docs/memo/sigma/</link>
-      <pubDate>Wed, 14 Sep 2022 18:21:26 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/docs/memo/sigma/</guid>
-      <description>\(\sigma\)代数#令\(\mathcal{F}\)是由集合X中的一些子集构成的集合组(\(\mathcal F \subset 2^X\))，如果满足：
-\[\begin{array}{rl}(1) &amp;amp;\emptyset \in \mathcal{F}\\(2)&amp;amp;若A\in \mathcal{F} ,则A^c\in \mathcal{F}\\(3)&amp;amp;若A_n \in \mathcal F , 则\bigcup_{n=1}^\infty A_n \in \mathcal F\end{array}\]那么\(\mathcal F\)是X的一个 \(\sigma\)代数
-为什么要可列并集也在\(\mathcal F\)内,不是交集什么的？因为要计算\(f\left(\bigcup_i A_i \right)\)的值，其中\(f\)是一种测度函数。所以任意可列并集必须在\(\mathcal F内\)。
-\(\emptyset\)和\(2^X\)是两个平凡的σ代数。
-有限多个开集的交是开集，任意多开集的并是开集； 有限多个闭集的并是闭集，任意多闭集的交是闭集。
-\(F_\sigma\)集，\(G_\delta\)集#开集与闭集的性质： \(F_\sigma\)集\(A\subset \mathbb R^n\)是可数个闭集的并集。 \(G_\delta\)集\(B\subset \mathbb R^n\)是可数个开集的交集。</description>
-    </item>
-    
-    <item>
-      <title>sigma</title>
-      <link>https://lifeisphy.github.io/notes/posts/sigma/</link>
-      <pubDate>Wed, 14 Sep 2022 18:21:26 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/posts/sigma/</guid>
-      <description>\(\sigma\)代数#令\(\mathcal{F}\)是由集合X中的一些子集构成的集合组(\(\mathcal F \subset 2^X\))，如果满足：\[\begin{array}{rl}(1) &amp;amp;\emptyset \in \mathcal{F}\\(2)&amp;amp;若A\in \mathcal{F} ,则A^c\in \mathcal{F}\\(3)&amp;amp;若A_n \in \mathcal F , 则\bigcup_{n=1}^\infty A_n \in \mathcal F\end{array}\]那么\(\mathcal F\)是X的一个\(\sigma\)代数
-为什么要可列并集也在\(\mathcal F\)内,不是交集什么的？因为要计算\(f\left(\bigcup_i A_i \right)\)的值，其中\(f\)是一种测度函数。所以任意可列并集必须在\(\mathcal F内\)。\(\emptyset\)和\(2^X\)是两个平凡的σ代数。有限多个开集的交是开集，任意多开集的并是开集； 有限多个闭集的并是闭集，任意多闭集的交是闭集。
-\(F_\sigma\)集，\(G_\delta\)集#开集与闭集的性质： \(F_\sigma\)集\(A\subset \mathbb R^n\)是可数个闭集的并集。 \(G_\delta\)集\(B\subset \mathbb R^n\)是可数个开集的交集。</description>
-    </item>
-    
-    <item>
-      <title>infinity</title>
-      <link>https://lifeisphy.github.io/notes/posts/infinity/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://lifeisphy.github.io/notes/posts/infinity/</guid>
-      <description>本文是参考了《实变函数与泛函分析》第一章写出的科普文，也希望能让各位对“有限”与“无限”的区别与联系有一个更数学的认识。 有限其实已经为我们所熟知了。但很多人碰到“无穷”这个概念时常常会感到十分困惑：无穷大是什么？无穷大的量之间该如何比较？本篇文章将带你走进这些问题的数学研究。
-集合#集合就是把一类不相同的事物聚集在一起。比如把三个人堆在一起，\(A=\{张三，李四，王五\}\)就构成一个集合，全体自然数堆在一起，\(\mathbb{N}=\{0,1,2,...\}\)也构成一个集合。集合中的每个事物叫做元素，元素可以是一本书，一个人，或者一粒沙子，总之什么都可以。对于一个元素\(x\)，它如果在集合\(S\)中，就叫做\(x\)属于集合S,记作\(x\in S\)。反之，若\(x\)不在集合中，则\(x\)不属于\(S\)，\(x\notin S\)。
-元素与集合之间存在“属于”或“不属于”的关系，而集合与集合之间则可以比较。比如集合A包含B，换言之B是A的子集，说的就是\(\forall a\in B,a\in A\)，记作\(B\subseteq A\),如果B和A不相同，则B是A的真子集，\(B\subset A\)显然，有些集合的元素个数是有限的，比如上面的\(A\)就只有3个元素，这叫做有限集，是我们熟悉的情况；但也有些集合元素个数无限，比如自然数集\(\mathbb{N}\)和实数集\(\mathbb{R}\)。这些叫做无限集。
-笛卡尔积#假设我们有两个集合\(A,B\)，从\(A\)中取出一个元素\(a\)，再从\(B\)中取出一元素\(b\)，它们的有序对\((a,b)\)构成的集合称作集合\(A,B\)的笛卡尔积笛卡尔积，记作\(A\times B\)。 用数学语言描述，就是： \[A\times B = \{(a,b)|\forall a\in A,b\in B\}\]笛卡尔积的使用也很常见。比如，\(\mathbb R\)表示实数，那么\(\mathbb R\times \mathbb R\)就是二维欧式空间，\(\mathbb R^n =\{(x_1,x_2,\cdots,x_n)|x_i\in \mathbb R,1\le i\le n\}\)是n维欧式空间。</description>
-    </item>
-    
-  </channel>
-</rss>
