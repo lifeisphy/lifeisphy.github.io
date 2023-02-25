@@ -290,41 +290,58 @@ pre[data-line] .line-highlight[data-end]:after {
   font-size: medium;
 }
 .bar_template {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+}
+.bar_template .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .bar_template:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .def,
 .d,
 .yellow {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #f3e9de;
   border-color: #e6d303;
+}
+.def .label,
+.d .label,
+.yellow .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .def:before,
 .d:before,
 .yellow:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .def:before,
 .d:before,
@@ -335,23 +352,33 @@ pre[data-line] .line-highlight[data-end]:after {
 .thm,
 .theorem,
 .t {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #b2f1ce;
   border-color: #e6d303;
+}
+.thm .label,
+.theorem .label,
+.t .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .thm:before,
 .theorem:before,
 .t:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .thm:before,
 .theorem:before,
@@ -362,28 +389,39 @@ pre[data-line] .line-highlight[data-end]:after {
 .pf,
 .proof,
 .p {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: aqua;
   border-color: lightpink;
+}
+.pf .label,
+.proof .label,
+.p .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .pf:before,
 .proof:before,
 .p:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .pf:before,
 .proof:before,
 .p:before {
   content: "证明";
+  color: white;
   background-color: #4949ff;
 }
 .pf:after,
@@ -396,105 +434,148 @@ pre[data-line] .line-highlight[data-end]:after {
 .properties,
 .property,
 .prop {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: aqua;
   border-color: lightpink;
+}
+.blue .label,
+.properties .label,
+.property .label,
+.prop .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .blue:before,
 .properties:before,
 .property:before,
 .prop:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .blue:before,
 .properties:before,
 .property:before,
 .prop:before {
   content: attr(name);
+  color: white;
   background-color: #4949ff;
 }
 .question,
 .q,
 .pink {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #fcd2d9;
   border-color: #e958e9;
+}
+.question .label,
+.q .label,
+.pink .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .question:before,
 .q:before,
 .pink:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .question:before,
 .q:before,
 .pink:before {
   content: attr(name);
+  color: white;
   background-color: #fa97a8;
 }
 .eg,
 .ex,
 .example {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #0cf76a;
   border-color: #0cb951;
+}
+.eg .label,
+.ex .label,
+.example .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .eg:before,
 .ex:before,
 .example:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .eg:before,
 .ex:before,
 .example:before {
   content: attr(name);
+  color: white;
   background-color: #2bbb2b;
 }
 .lemma {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #cbb6e5;
   border-color: #771be7;
+}
+.lemma .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .lemma:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .lemma:before {
   content: attr(name);
+  color: white;
   background-color: #871bb5;
 }
 .footer {
@@ -656,7 +737,7 @@ c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></spa
 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
 c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span></span></span></span>&#x5316;&#x4E3A;&#x6C42;&#x6781;&#x503C;&#x95EE;&#x9898;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>min</mi><mo>&#x2061;</mo></mrow><mi>x</mi></msub><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>x</mi><mi>T</mi></msup><mi>A</mi><mi>x</mi><mo>&#x2212;</mo><msup><mi>b</mi><mi>T</mi></msup><mi>x</mi></mrow><annotation encoding="application/x-tex">\min_x \frac{1}{2}x^T Ax-b^Tx</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mop"><span class="mop">min</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mord mathnormal">A</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8413em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mord mathnormal">x</span></span></span></span>&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x7F16;&#x5199;&#x7A0B;&#x5E8F;<code>1.c</code>&#x5B9E;&#x73B0;&#xFF0C;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#xFF1A;<br>
-<img src="http://60.205.203.160:8000/home/2022-11-26_17-57-56.62.png" style></p>
+<img src="./img/2022-11-26_17-57-56.62.png" style></p>
 <p>&#x5176;&#x4E2D;&#x4E0A;&#x9762;&#x662F;&#x6700;&#x901F;&#x4E0B;&#x964D;&#x6CD5;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x5171;&#x8F6D;&#x68AF;&#x5EA6;&#x6CD5;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
 <h1 class="mume-header" id="-2-%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E6%B1%82%E6%9C%AC%E5%BE%81%E5%80%BC-">2. &#x56DB;&#x79CD;&#x65B9;&#x6CD5;&#x6C42;&#x672C;&#x5F81;&#x503C;</h1>
 
@@ -865,7 +946,7 @@ l0,-1344c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 -470,-1265c-4.7,-6,-9.7,-11.7,-15,-17c-0.7,-0.7,-6.7,-1,-18,-1z"/></svg></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 </div></div>
 <p>&#x5BF9;Sturm&#x5E8F;&#x5217;+&#x5BF9;&#x5206;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x548C;&#x526F;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x7684;&#x5E8F;&#x5217;&#x9012;&#x5F52;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;&#x4F46;C&#x8BED;&#x8A00;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x3002;&#x56E0;&#x6B64;&#x6539;&#x7528;python&#xFF0C;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;<a href="./math_.py">math_.py</a>&#x548C;<a href="./T2.py">T2.py</a>&#xFF0C;&#x8FD0;&#x884C;&#x5F97;&#x5230;&#x5706;&#x76D8;&#x5B9A;&#x7406;&#x786E;&#x5B9A;&#x7684;&#x672C;&#x5F81;&#x503C;&#x8303;&#x56F4;&#xFF0C;&#x4EE5;&#x53CA;&#x7B2C; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">5k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">5</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> &#x6B21;&#x8FED;&#x4EE3;&#x540E;&#x7684;&#x7279;&#x5F81;&#x503C;&#xFF1A;<br>
-<img src="http://60.205.203.160:8000/home/2022-11-28_16-33-50.85.png" style></p>
+<img src="./img/2022-11-28_16-33-50.85.png" style></p>
 <h1 class="mume-header" id="-3%E5%B9%82%E6%AC%A1%E6%B3%95%E6%B1%82%E7%9F%A9%E9%98%B5%E6%9C%80%E5%A4%A7%E6%A8%A1%E7%9A%84%E6%9C%AC%E5%BE%81%E5%80%BC%E5%92%8C%E6%9C%AC%E5%BE%81%E7%9F%A2-">3.&#x5E42;&#x6B21;&#x6CD5;&#x6C42;&#x77E9;&#x9635;&#x6700;&#x5927;&#x6A21;&#x7684;&#x672C;&#x5F81;&#x503C;&#x548C;&#x672C;&#x5F81;&#x77E2;</h1>
 
 <h3 class="mume-header" id="-a-">(a)</h3>
@@ -927,7 +1008,7 @@ c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></spa
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi>lim</mi><mo>&#x2061;</mo></mrow><mrow><mi>k</mi><mo>&#x2192;</mo><mi mathvariant="normal">&#x221E;</mi></mrow></munder><msup><mi>&#x3BD;</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><munder><mrow><mi>lim</mi><mo>&#x2061;</mo></mrow><mrow><mi>k</mi><mo>&#x2192;</mo><mi mathvariant="normal">&#x221E;</mi></mrow></munder><mo stretchy="false">[</mo><msup><mi>q</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><msup><mo stretchy="false">]</mo><mo>&#x2020;</mo></msup><mi>A</mi><msup><mi>q</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><msub><mi>&#x3BB;</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\lim_{k\to\infty} \nu^{(k)} = \lim_{k\to\infty} [q^{(k)}]^\dagger A q^{(k)} = \lambda_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.6901em;vertical-align:-0.7521em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-2.3479em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">&#x2192;</span><span class="mord mtight">&#x221E;</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop">lim</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.7521em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.06366em;">&#x3BD;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.6901em;vertical-align:-0.7521em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-2.3479em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">&#x2192;</span><span class="mord mtight">&#x221E;</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop">lim</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.7521em;"><span></span></span></span></span></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">&#x2020;</span></span></span></span></span></span></span></span><span class="mord mathnormal">A</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.938em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">&#x3BB;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
 </div>
 <p>&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x6C42;&#x89E3;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">N=10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span>&#x7684;&#x60C5;&#x5F62;&#xFF0C;&#x6C42;&#x51FA;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>&#x2212;</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-A)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">&#x2212;</span><span class="mord mathnormal">A</span><span class="mclose">)</span></span></span></span>&#x7EDD;&#x5BF9;&#x503C;&#x6700;&#x5927;&#x7684;&#x672C;&#x5F81;&#x503C;&#x548C;&#x76F8;&#x5E94;&#x672C;&#x5F81;&#x77E2;&#xFF08;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x4E3A;400&#xFF09;&#xFF1A;<br>
-<img src="http://60.205.203.160:8000/home/2022-11-28_17-35-48.82.png" style></p>
+<img src="./img/2022-11-28_17-35-48.82.png" style></p>
 <h1 class="mume-header" id="-4%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%90%B8%E5%BC%95%E5%AD%90-">4.&#x6D1B;&#x4F26;&#x5179;&#x5438;&#x5F15;&#x5B50;</h1>
 
 <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3B2;</mi><mo>=</mo><mn>0.67</mn><mo separator="true">,</mo><mi>&#x3C1;</mi><mo>=</mo><mn>28.00</mn><mo separator="true">,</mo><mi>&#x3C3;</mi><mo>=</mo><mn>10.00</mn></mrow><annotation encoding="application/x-tex">\beta = 0.67,\rho = 28.00,\sigma = 10.00</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">&#x3B2;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0.67</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">&#x3C1;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">28.00</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C3;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10.00</span></span></span></span>:</p>

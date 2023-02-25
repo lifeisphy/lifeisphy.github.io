@@ -290,41 +290,58 @@ pre[data-line] .line-highlight[data-end]:after {
   font-size: medium;
 }
 .bar_template {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+}
+.bar_template .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .bar_template:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .def,
 .d,
 .yellow {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #f3e9de;
   border-color: #e6d303;
+}
+.def .label,
+.d .label,
+.yellow .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .def:before,
 .d:before,
 .yellow:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .def:before,
 .d:before,
@@ -335,23 +352,33 @@ pre[data-line] .line-highlight[data-end]:after {
 .thm,
 .theorem,
 .t {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #b2f1ce;
   border-color: #e6d303;
+}
+.thm .label,
+.theorem .label,
+.t .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .thm:before,
 .theorem:before,
 .t:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .thm:before,
 .theorem:before,
@@ -362,28 +389,39 @@ pre[data-line] .line-highlight[data-end]:after {
 .pf,
 .proof,
 .p {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: aqua;
   border-color: lightpink;
+}
+.pf .label,
+.proof .label,
+.p .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .pf:before,
 .proof:before,
 .p:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .pf:before,
 .proof:before,
 .p:before {
   content: "证明";
+  color: white;
   background-color: #4949ff;
 }
 .pf:after,
@@ -396,105 +434,148 @@ pre[data-line] .line-highlight[data-end]:after {
 .properties,
 .property,
 .prop {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: aqua;
   border-color: lightpink;
+}
+.blue .label,
+.properties .label,
+.property .label,
+.prop .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .blue:before,
 .properties:before,
 .property:before,
 .prop:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .blue:before,
 .properties:before,
 .property:before,
 .prop:before {
   content: attr(name);
+  color: white;
   background-color: #4949ff;
 }
 .question,
 .q,
 .pink {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #fcd2d9;
   border-color: #e958e9;
+}
+.question .label,
+.q .label,
+.pink .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .question:before,
 .q:before,
 .pink:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .question:before,
 .q:before,
 .pink:before {
   content: attr(name);
+  color: white;
   background-color: #fa97a8;
 }
 .eg,
 .ex,
 .example {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #0cf76a;
   border-color: #0cb951;
+}
+.eg .label,
+.ex .label,
+.example .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .eg:before,
 .ex:before,
 .example:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .eg:before,
 .ex:before,
 .example:before {
   content: attr(name);
+  color: white;
   background-color: #2bbb2b;
 }
 .lemma {
-  margin: 35px 0 20px 0;
-  padding: 0px 20px 0px 20px;
-  border-left: 5px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
   position: relative;
+  padding: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: #cbb6e5;
   border-color: #771be7;
+}
+.lemma .label {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  color: white;
+  padding: 0px 6px 0px 6px;
 }
 .lemma:before {
   position: absolute;
-  left: 0px;
-  top: -24px;
-  height: 24px;
-  width: 100%;
-  padding: 0px 6px 0px 6px;
-  display: block;
+  left: 20px;
+  top: -15px;
   color: white;
+  padding: 0px 6px 0px 6px;
 }
 .lemma:before {
   content: attr(name);
+  color: white;
   background-color: #871bb5;
 }
 .footer {
@@ -904,14 +985,14 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">&#
 &amp; \approx \frac{(b-a)\pi}{2N} \sum_{k=0}^{N-1} \sin\frac{\pi(k+1/2)}{N}h\left(a+\frac{b-a}{2}(1+\cos\frac{\pi(k+1/2)}{N})\right)
 \end{align}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:6.2997em;vertical-align:-2.8999em;"></span><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.3999em;"><span style="top:-5.6292em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011em;">&#x222B;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.599em;"><span style="top:-1.7881em;margin-left:-0.4445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span style="top:-3.8129em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span><span style="top:-2.5306em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:2.8999em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.3999em;"><span style="top:-5.6292em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011em;">&#x222B;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.564em;"><span style="top:-1.7881em;margin-left:-0.4445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2212;</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.8129em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.9703em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">a</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">a</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">d</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span></span></span><span style="top:-2.5306em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&#x2248;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C0;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283em;"><span style="top:-1.8479em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C0;</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1/2</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">a</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C0;</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1/2</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:2.8999em;"><span></span></span></span></span></span></span></span><span class="tag"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.3999em;"><span style="top:-5.6292em;"><span class="pstrut" style="height:3.8283em;"></span><span class="eqn-num"></span></span><span style="top:-2.5306em;"><span class="pstrut" style="height:3.8283em;"></span><span class="eqn-num"></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:2.8999em;"><span></span></span></span></span></span></span></span></span><br>
 &#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;<br>
-<img src="http://60.205.203.160:8000/qcqi-pics/2022-11-8 14-21-2.31.png" style></p>
+<img src="./img/2022-11-8 14-21-2.31.png" style></p>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x9AD8;&#x65AF;-&#x5207;&#x6BD4;&#x96EA;&#x592B;&#x65B9;&#x6CD5;&#x5728;&#x8BA1;&#x7B97;&#x91CF;&#x63A5;&#x8FD1;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x76F8;&#x6BD4;&#x524D;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x66F4;&#x52A0;&#x7CBE;&#x786E;&#x3002;</p>
 <h2 class="mume-header" id="-3%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95%E6%B1%82%E6%A0%B9-">3.&#x4E09;&#x79CD;&#x65B9;&#x6CD5;&#x6C42;&#x6839;</h2>
 
 <p>&#x7531;&#x4E8E;&#x539F;&#x65B9;&#x7A0B;&#x7684;&#x96F6;&#x70B9;&#x4E3A;&#x4E8C;&#x91CD;&#x6839;&#xFF0C;&#x5728;&#x4EFB;&#x610F;&#x533A;&#x95F4;&#x7684;&#x4E24;&#x7AEF;&#x51FD;&#x6570;&#x503C;&#x5747;&#x6052;&#x4E3A;&#x6B63;&#xFF0C;&#x4E8C;&#x5206;&#x6CD5;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x4E0B;&#x53BB;&#xFF1A;<br>
-<img src="http://60.205.203.160:8000/qcqi-pics/2022-11-6 17-30-54.77.png" style></p>
+<img src="./img/2022-11-6 17-30-54.77.png" style></p>
 <p>&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;Newton-Ralphson&#x4E0E;&#x5272;&#x7EBF;&#x6CD5;&#x8BA1;&#x7B97;&#x65B9;&#x7A0B;&#x7684;&#x6B63;&#x6839;(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo mathvariant="normal">&#x2260;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\ne 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel">&#xE020;</span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>)&#xFF0C;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF08;&#x5176;&#x4E2D;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4E2D;&#x7CBE;&#x5EA6;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>r</mi><mi>e</mi><mi>c</mi><mo>=</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>&#x2212;</mo><mn>7</mn></mrow></msup></mrow><annotation encoding="application/x-tex">prec = 10^{-7}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">rec</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2212;</span><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span></span>&#xFF09;&#xFF1A;<br>
-<img src="http://60.205.203.160:8000/qcqi-pics/2022-11-6 17-25-47.45.png" style></p>
+<img src="./img/2022-11-6 17-25-47.45.png" style></p>
 <p>&#x56FE;&#x4E2D;&#x4E0A;&#x9762;&#x4E3A;N-R&#x65B9;&#x6CD5;&#x5F97;&#x5230;&#x7684;&#x6839;&#xFF0C;&#x4E0B;&#x9762;&#x4E3A;&#x5272;&#x7EBF;&#x6CD5;&#x5F97;&#x5230;&#x7684;&#x6839;&#x3002;&#x7531;&#x4E8E;&#x662F;&#x4E8C;&#x91CD;&#x96F6;&#x70B9;&#xFF0C;&#x8FD9;&#x4E24;&#x79CD;&#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#x5F97;&#x5230;&#x7684;&#x7CBE;&#x5EA6;&#x5747;&#x53EA;&#x6709;&#x5927;&#x7EA6;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x223C;</mo><msqrt><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>&#x2212;</mo><mn>7</mn></mrow></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sim \sqrt{10^{-7}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">&#x223C;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.0849em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9551em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2212;</span><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span><span style="top:-2.9151em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
 c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
 c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
