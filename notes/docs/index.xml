@@ -2,9 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docs on Hugo Book</title>
-    <link>https://lifeisphy.github.io/notes/docs/</link>
+    <link>https://lifeisphy.github.io/notes/docs.html</link>
     <description>Recent content in Docs on Hugo Book</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Feb 2023 22:03:25 +0000</lastBuildDate><atom:link href="https://lifeisphy.github.io/notes/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Feb 2023 15:54:20 +0000</lastBuildDate><atom:link href="https://lifeisphy.github.io/notes/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>L2</title>
+      <link>https://lifeisphy.github.io/notes/docs/CS106L-cpp/L2.html</link>
+      <pubDate>Fri, 24 Feb 2023 15:54:20 +0000</pubDate>
+      
+      <guid>https://lifeisphy.github.io/notes/docs/CS106L-cpp/L2.html</guid>
+      <description>用new实现动态内存分配：
+p = new T[N] T:任意类型名 P为T* 指针</description>
+    </item>
+    
   </channel>
 </rss>

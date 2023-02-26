@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>广义相对论 on Hugo Book</title>
-    <link>https://lifeisphy.github.io/notes/tags/%E5%B9%BF%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</link>
+    <link>https://lifeisphy.github.io/notes/tags/%E5%B9%BF%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA.html</link>
     <description>Recent content in 广义相对论 on Hugo Book</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 09 Feb 2023 22:03:25 +0000</lastBuildDate><atom:link href="https://lifeisphy.github.io/notes/tags/%E5%B9%BF%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一章 拓扑空间简介</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/</link>
+      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B.html</link>
       <pubDate>Sat, 12 Nov 2022 11:12:20 +0000</pubDate>
       
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%AE%80%E4%BB%8B.html</guid>
       <description>1.1 集合论初步#这部分比较简单，略
 1.2 拓扑空间#拓扑空间被定义为\((X,\mathscr{T})\)，其中 \[\mathscr T \subset 2^X\]是X的全部开集的集合。开集要满足任意并和有限交的封闭性。
 \(\mathscr T\)选取任意性：
@@ -21,10 +21,10 @@
     
     <item>
       <title>第二章 流形和张量场</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/</link>
+      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA.html</link>
       <pubDate>Sat, 12 Nov 2022 13:33:59 +0000</pubDate>
       
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA/</guid>
+      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B5%81%E5%BD%A2%E5%92%8C%E5%BC%A0%E9%87%8F%E5%9C%BA.html</guid>
       <description>2.1 微分流形#拓扑空间\((M,\mathscr T)\)称为n维微分流形(n-dimensional differentiable manifold)，若\(M\)有开覆盖\(\{O_\alpha\}\)满足： a. \(\forall O_\alpha ,\exists 同胚\Psi_\alpha:O_\alpha\to V_\alpha\)(\(V_\alpha\)为\(\mathbb{R}^n\)用通常拓扑衡量的开子集); b. \(\text{if}\ O_\alpha \cap O_\beta \ne \emptyset\)，复合映射\(\Psi_\beta\circ \Psi_\alpha^{-1}\)是\(C^\infty\)光滑的。
 \(\psi_\beta \circ \psi_\alpha^{-1}\)是\(\mathbb{R}^n\)的子集之间的映射，每个点都有n个自然坐标。因此它提供了n个n原函数。\(C^\infty\)表示每个n元函数都是无穷阶光滑的。尽管原来的拓扑空间没有坐标，但其中的开覆盖有了和\(\mathbb{R}^n\)的同胚之后就可以用\(\mathbb{R}^n\)的坐标去定义其中点的坐标。每个开覆盖对应的同胚不同，因此两个覆盖的交集就有了两套坐标\(\{x^\mu\},\{x^\nu\}\)，映射\(\psi_\beta\circ\psi_\alpha^{-1}\)提供的就是二者的一个坐标变换。
 \(C^\infty\)光滑对应的流形为光滑流形，类似还可定义\(C^r\)流形、解析流形
@@ -35,10 +35,10 @@
     
     <item>
       <title>第三章 黎曼曲率张量</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/</link>
+      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F.html</link>
       <pubDate>Sun, 25 Dec 2022 23:33:17 +0000</pubDate>
       
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F/</guid>
+      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%BB%8E%E6%9B%BC%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F.html</guid>
       <description>\[\global\def\ccc{c_1\cdots c_l}\global\def\bbb{b_1\cdots b_k}\global\def\ddd{d_1\cdots d_k&amp;#39;}\global\def\eee{e_1\cdots e_l&amp;#39;}\]黎曼（内禀）曲率张量#3.1 导数算符把nabla算子推广到任意流形，其上可以没有度规，所以要分清矢量和对偶矢量。在推广\(\vec\nabla\)时它更像对偶矢量，故记作\(\nabla_a\)。
 记\(\mathscr F_M(k,l)\)为流形M上全体\(C^\infty\)的\((k,l)\)型张量场集合(函数\(f\)视为标量场，因此\(\mathscr F_M(0,0)=\mathscr F_M\).)映射\(\nabla:\mathscr F_M(k,l)\to\mathscr F_M(k,l&amp;#43;1)\)称为M上的无挠导数算符，若它满足：
 线性性：\(\nabla_a(\alpha T^{\bbb}{}_{\ccc}&amp;#43;\beta S^{\bbb}{}_{\ccc})=\alpha \nabla_a T^{\bbb}{}_{\ccc}&amp;#43;\beta\nabla_a S^{\bbb}{}_{\ccc}\)满足Leibnitz律: \[\nabla_a(T^{\bbb}{}_{\ccc}S^{\ddd}{}_{\eee} )= T^{\bbb}_{\ccc}\nabla_a S^{\ddd}{}_{\eee} &amp;#43; S^{\ddd}{}_{\eee}\nabla_a T^{\bbb}{}_{\ccc}\]与缩并可换序; \(v(f)=v^a\nabla_a f\),\(\forall f\in\mathscr F_M,v\in \mathscr F_M(1,0)\); 无挠性(torsion-free):\(\nabla_a\nabla_b f=\nabla_b\nabla_a f,\forall f\in \mathscr F_M\)条件3记作\(\nabla\circ C=C\circ \nabla\),以后常写作</description>
@@ -46,30 +46,30 @@
     
     <item>
       <title>第四章 李导数、Killing场和超曲面</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/</link>
+      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2.html</link>
       <pubDate>Wed, 11 Jan 2023 16:59:05 +0000</pubDate>
       
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2/</guid>
+      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%9D%8E%E5%AF%BC%E6%95%B0Killing%E5%9C%BA%E5%92%8C%E8%B6%85%E6%9B%B2%E9%9D%A2.html</guid>
       <description>chap4:Lie derivatives, Killing fields, hypersurfaces#4.1 流形间的映射#设\(M,N\)为流形，\(\phi:M\to N\)为光滑映射，\(\mathscr F_M\)和\(\mathscr F_N\)分别为M和N上光滑函数的集合,\(\mathscr F_M(k,l),\mathscr F_N(k,l)\)分别为M和N上光滑张量场集合,由\(\phi\)自然诱导出一系列映射：
 \(\phi^*:\mathscr F_N\to\mathscr F_M\)定义为： \[(\phi^*f)|_p :=f|_{\phi(p)},\forall f\in\mathscr F_N,p\in M\]或者写成：\((\phi^*f)(p)=f(\phi(p))\)线性 \(\phi^*(fg)=\phi^*(f)\phi^*(g)\)\(\phi_*:V_p\to V_{\phi(p)}\)定义为： \[(\phi_*v)(f):=v(\phi^*f),\forall f\in\mathscr F_N\]\(\phi_*\)是线性映射：\(\phi_*(\alpha u^a&amp;#43;\beta v^a) = \alpha\phi_*u^a&amp;#43;\beta\phi_* v^a\)拉回映射可延拓至\(\phi^*:\mathscr F_N(0,l)\to \mathscr F_M(0,l)\)：对任意\(T\in\mathscr F_N(0,l)\)，定义\(\phi^*T\in \mathscr F_M(0,l)\)为： \[(\phi^*T)_{a_1\cdots a_l}|_p (v_1)^{a_1}\cdots (v_l)^{a_l}:= T_{a_1\cdots a_l}|_{\phi(p)} (\phi_*v_1)^{a_1}\cdots (\phi_*v_l)^{a_l},\forall p\in M,v_1\cdots v_l\in V_p\]推前映射\(\phi_*\)可按如下方式延拓为\(p\)到\(\phi(p)\)张量空间的映射：\(\phi_*:\mathscr T_{V_p}(k,0)\to \mathscr T_{V_{\phi(p)}}(k,0)\): \[(\phi_* T)^{a_1\cdots a_k}(\omega^1)_{a_1}\cdots(\omega^k)_{a_k}:=T^{a_1\cdots a_k}(\phi^*\omega^1)_{a_1}\cdots (\phi^*\omega^k)_{a_k},\\ \forall \omega^1\cdots\omega^k \in V^* _{\phi(p)},T\in\mathscr T_{V_p}(k,0)\]其中\(\phi^*\omega_a\)定义为\((\phi^*\omega)_av^a\equiv \omega_a(\phi_*v)^a\)拉回映射的延拓是拉回映射\(k=1\)时的特例，拉回映射是把N上的\((0,l)\)型张量场变成M上同类型张量场，是场之间的变换； 推前映射的延拓是推前映射\(l=0\)时的特例，推前映射是把\(p\)点\((k,0)\)型张量变为像点\(\phi(p)\)点的同型张量，但不能变成场和场之间的映射，因为对N上任意一个点\(q\)，M中不一定存在它的原像\(p=\phi^{-1}(q)\)，因此张量场在\(q\)处的值就无法定义。</description>
     </item>
     
     <item>
       <title>第五章 微分形式及其积分</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/</link>
+      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86.html</link>
       <pubDate>Thu, 26 Jan 2023 17:14:58 +0000</pubDate>
       
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/</guid>
+      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86.html</guid>
       <description>5.1 微分形式#先介绍\(n\)维空间\(V\)上的形式，再讨论\(n\)维流形\(M\)上的微分形式场。
 \(\omega_{a_{1}a_{2}\dots a_{l}}\in \mathscr T_{V}(0,l)\)叫\(V\)上的l次形式，若 \[\omega _{a_{1}a_{2}\cdots a_{l}}=\omega_{[a_{1}\dots a_{l}]}\]为书写方便，有时略去下标，将形式\(\omega_{a_{1}\dots a_{l}}\)写为\(\mathbf{ \omega}\)由定义知，1形式就是\(V\)上对偶矢量,\(\Lambda(1)=V^*\).约定把任意实数称为\(V\)上0形式，则\(\lambda(0)=\mathbb{R}\)若微分形式某分量有两个指标重复，则整个分量为0. 记\(\mathscr{T}_{V}(0,l)\)是全体(0,l)型矢量空间的集合，全体l-form的集合记为\(\Lambda(l)\)，则\(\Lambda(l)\subset \mathscr{T}_{V}(0,l)\)\[\dim \Lambda(l) = \begin{cases}\frac{n!}{l!(n-l)!},&amp;amp; l\ge n\\ \\0, &amp;amp; l&amp;lt;n\end{cases}\]proof:对\(n=3,l=2\)情形， \[\begin{aligned}\omega_{ab}&amp;amp;=\omega_{11}(e^1)_{a}(e^1)_{b} &amp;#43; \omega_{12}(e^1)_{a}(e^2)_{b}&amp;#43;\omega_{13}(e^1)_{a}(e^3)_{b}&amp;#43;\dots \\ \\&amp;amp;= \omega_{12}(e^1)_{a}\wedge(e^2)_{b}&amp;#43;\omega_{13}(e^1)_{a}\wedge (e^3)_{b}&amp;#43;\omega_{23}(e^2)_{a}\wedge(e^3)_{b} \\\end{aligned}\]推广到一般情形，就有： \[\omega_{ab}=\sum_{C}\omega_{\mu\nu}(e^\mu)_{a}\wedge (e^\nu)_{b}\\ \omega_{a_{1}\dots a_{l}}=\sum_{C}\omega_{\mu_{1}\dots\mu_{l}}(e^{\mu_{1}})_{a_{1}}\wedge \dots\wedge (e^{\mu_{l}})_{a_{l}}\]其中\(\sum_{c}\)表示对\(n\)个数中取\(l\)个数的各种组合求和，即，\(\Lambda(l)\)的基底矢量共\(C_n^l\)个 当\(l&amp;lt;n\)时，\(\Lambda(l)\)一定有重复指标，因而只有零元一个元素。</description>
     </item>
     
     <item>
       <title>第六章 狭义相对论</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</link>
+      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA.html</link>
       <pubDate>Thu, 09 Feb 2023 22:03:25 +0000</pubDate>
       
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</guid>
+      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA.html</guid>
       <description>6.1 四维表述基础#这里所讲的狭义相对论（SR）与普物中的很相似，许多概念在此只作提及，重点看广义相对论（GR）中存在不同的地方。
 一些物理名词与数学名词的对应：
 Phys Math innertial coordinates Lorenzian coordinates interval Minkowski line element background spacetime 4-dim Minkowski space observer(point mass) timelike curve inertial observer timelike geodesics 所谓事件，就是时间一瞬和空间一点的结合。我们可以将炸弹爆炸、两车相撞等都抽象为事件。
@@ -84,10 +84,10 @@ Phys Math innertial coordinates Lorenzian coordinates interval Minkowski line el
     
     <item>
       <title>群论拓扑</title>
-      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/</link>
+      <link>https://lifeisphy.github.io/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91.html</link>
       <pubDate>Tue, 13 Dec 2022 19:55:38 +0000</pubDate>
       
-      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91/</guid>
+      <guid>https://lifeisphy.github.io/notes/docs/GR/%E7%BE%A4%E8%AE%BA%E6%8B%93%E6%89%91.html</guid>
       <description>Group theory补充：#\((X,\theta(X)),(Y,\theta(Y))\)都是拓扑空间，\(Z=X\otimes Y\)是X与Y的直积集，令 \[\theta(Z) = \left\{O=\bigcup_{O_1\in\tilde{O_1},O_2\in\tilde{O_2}} O_1\otimes O_2|\tilde{O_1}\in \theta(X),\tilde{O_2}\in\theta(Y)\right\}\]则\(\theta(Z)\)是Z上的一个拓扑，\((Z,\theta(Z))\)是X和Y的直积拓扑空间
 \((X,\theta)\)为连通拓扑空间，若\(\nexists\ 开集\ O_1,O_2\ \text{such that}\)\[O_1\cup O_2=X \\ P_1\cap O_2 = \emptyset \\\]则称\((X,\theta)\)是连通的拓扑空间；反之则是不连通的
 道路连通与连通的区别：道路连通的条件更加严格，道路连通的拓扑空间一定连通。
